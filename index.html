@@ -23,7 +23,8 @@
     /* NAV */
     nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
     .nav-logo { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; text-decoration: none; }
-    .nav-logo-mark { width: 36px; height: 36px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+    .nav-logo-mark { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-mark img { width: 36px; height: 36px; object-fit: contain; filter: brightness(0) invert(1); }
     .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 600; }
     .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; padding: 0.5rem 0.85rem; border-radius: 4px; transition: color 0.2s, background 0.2s; }
@@ -95,6 +96,54 @@
     .empty-state { text-align: center; padding: 4rem 2rem; color: var(--muted); grid-column: 1/-1; }
     .empty-state p { font-size: 1.1rem; }
 
+    /* ABOUT SECTION */
+    .about-section-wrap { background: var(--cream); padding: 4rem 2rem 5rem; border-top: 1px solid var(--border); }
+    .about-lead { font-size: 1.15rem; line-height: 1.8; color: var(--navy); font-weight: 400; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+    .about-lead strong { font-weight: 600; }
+    .about-block { margin-bottom: 3rem; }
+    .about-block h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .about-block p { color: var(--text); margin-bottom: 1rem; font-size: 1rem; }
+    .about-block p:last-child { margin-bottom: 0; }
+    .about-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .epic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .epic-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.4rem 1.5rem; position: relative; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .epic-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .epic-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
+    .epic-card.equity::before { background: #c8a84b; }
+    .epic-card.participation::before { background: #276221; }
+    .epic-card.identity::before { background: #1a6891; }
+    .epic-card.competence::before { background: #7b2f82; }
+    .epic-bg-letter { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; line-height: 1; opacity: 0.1; position: absolute; top: 0.75rem; right: 1rem; }
+    .epic-card.equity .epic-bg-letter { color: #c8a84b; }
+    .epic-card.participation .epic-bg-letter { color: #276221; }
+    .epic-card.identity .epic-bg-letter { color: #1a6891; }
+    .epic-card.competence .epic-bg-letter { color: #7b2f82; }
+    .epic-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+    .epic-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .about-stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .about-stat-box { background: var(--navy); border-radius: 6px; padding: 1.4rem 1rem; text-align: center; }
+    .about-stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; margin-bottom: 0.3rem; }
+    .about-stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .about-cat-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 1.25rem; }
+    .about-cat-list li { display: flex; align-items: center; gap: 0.6rem; background: var(--white); border: 1px solid var(--border); border-radius: 5px; padding: 0.65rem 1rem; font-size: 0.9rem; color: var(--text); transition: border-color 0.2s; }
+    .about-cat-list li:hover { border-color: var(--gold); }
+    .about-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .about-cat-count { margin-left: auto; font-size: 0.75rem; font-weight: 700; color: var(--gold); background: #f5edd8; padding: 0.1rem 0.45rem; border-radius: 20px; }
+    .about-pull-quote { border-left: 3px solid var(--gold); padding: 1rem 0 1rem 1.75rem; margin: 2rem 0; }
+    .about-pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--navy); line-height: 1.65; margin: 0; }
+    .about-pull-quote cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+    .about-cta { background: var(--navy); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; margin-top: 1rem; }
+    .about-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(200,168,75,0.1) 0%, transparent 65%); pointer-events: none; }
+    .about-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .about-cta p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .about-cta-btn { display: inline-block; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.05em; padding: 0.75rem 2rem; border-radius: 4px; transition: background 0.2s, transform 0.15s; }
+    .about-cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+    @media (max-width: 640px) {
+      .epic-grid { grid-template-columns: 1fr; }
+      .about-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .about-cat-list { grid-template-columns: 1fr; }
+    }
+
     /* FOOTER */
     footer { background: #111c2e; color: rgba(255,255,255,0.6); padding: 3rem 2rem; margin-top: 4rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -110,14 +159,13 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-mark">S</div>
+    <div class="nav-logo-mark"><img src="Scanlon_S16.JPG" alt="Scanlon Network Logo"></div>
     <span class="nav-logo-text">Scanlon Network</span>
   </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#archive">Archive</a></li>
-    <li><a href="#podcasts">Podcasts</a></li>
-    <li><a href="#community">Community</a></li>
+    <li><a href="#archive" id="podcastsNavLink">Podcasts</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#archive" class="nav-cta">Get Started</a></li>
   </ul>
@@ -128,6 +176,151 @@
   <h1>The Scanlon <em>Leadership Archive</em></h1>
   <p>A growing collection of timeless insights, resources, and tools capturing the legacy of the Scanlon Leadership Network.</p>
 </div>
+
+<section class="about-section-wrap" id="about">
+  <div class="container" style="max-width:800px;">
+    <span class="section-label" style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.4rem;">About This Site</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Preserving a <em style="font-style:italic;color:#c8a84b;">Legacy</em> of People-Centered Leadership</h2>
+    <div class="divider"></div>
+
+    <p class="about-lead">
+      The <strong>Scanlon Leadership Archive</strong> is a living collection of documents, videos, podcasts, and tools
+      that preserve and extend the legacy of one of the most enduring movements in organizational management —
+      the Scanlon Plan. It exists because great ideas deserve to be found.
+    </p>
+
+    <!-- WHAT IS THIS SITE -->
+    <div class="about-block">
+      <span class="section-label">The Archive</span>
+      <h3>What This Site Is</h3>
+      <div class="divider"></div>
+      <p>This is a curated, searchable library of primary and secondary resources documenting the Scanlon tradition
+      from its origins in 1930s labor-management cooperation through its evolution into a comprehensive leadership
+      philosophy practiced by organizations worldwide.</p>
+      <p>The archive draws together materials that have previously existed only in filing cabinets, institutional
+      memories, and private collections — newsletters from the 1990s, landmark case studies, foundational essays,
+      practitioner interviews, and training tools developed over decades of field work. Brought together in one place,
+      they tell a coherent story about what it looks like when organizations genuinely trust their people.</p>
+      <p>Resources are organized by category and tagged against the EPIC framework — the four principles
+      (Equity, Participation, Identity, Competence) — so visitors can explore thematically or browse the full collection.</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="about-stats-row">
+      <div class="about-stat-box"><span class="about-stat-number">60+</span><span class="about-stat-label">Resources</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">8</span><span class="about-stat-label">Categories</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">5</span><span class="about-stat-label">Formats</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">70+</span><span class="about-stat-label">Years of History</span></div>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- THE SCANLON TRADITION -->
+    <div class="about-block">
+      <span class="section-label">Background</span>
+      <h3>The Scanlon Tradition</h3>
+      <div class="divider"></div>
+      <p>Joe Scanlon was a steelworker, union leader, and later a lecturer at MIT whose ideas about labor-management
+      cooperation were radical in his time and remain quietly revolutionary today. His core insight was simple:
+      the people doing the work know the most about how to improve it, and organizations that ignore that knowledge
+      leave enormous value — human and financial — on the table.</p>
+      <p>From that insight grew a full management philosophy: gainsharing plans that distribute productivity gains
+      equitably; participative committees that give employees meaningful voice; identity-building practices that
+      connect people to organizational purpose; and competence development that treats every worker as worth investing in.</p>
+
+      <blockquote class="about-pull-quote">
+        <p>"Every man a capitalist" — the idea that every person should be a genuine stakeholder in the enterprise they give their working life to.</p>
+        <cite>— Joe Scanlon, foundational principle</cite>
+      </blockquote>
+
+      <p>Scanlon's ideas influenced the development of Japanese Lean manufacturing, shaped management practices at
+      iconic American companies like Herman Miller, Donnelly Corporation, and Landscape Forms, and continue to
+      inform how forward-thinking organizations design work today.</p>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- EPIC -->
+    <div class="about-block">
+      <span class="section-label">The Framework</span>
+      <h3>The EPIC Principles</h3>
+      <div class="divider"></div>
+      <p>All resources in the archive are tagged against one or more of the four EPIC principles — the conceptual
+      pillars of the Scanlon approach.</p>
+      <div class="epic-grid">
+        <div class="epic-card equity">
+          <div class="epic-bg-letter">E</div>
+          <div class="epic-name">Equity</div>
+          <p class="epic-desc">Fair sharing of gains, risks, and information. Scanlon organizations distribute the fruits of improved performance — financially and otherwise — to the people who create them.</p>
+        </div>
+        <div class="epic-card participation">
+          <div class="epic-bg-letter">P</div>
+          <div class="epic-name">Participation</div>
+          <p class="epic-desc">Genuine employee voice in decisions that affect their work. Real authority and accountability at every level of the organization — not consultation theater.</p>
+        </div>
+        <div class="epic-card identity">
+          <div class="epic-bg-letter">I</div>
+          <div class="epic-name">Identity</div>
+          <p class="epic-desc">Clarity of organizational purpose, values, and belonging. People work best when they understand why their organization exists and feel genuinely connected to its mission.</p>
+        </div>
+        <div class="epic-card competence">
+          <div class="epic-bg-letter">C</div>
+          <div class="epic-name">Competence</div>
+          <p class="epic-desc">Commitment to developing the skills and knowledge of every person in the organization. Learning is treated as a strategic imperative, not a perk.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- WHAT'S IN THE ARCHIVE -->
+    <div class="about-block">
+      <span class="section-label">Collection</span>
+      <h3>What You'll Find Here</h3>
+      <div class="divider"></div>
+      <p>The archive spans eight categories, ranging from foundational theory to practitioner tools, across multiple formats.</p>
+      <ul class="about-cat-list">
+        <li><span class="about-cat-dot" style="background:#1a6891;"></span>Articles &amp; Essays<span class="about-cat-count">29</span></li>
+        <li><span class="about-cat-dot" style="background:#7b2f82;"></span>Case Studies<span class="about-cat-count">7</span></li>
+        <li><span class="about-cat-dot" style="background:#c8a84b;"></span>Tools &amp; Templates<span class="about-cat-count">6</span></li>
+        <li><span class="about-cat-dot" style="background:#2b4fc0;"></span>Video Library<span class="about-cat-count">11</span></li>
+        <li><span class="about-cat-dot" style="background:#6b2bc0;"></span>Podcasts &amp; Interviews<span class="about-cat-count">10</span></li>
+        <li><span class="about-cat-dot" style="background:#276221;"></span>Leadership Resources<span class="about-cat-count">2</span></li>
+        <li><span class="about-cat-dot" style="background:#c0392b;"></span>Thought Leadership<span class="about-cat-count">1</span></li>
+        <li><span class="about-cat-dot" style="background:#2bc06b;"></span>Continuous Improvement<span class="about-cat-count">2</span></li>
+      </ul>
+      <p style="margin-top:1.5rem;">Highlights include the full Max DePree interview series on servant leadership;
+      employee-produced videos from Wescast Industries; CEO testimonials from Donnelly Corporation, Landscape Forms,
+      SGS Tools, Lorin Industries, and Thomson-Shore; foundational texts by Dr. Carl Frost; the original
+      <em>Fortune Magazine</em> article that helped launch the movement; and the definitive EPIC Leadership guidebook
+      synthesizing decades of research and practice.</p>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- WHO IT'S FOR -->
+    <div class="about-block">
+      <span class="section-label">Audience</span>
+      <h3>Who This Archive Is For</h3>
+      <div class="divider"></div>
+      <p>This archive is designed for anyone who believes the relationship between organizations and the people
+      inside them can — and should — be better.</p>
+      <p><strong>Practitioners</strong> implementing or renewing a Scanlon Plan will find implementation roadmaps,
+      sample agreements, measurement guides, and case studies from organizations that have done it successfully.
+      <strong>Leaders</strong> wrestling with culture, engagement, or transformation will find a coherent
+      philosophical framework backed by decades of evidence. <strong>Researchers and students</strong> will find
+      primary sources and practitioner voices unavailable anywhere else in one place. And <strong>anyone curious</strong>
+      about why some workplaces feel fundamentally more alive and trusting will find the answer here.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+      <h3>Explore the Archive</h3>
+      <p>Browse the full collection, filter by theme or format, and discover where the Scanlon tradition can take your organization.</p>
+      <a href="#archive" class="about-cta-btn">Browse All Resources →</a>
+    </div>
+  </div>
+</section>
 
 <section class="archive-section" id="archive">
   <div class="container">
@@ -186,7 +379,7 @@
 <footer>
   <div class="footer-inner">
     <div class="nav-logo" style="padding:0;">
-      <div class="nav-logo-mark">S</div>
+      <div class="nav-logo-mark"><img src="Scanlon_S16.JPG" alt="Scanlon Network Logo"></div>
       <span class="nav-logo-text">Scanlon Network</span>
     </div>
     <div class="footer-bottom">© 2026 Scanlon Leadership Network Archive.</div>
@@ -386,6 +579,14 @@ document.getElementById('searchInput').addEventListener('input', render);
 document.getElementById('themeFilter').addEventListener('change', render);
 document.getElementById('formatFilter').addEventListener('change', render);
 document.getElementById('sortFilter').addEventListener('change', render);
+
+// Podcasts nav link — filter to Podcast format and scroll to archive
+document.getElementById('podcastsNavLink').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('formatFilter').value = 'Podcast';
+  render();
+  document.getElementById('archive').scrollIntoView({ behavior: 'smooth' });
+});
 </script>
 </body>
 </html>
