@@ -2,7 +2,611 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="v<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scanlon Leadership Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2640;
+      --gold: #c8a84b;
+      --gold-light: #e8d49a;
+      --cream: #f8f5ee;
+      --text: #2c2c2c;
+      --muted: #6b6b6b;
+      --white: #ffffff;
+      --border: #ddd5c0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Serif 4', serif; background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.7; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; text-decoration: none; }
+    .nav-logo-mark { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-mark img { width: 36px; height: 36px; object-fit: contain;  }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; padding: 0.5rem 0.85rem; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--gold); background: rgba(255,255,255,0.06); }
+    .nav-cta { background: var(--gold) !important; color: var(--navy) !important; font-weight: 600 !important; padding: 0.5rem 1.1rem !important; border-radius: 4px; }
+
+    /* HERO */
+    .hero { background: var(--navy); color: var(--white); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(200,168,75,0.12) 0%, transparent 65%); pointer-events: none; }
+    .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; max-width: 720px; margin: 0 auto 1rem; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero p { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto; font-weight: 300; }
+
+    /* ARCHIVE SECTION */
+    .archive-section { padding: 3rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: block; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 0.5rem; }
+    .divider { width: 50px; height: 3px; background: var(--gold); margin: 0.75rem 0 1.5rem; }
+
+    /* CONTROLS */
+    .controls { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+    .control-group { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 160px; }
+    .control-group label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .control-group select, .control-group input { padding: 0.6rem 0.85rem; border: 1px solid var(--border); border-radius: 4px; font-family: 'Source Serif 4', serif; font-size: 0.9rem; color: var(--text); background: var(--cream); appearance: none; cursor: pointer; }
+    .control-group select:focus, .control-group input:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+    .search-box { flex: 2; min-width: 220px; }
+    .results-count { font-size: 0.85rem; color: var(--muted); align-self: center; white-space: nowrap; }
+
+    /* STATS BAR */
+    .stats-bar { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .stat-pill { background: var(--white); border: 1px solid var(--border); border-radius: 30px; padding: 0.4rem 1rem; font-size: 0.82rem; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .stat-pill:hover, .stat-pill.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .stat-pill span { font-weight: 700; color: var(--gold); margin-left: 0.25rem; }
+    .stat-pill.active span { color: var(--gold-light); }
+
+    /* GRID */
+    .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+
+    /* CARD */
+    .resource-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.2s, transform 0.2s; position: relative; }
+    .resource-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+    .card-format { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--cream); border: 1px solid var(--border); border-radius: 3px; padding: 0.2rem 0.5rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .card-format.pdf { background: #fff0f0; border-color: #f5c6c6; color: #c0392b; }
+    .card-format.video { background: #f0f4ff; border-color: #c6d3f5; color: #2b4fc0; }
+    .card-format.podcast { background: #f5f0ff; border-color: #d3c6f5; color: #6b2bc0; }
+    .card-format.article { background: #f0fff4; border-color: #c6f5d3; color: #2bc06b; }
+    .card-format.template { background: #fffbf0; border-color: #f5e6c6; color: #c08b2b; }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.35; }
+    .card-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .card-tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 600; letter-spacing: 0.05em; }
+    .tag-identity { background: #e8f4fd; color: #1a6891; }
+    .tag-participation { background: #edf8e9; color: #276221; }
+    .tag-equity { background: #fef9e7; color: #876a00; }
+    .tag-competence { background: #fdf2fb; color: #7b2f82; }
+    .tag-category { background: var(--cream); color: var(--muted); border: 1px solid var(--border); }
+    .card-date { font-size: 0.75rem; color: #aaa; margin-left: auto; }
+    .card-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-top: auto; transition: color 0.2s; }
+    .card-link:hover { color: var(--navy); }
+    .card-link svg { width: 14px; height: 14px; }
+
+    /* DUPLICATE WARNING */
+    .dup-badge { position: absolute; top: 0.75rem; right: 0.75rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 3px; font-size: 0.65rem; padding: 0.15rem 0.4rem; color: #856404; font-weight: 600; }
+
+    /* EMPTY STATE */
+    .empty-state { text-align: center; padding: 4rem 2rem; color: var(--muted); grid-column: 1/-1; }
+    .empty-state p { font-size: 1.1rem; }
+
+    /* ABOUT SECTION */
+    .about-section-wrap { background: var(--cream); padding: 4rem 2rem 5rem; border-top: 1px solid var(--border); }
+    .about-lead { font-size: 1.15rem; line-height: 1.8; color: var(--navy); font-weight: 400; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+    .about-lead strong { font-weight: 600; }
+    .about-block { margin-bottom: 3rem; }
+    .about-block h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .about-block p { color: var(--text); margin-bottom: 1rem; font-size: 1rem; }
+    .about-block p:last-child { margin-bottom: 0; }
+    .about-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .epic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .epic-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.4rem 1.5rem; position: relative; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+    .epic-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .epic-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
+    .epic-card.equity::before { background: #c8a84b; }
+    .epic-card.participation::before { background: #276221; }
+    .epic-card.identity::before { background: #1a6891; }
+    .epic-card.competence::before { background: #7b2f82; }
+    .epic-bg-letter { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; line-height: 1; opacity: 0.1; position: absolute; top: 0.75rem; right: 1rem; }
+    .epic-card.equity .epic-bg-letter { color: #c8a84b; }
+    .epic-card.participation .epic-bg-letter { color: #276221; }
+    .epic-card.identity .epic-bg-letter { color: #1a6891; }
+    .epic-card.competence .epic-bg-letter { color: #7b2f82; }
+    .epic-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+    .epic-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .about-stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .about-stat-box { background: var(--navy); border-radius: 6px; padding: 1.4rem 1rem; text-align: center; }
+    .about-stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; margin-bottom: 0.3rem; }
+    .about-stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .about-cat-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 1.25rem; }
+    .about-cat-list li { display: flex; align-items: center; gap: 0.6rem; background: var(--white); border: 1px solid var(--border); border-radius: 5px; padding: 0.65rem 1rem; font-size: 0.9rem; color: var(--text); transition: border-color 0.2s; }
+    .about-cat-list li:hover { border-color: var(--gold); }
+    .about-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .about-cat-count { margin-left: auto; font-size: 0.75rem; font-weight: 700; color: var(--gold); background: #f5edd8; padding: 0.1rem 0.45rem; border-radius: 20px; }
+    .about-pull-quote { border-left: 3px solid var(--gold); padding: 1rem 0 1rem 1.75rem; margin: 2rem 0; }
+    .about-pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--navy); line-height: 1.65; margin: 0; }
+    .about-pull-quote cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+    .about-cta { background: var(--navy); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; margin-top: 1rem; }
+    .about-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(200,168,75,0.1) 0%, transparent 65%); pointer-events: none; }
+    .about-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+    .about-cta p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .about-cta-btn { display: inline-block; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.05em; padding: 0.75rem 2rem; border-radius: 4px; transition: background 0.2s, transform 0.15s; }
+    .about-cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+    @media (max-width: 640px) {
+      .epic-grid { grid-template-columns: 1fr; }
+      .about-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .about-cat-list { grid-template-columns: 1fr; }
+    }
+
+    /* FOOTER */
+    footer { background: #111c2e; color: rgba(255,255,255,0.6); padding: 3rem 2rem; margin-top: 4rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom { font-size: 0.82rem; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .archive-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark"><img src="data:image/png;base64,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" alt="Scanlon Network Logo"></div>
+    <span class="nav-logo-text">Scanlon Network</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#archive">Archive</a></li>
+    <li><a href="#archive" id="podcastsNavLink">Podcasts</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="leaders.html">Leaders</a></li>
+    <li><a href="#archive" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="home">
+  <p class="hero-eyebrow">Resource Library</p>
+  <h1>The Scanlon <em>Leadership Archive</em></h1>
+  <p>A growing collection of timeless insights, resources, and tools capturing the legacy of the Scanlon Leadership Network.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+    <a href="#archive" style="background:var(--gold);color:var(--navy);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700;font-size:0.9rem;padding:0.75rem 1.75rem;border-radius:4px;letter-spacing:0.04em;">Browse the Archive</a>
+    <a href="leaders.html" style="background:transparent;color:var(--white);text-decoration:none;font-family:'Playfair Display',serif;font-weight:600;font-size:0.9rem;padding:0.75rem 1.75rem;border-radius:4px;letter-spacing:0.04em;border:1px solid rgba(255,255,255,0.35);">Meet the Leaders →</a>
+  </div>
+</div>
+
+<section class="about-section-wrap" id="about">
+  <div class="container" style="max-width:800px;">
+    <span class="section-label" style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.4rem;">About This Site</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Preserving a <em style="font-style:italic;color:#c8a84b;">Legacy</em> of People-Centered Leadership</h2>
+    <div class="divider"></div>
+
+    <p class="about-lead">
+      The <strong>Scanlon Leadership Archive</strong> is a living collection of documents, videos, podcasts, and tools
+      that preserve and extend the legacy of one of the most enduring movements in organizational management —
+      the Scanlon Plan. It exists because great ideas deserve to be found.
+    </p>
+
+    <!-- WHAT IS THIS SITE -->
+    <div class="about-block">
+      <span class="section-label">The Archive</span>
+      <h3>What This Site Is</h3>
+      <div class="divider"></div>
+      <p>This is a curated, searchable library of primary and secondary resources documenting the Scanlon tradition
+      from its origins in 1930s labor-management cooperation through its evolution into a comprehensive leadership
+      philosophy practiced by organizations worldwide.</p>
+      <p>The archive draws together materials that have previously existed only in filing cabinets, institutional
+      memories, and private collections — newsletters from the 1990s, landmark case studies, foundational essays,
+      practitioner interviews, and training tools developed over decades of field work. Brought together in one place,
+      they tell a coherent story about what it looks like when organizations genuinely trust their people.</p>
+      <p>Resources are organized by category and tagged against the EPIC framework — the four principles
+      (Equity, Participation, Identity, Competence) — so visitors can explore thematically or browse the full collection.</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="about-stats-row">
+      <div class="about-stat-box"><span class="about-stat-number">60+</span><span class="about-stat-label">Resources</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">8</span><span class="about-stat-label">Categories</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">5</span><span class="about-stat-label">Formats</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">70+</span><span class="about-stat-label">Years of History</span></div>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- THE SCANLON TRADITION -->
+    <div class="about-block">
+      <span class="section-label">Background</span>
+      <h3>The Scanlon Tradition</h3>
+      <div class="divider"></div>
+      <p>Joe Scanlon was a steelworker, union leader, and later a lecturer at MIT whose ideas about labor-management
+      cooperation were radical in his time and remain quietly revolutionary today. His core insight was simple:
+      the people doing the work know the most about how to improve it, and organizations that ignore that knowledge
+      leave enormous value — human and financial — on the table.</p>
+      <p>From that insight grew a full management philosophy: gainsharing plans that distribute productivity gains
+      equitably; participative committees that give employees meaningful voice; identity-building practices that
+      connect people to organizational purpose; and competence development that treats every worker as worth investing in.</p>
+
+      <blockquote class="about-pull-quote">
+        <p>"Every man a capitalist" — the idea that every person should be a genuine stakeholder in the enterprise they give their working life to.</p>
+        <cite>— Joe Scanlon, foundational principle</cite>
+      </blockquote>
+
+      <p>Scanlon's ideas influenced the development of Japanese Lean manufacturing, shaped management practices at
+      iconic American companies like Herman Miller, Donnelly Corporation, and Landscape Forms, and continue to
+      inform how forward-thinking organizations design work today.</p>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- EPIC -->
+    <div class="about-block">
+      <span class="section-label">The Framework</span>
+      <h3>The EPIC Principles</h3>
+      <div class="divider"></div>
+      <p>All resources in the archive are tagged against one or more of the four EPIC principles — the conceptual
+      pillars of the Scanlon approach.</p>
+      <div class="epic-grid">
+        <div class="epic-card equity">
+          <div class="epic-bg-letter">E</div>
+          <div class="epic-name">Equity</div>
+          <p class="epic-desc">Fair sharing of gains, risks, and information. Scanlon organizations distribute the fruits of improved performance — financially and otherwise — to the people who create them.</p>
+        </div>
+        <div class="epic-card participation">
+          <div class="epic-bg-letter">P</div>
+          <div class="epic-name">Participation</div>
+          <p class="epic-desc">Genuine employee voice in decisions that affect their work. Real authority and accountability at every level of the organization — not consultation theater.</p>
+        </div>
+        <div class="epic-card identity">
+          <div class="epic-bg-letter">I</div>
+          <div class="epic-name">Identity</div>
+          <p class="epic-desc">Clarity of organizational purpose, values, and belonging. People work best when they understand why their organization exists and feel genuinely connected to its mission.</p>
+        </div>
+        <div class="epic-card competence">
+          <div class="epic-bg-letter">C</div>
+          <div class="epic-name">Competence</div>
+          <p class="epic-desc">Commitment to developing the skills and knowledge of every person in the organization. Learning is treated as a strategic imperative, not a perk.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- WHAT'S IN THE ARCHIVE -->
+    <div class="about-block">
+      <span class="section-label">Collection</span>
+      <h3>What You'll Find Here</h3>
+      <div class="divider"></div>
+      <p>The archive spans eight categories, ranging from foundational theory to practitioner tools, across multiple formats.</p>
+      <ul class="about-cat-list">
+        <li><span class="about-cat-dot" style="background:#1a6891;"></span>Articles &amp; Essays<span class="about-cat-count">29</span></li>
+        <li><span class="about-cat-dot" style="background:#7b2f82;"></span>Case Studies<span class="about-cat-count">7</span></li>
+        <li><span class="about-cat-dot" style="background:#c8a84b;"></span>Tools &amp; Templates<span class="about-cat-count">6</span></li>
+        <li><span class="about-cat-dot" style="background:#2b4fc0;"></span>Video Library<span class="about-cat-count">11</span></li>
+        <li><span class="about-cat-dot" style="background:#6b2bc0;"></span>Podcasts &amp; Interviews<span class="about-cat-count">10</span></li>
+        <li><span class="about-cat-dot" style="background:#276221;"></span>Leadership Resources<span class="about-cat-count">2</span></li>
+        <li><span class="about-cat-dot" style="background:#c0392b;"></span>Thought Leadership<span class="about-cat-count">1</span></li>
+        <li><span class="about-cat-dot" style="background:#2bc06b;"></span>Continuous Improvement<span class="about-cat-count">2</span></li>
+      </ul>
+      <p style="margin-top:1.5rem;">Highlights include the full Max DePree interview series on servant leadership;
+      employee-produced videos from Wescast Industries; CEO testimonials from Donnelly Corporation, Landscape Forms,
+      SGS Tools, Lorin Industries, and Thomson-Shore; foundational texts by Dr. Carl Frost; the original
+      <em>Fortune Magazine</em> article that helped launch the movement; and the definitive EPIC Leadership guidebook
+      synthesizing decades of research and practice.</p>
+    </div>
+
+    <hr class="about-divider">
+
+    <!-- WHO IT'S FOR -->
+    <div class="about-block">
+      <span class="section-label">Audience</span>
+      <h3>Who This Archive Is For</h3>
+      <div class="divider"></div>
+      <p>This archive is designed for anyone who believes the relationship between organizations and the people
+      inside them can — and should — be better.</p>
+      <p><strong>Practitioners</strong> implementing or renewing a Scanlon Plan will find implementation roadmaps,
+      sample agreements, measurement guides, and case studies from organizations that have done it successfully.
+      <strong>Leaders</strong> wrestling with culture, engagement, or transformation will find a coherent
+      philosophical framework backed by decades of evidence. <strong>Researchers and students</strong> will find
+      primary sources and practitioner voices unavailable anywhere else in one place. And <strong>anyone curious</strong>
+      about why some workplaces feel fundamentally more alive and trusting will find the answer here.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+      <h3>Explore the Archive</h3>
+      <p>Browse the full collection, filter by theme or format, and discover where the Scanlon tradition can take your organization.</p>
+      <a href="#archive" class="about-cta-btn">Browse All Resources →</a>
+    </div>
+  </div>
+</section>
+
+<section class="archive-section" id="archive">
+  <div class="container">
+    <span class="section-label">Browse All Resources</span>
+    <h2>Archive Collection</h2>
+    <div class="divider"></div>
+
+    <!-- CATEGORY PILLS -->
+    <div class="stats-bar" id="categoryPills"></div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+      <div class="control-group search-box">
+        <label>Search</label>
+        <input type="text" id="searchInput" placeholder="Search titles, descriptions, authors…" />
+      </div>
+      <div class="control-group">
+        <label>Theme (EPIC)</label>
+        <select id="themeFilter">
+          <option value="">All Themes</option>
+          <option value="Identity">Identity</option>
+          <option value="Participation">Participation</option>
+          <option value="Equity">Equity</option>
+          <option value="Competence">Competence</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Format</label>
+        <select id="formatFilter">
+          <option value="">All Formats</option>
+          <option value="PDF">PDF</option>
+          <option value="Video">Video</option>
+          <option value="Podcast">Podcast</option>
+          <option value="Article">Article</option>
+          <option value="Template">Template</option>
+          <option value="Document">Document</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Sort By</label>
+        <select id="sortFilter">
+          <option value="date-desc">Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="title-asc">Title A–Z</option>
+          <option value="title-desc">Title Z–A</option>
+        </select>
+      </div>
+      <div class="results-count" id="resultsCount"></div>
+    </div>
+
+    <!-- GRID -->
+    <div class="archive-grid" id="archiveGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="nav-logo" style="padding:0;">
+      <div class="nav-logo-mark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAC7CAYAAACkaDbfAAAHJ0lEQVR4nO2dSZLiMBREBVF34hLsOSN7LsGp3IsOVRnjQbL+kF/Kt+2OAqUfKXkKXaZpSpF5P+/iA7g9XhfpvxmFSyQhNA5+CSMJAi2ElwB79C4HnBCIEmzRoxwwQkQSYUlPYrgKEVmCLaLL4SJEjyIsiSrG1foDR5AhpbjjNGuIqAFJEKkt1IUYWYQlEcRQnTIowycR8lBriAiD9wS1LVSEoAzloIkhKgRFOA+KGGJrCMrQBkp+Ig2BMphe8GyLZiEogx4eYjQJQRlssBTjtBCoMpwND3U8cyzEOCUESniaAaGMcYm2FNVCeAflMa96j3kNrRyqhPAMBuE8HU0MjUzghUAQYY1e5SgWwjoAVBGWIIkhkVmREJRhHyQpUmrL71AIy8FGE2FJD2KYP0K3RXQZUvo/BqRxnBF0tyGsjEcKUYqobbEphMWAehRhSTQx3IQYQYY5UcRwWUOMJkNKeGPeEnS1ITRtRgvGA+S2MBWCMnyCKMaXEJTBHiQxTNYQlGEfpOsXMBemCMYPR10IhEFGwrstPoRAmstGx0sM1YZgO7RjnSHXEAGwbIvf007p6YLtoIfm1M6GCIjmj01FCLaDPlrTyDUlnl1ERloMThmdICHG7fG6iAvB6cKXVjHYEJ1yVowfjS9D6lhbw0k17e3xutSsEX+4oPThKPf87xJi5L9RcqxFpwyuH455P+9TzY9Q8gdbcnw4ZRjRcmAt24JCKCI9HVuIQSEU0F6XaYiRoRBCeCzO38/7JL1uoxCNeJ+lSbZFShTiNN4iLJESg0JUgCbBGq1iUIgCIoggBYXYIKIEEusICrFgVBEyFCLFlCAlnVsFQwtBEb75qb09Gp2oY7W6cThMQ0QUIfybW6iho36vLTzf7xymISKA8DwJhXAGQYI515Rkv1S0evbC+7X/LdgQhiAKsIRCGBBBhIzKexmcNv6DOi3s8StEtC+OTEQRMkO8uWV9cGoftUdCTYiogUgSUYwPIaLWHDqRxFCdMqKEYEWEPNTXEBFCsAS9Lb6E4LRhA6oYJmcZiANHAU2MVSE0WgJp0Iig5DPEdYgoILSF+a58nmsU77BrCf/EVAnRDoonHlntCqFlKKUoxzqrw4YYWQqUU3DLtYXrojKKFEhiaH9GkRCagSCsrEtAEUM7q+KGQAgDAQQxhtgeIdpe495iaOVVJYR2AFGmjzm9SVHdEBYBRBPDsy2kczo1ZVgN3luK2s/3EkMyJ5g1xBbR2iIln2lEKqPTQng8uGr5ea14tIVERk0NwaeZj7EWozWf5ikjcj1aEkWK3dvfVl+ihTNB13zXyA8LnfnuYotKz9OuaI2BfJbWzQYqWmJoyeZ9pXOL7nbli9YYFld/a/5/tzv7Uoo/arJQuzCFUImR2sI7q4z6lUqEgUYRQ/NHVDp+sdPOIyIckC16utZyNBazexkIU0gkvLIyv7lFKXw5ah6Xu53RpIh0FbYVt9vfnELKsL507v48BMU4xjIfdyEyFMOWrZaAESJDMdaxygROiAyl+MYiE1ghUmJbaLM2bUALkaEYf2jnEEKIjPfzFl6fbUkoIVJiW6Sku79JOCEyFEOHsEJEuaWthdaPIdQGKiMLoMn7eZ+yYCGEoAh2QE8Zo08LR2gsLuEaggL4AiMERcDAfcrgtNCG9NmGS0NEFGCUax5mQlACfN7P+6QuRDQRRpNgiZoQFCEm4kJQhNiICEEJ+qFJCIrQHzAXprSgBHU0CZHDRmwKinAOkYa4PV4XBCkoQTtiU4ZnW1AEOcTXEJZiUAR5foWYH0CJoLXEoAS6rN7tlDyIUgeQD9XasDllZCk824IC2HOZpqnoQGm+C6D5WSMg2ejFi0qLxqAI/hQ3xBweOBwgtljiY299cnu8Lk3PVFKM/hB5yJZS+ACxTeMWbIs+EH8Mn2LEJJ8oqL2XQTF0gdjq+QwUIxZmb25RCjk0szR9lY9tgcn8QuPV4wBRjPNo5+b6si+lqMMiL779PTjL+1JXlBtVFGMfq2x+99xCOxgooiJguf/Wdf6PSAcBTVAvrHP4WkOgSTGyGB5j392mEe1gIMmqjXb2W1kW7dtJMWzxfKelaiNXJDF6lcL7BafqnX2RpEipHzEscxUVIkMx5ECRISWBvb+RxIgmhXV2JfmIbQaPJEZK2HIg7xQsJkSGYmzjmU1pDuJCpIQnRcZLDu88asatIkTGO4g9tOVAGXvtOFWFSAknmCNaBEEd45kxqQuRQQ2tV84KbiZEhmLo09J25kJkKIYOrWsjNyEyFEMOiYWy+zOVSNcJIiOVo3tDzGFbnEPyRwUlRIZilCPdsJBCZCjGNlpTrfsaYg+uL9bRzAW6IeawLWx+IGGEyIwqhlVbhhMiM4oY1tNmWCHm9CiH1/qpCyEy0cVAWER3JcScKHIgSDCnWyHmoMmBJsGcIYSYg/yAKwLDCbEGd/354x8GTTuOj8nusgAAAABJRU5ErkJggg==" alt="Scanlon Network Logo"></div>
+      <span class="nav-logo-text">Scanlon Network</span>
+    </div>
+    <div class="footer-bottom">© 2026 Scanlon Leadership Network Archive.</div>
+  </div>
+</footer>
+
+<script>
+const resources = [
+  {title:"PAWS Plan — Limerick Veterinary Hospital",category:"Scanlon Plans",theme:"Participation",format:"HTML",desc:"The PAWS (Participation, Awareness, Wellness, Service) Goalsharing Plan adopted by Limerick Veterinary Hospital in 1999, documenting their structure for employee involvement and bonus sharing.",date:"1999-01-01",url:"paws-plan.html"},
+  {title:"PREPARE/21 — Beth Israel Hospital",category:"Scanlon Plans",theme:"Participation",format:"HTML",desc:"Beth Israel Hospital's PREPARE/21 Scanlon Plan from 1988, an early healthcare application of Scanlon principles emphasizing participation and organizational readiness.",date:"1988-01-01",url:"prepare21.html"},
+  {title:"COEDS Goalsharing Plan — Sears",category:"Scanlon Plans",theme:"Equity",format:"HTML",desc:"The COEDS (Cooperation, Opportunity, Equity, Development, Service) Goalsharing Plan implemented at Sears in 1997, adapting Scanlon principles to a major retail environment.",date:"1997-01-01",url:"sears-coeds-plan.html"},
+  {title:"The ELGA Way — ELGA Credit Union",category:"Scanlon Plans",theme:"Identity",format:"HTML",desc:"ELGA Credit Union's Scanlon-based organizational plan from 2011, outlining their values-driven approach to member service and employee engagement.",date:"2011-01-01",url:"elga-way-plan.html"},
+  {title:"EPIC Plan — Watermark Credit Union",category:"Scanlon Plans",theme:"Competence",format:"HTML",desc:"Watermark Credit Union's EPIC (Equity, Participation, Identity, Competence) Plan from 2005, a comprehensive Scanlon implementation in a cooperative financial institution.",date:"2005-01-01",url:"watermark-epic-plan.html"},
+  {title:"ICE Plan — Spring Engineering",category:"Scanlon Plans",theme:"Participation",format:"HTML",desc:"Spring Engineering's ICE (Innovation, Cooperation, Excellence) Scanlon Plan from 1994, documenting their approach to gainsharing and participative management in manufacturing.",date:"1994-01-01",url:"spring-engineering-ice-plan.html"},
+  {title:"The Filene Story: Cooperative Leadership in Action",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A White Paper by the Filene Institute (Credit Union Think Tank) that explored Scanlon at Watermark Credit Union",date:"2026-02-03",url:"https://drive.google.com/file/d/1LUp0CETbkPciRdyAAAh-IzXb0Osp4d-t/view"},
+  {title:"The Filene Story: Cooperative Leadership in Action",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A White Paper by the Filene Institute (Credit Union Think Tank) that explored Scanlon at Watermark Credit Union",date:"2025-10-20",url:"https://drive.google.com/file/d/10bW7wSEdSLwYMbZvL_lmANLymN_ELr-l/view",duplicate:true},
+  {title:"EPIC Leadership: A Guide to People-Centered Transformation",category:"Articles & Essays",theme:"Competence",format:"PDF",desc:"The definitive book on Scanlon history, Principles and Processes containing historic and current research and case studies.",date:"2025-10-20",url:"https://drive.google.com/file/d/1qhaumXGpUqG_fk6egkeq18idYp3bgaOY/view"},
+  {title:"Why Scanlon Matters: The Case for People-Centered Management",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A brief essay on the Scanlon Principles and Processes with comments by famous organizational scholars.",date:"2025-08-26",url:"https://drive.google.com/file/d/1APE1uT73HHbr8OQTvnEFMrfX-xFWItsa/view"},
+  {title:"Leading Lean: Integrating Scanlon Principles with Lean Management",category:"Articles & Essays",theme:"Competence",format:"PDF",desc:"Examines how Scanlon principles integrate with Lean management practices for sustainable organizational improvement.",date:"2025-10-20",url:"https://drive.google.com/file/d/1rlqF-lwAZ2KRkf675aLbxGuIs9uiJb7m/view"},
+  {title:"Performance-Based Participative Management",category:"Articles & Essays",theme:"Participation",format:"PDF",desc:"The definitive guide on the Scanlon Principles of Equity, Participation, Identity and Competence.",date:"2025-10-20",url:"https://drive.google.com/file/d/10SHub3-u-D_hkPfEUOjpp77GtHfv3k4F/view"},
+  {title:"The Yarrow Story: Scanlon Principles in Practice",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A workbook created for a Scanlon Top Level Leadership Retreat to help leaders understand their unique roles in Scanlon.",date:"2025-08-25",url:"https://drive.google.com/file/d/1Yqu1RvkvZyglTbKVHdWl__1DoLdLTY3p/view"},
+  {title:"Scanlon Leadership Network — Summer 1997 Newsletter",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Scanlon Leadership Network newsletter featuring updates, practitioner stories, and resources from Summer 1997.",date:"2025-10-20",url:"https://drive.google.com/file/d/1FT_wFS6s6I-2BwYwp64-D0ShR8au_wKJ/view"},
+  {title:"Scanlon Leadership Network — Summer 2000 Newsletter",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Scanlon Leadership Network newsletter featuring updates, practitioner stories, and resources from Summer 2000.",date:"2025-10-20",url:"https://drive.google.com/file/d/197pDiGfP9kPatu59hst5J1wnm2OBjvLt/view"},
+  {title:"Scanlon Leadership Network — Spring 2000 Newsletter",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Scanlon Leadership Network newsletter with articles and updates from the Scanlon community, Spring 2000.",date:"2025-10-20",url:"https://drive.google.com/file/d/1x8NSJz_gWHeEZL0OjTNNjjRU1iwmp7Fw/view"},
+  {title:"Scanlon Leadership Network — Spring Newsletter",category:"Case Studies",theme:"Identity",format:"PDF",desc:"Newspaper article on Scanlon Company Spring Engineering.",date:"2025-10-20",url:"https://drive.google.com/file/d/1mz_bxclzg95uSTKA4WFFyxhfZneGSWa-/view"},
+  {title:"Landscape Forms Inc. — Scanlon Case Study Part 2",category:"Case Studies",theme:"Identity",format:"PDF",desc:"How Landscape Forms Inc. applied the Scanlon Plan to build a culture of participation and excellence.",date:"2025-10-20",url:"https://drive.google.com/file/d/1vChtTOlFrLLzcQMz2xH4mP8R4uBCD9EQ/view"},
+  {title:"Landscape Forms Inc. — Scanlon Case Study",category:"Case Studies",theme:"Identity",format:"PDF",desc:"A newspaper article on how Landscape Forms Inc. applied the Scanlon Plan to build a culture of participation and excellence.",date:"2025-10-20",url:"https://drive.google.com/file/d/1UkvJ_p5bUO2lJzg5zHB2bk6YITpc_EJY/view"},
+  {title:"The Filene Story: Cooperative Leadership in Action",category:"Case Studies",theme:"Identity",format:"PDF",desc:"A White Paper by the Filene Institute exploring Scanlon at Watermark Credit Union.",date:"2026-02-03",url:"https://drive.google.com/file/d/1aNvuAW_aBYHY2b6D3tpAZCpEcp53n1uw/view"},
+  {title:"WCU Learners Guide: Scanlon Principles for Education",category:"Case Studies",theme:"Competence",format:"PDF",desc:"Educational resource designed to introduce Scanlon principles to Watermark Credit Union Employees.",date:"2025-08-26",url:"https://drive.google.com/file/d/10iuGTrCTUkWWpPS4L8LBOoeYpbu_FoFC/view"},
+  {title:"WCU Learners Guide (Summary Edition)",category:"Case Studies",theme:"Competence",format:"PDF",desc:"Summary educational resource for introducing Scanlon principles to Watermark Credit Union Employees.",date:"2025-08-26",url:"https://drive.google.com/file/d/1WHZGOIlFcEejJ43YQLf_YG6j1Nj_pEhX/view"},
+  {title:"Strategic Healthcare: Scanlon Plan Implementation",category:"Case Studies",theme:"Participation",format:"PDF",desc:"Explores the implementation of Scanlon principles in a healthcare setting, focusing on employee engagement and patient outcomes.",date:"2025-08-26",url:"https://drive.google.com/file/d/1Pw-V9BYuJFlE6FMjF3yzdE2RCG6lDseT/view"},
+  {title:"The Scanlon Plan in Retail Organizations",category:"Case Studies",theme:"Equity",format:"PDF",desc:"Analyzes how the Scanlon Plan was adapted for retail organizations and the results achieved.",date:"2025-08-26",url:"https://drive.google.com/file/d/1m4TdzfynnAkdC5Co1FN5NtmZ-2awxdXz/view"},
+  {title:"SGS Tools: A Scanlon Success Story",category:"Case Studies",theme:"Equity",format:"PDF",desc:"Case study of SGS Tools and their successful implementation of the Scanlon Plan.",date:"2025-08-26",url:"https://drive.google.com/file/d/1ZChep_KJbE8aTCoenVU0U44kir44se9K/view"},
+  {title:"Sample Union-Management Scanlon Agreement",category:"Tools & Templates",theme:"Participation",format:"PDF",desc:"Template document showing how a union-management Scanlon agreement can be structured.",date:"2025-10-20",url:"https://drive.google.com/file/d/1jr2z3BMIwmF2vYF73lwJhrW7u27K3oyq/view"},
+  {title:"The Mandate for Participative Leadership",category:"Tools & Templates",theme:"Participation",format:"PDF",desc:"Explains how leaders must create a mandate for change with examples.",date:"2025-10-20",url:"https://drive.google.com/file/d/1p6Bi1C35Ci7O4TAV2zE9q7UcpwysuA6K/view"},
+  {title:"Scanlon Implementation Roadmap",category:"Tools & Templates",theme:"Competence",format:"PDF",desc:"A Learning Map showing visually the steps to implement a Scanlon Plan.",date:"2025-10-20",url:"https://drive.google.com/file/d/1qusj3BNI0fGjBjlEFBCTRba_24-T84Xr/view"},
+  {title:"Scanlon Conference Trip Planner",category:"Tools & Templates",theme:"Competence",format:"PDF",desc:"The handout that goes with the Learning Map to help a group understand the Scanlon Implementation Roadmap.",date:"2025-10-20",url:"https://drive.google.com/file/d/1uGDOoNzgWWovpwDTGDtO8UTm79gS4iyl/view"},
+  {title:"Scanlon Resource Binder — Tab Dividers",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Organizational dividers for the Scanlon Listening Skills Resource Binder training materials.",date:"2025-10-16",url:"https://drive.google.com/file/d/1qOxICZVTGoUbI8Os9_gpuNCppZN1RWWp/view"},
+  {title:"Scanlon Resource Binder — Covers",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Cover pages for the Scanlon Listening Skills Resource Binder used in training programs.",date:"2025-10-16",url:"https://drive.google.com/file/d/1wxWTKS6BuR9T7GOYR8Dpb6V2qG_PCGWm/view"},
+  {title:"The Art of Listening (Illustration)",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Cartoon highlighting the importance of active listening in participative management.",date:"2025-10-16",url:"https://drive.google.com/file/d/1ppnQ_ftG1BFFaJI9JsESKkvqh6aFvYFX/view"},
+  {title:"Scanlon Resource Kit — Getting Started Guide",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Orientation guide for the Scanlon Innovation Resource Kit — start here before exploring other materials.",date:"2025-10-16",url:"https://drive.google.com/file/d/1bdXSHVQv8lmRKhXRtv16ZXffEOmHCbcZ/view"},
+  {title:"Within Your Reach — Bill Bottum (2010)",category:"Leadership Resources",theme:"Identity",format:"PDF",desc:"Bill Bottum's reflections on the Beatitudes and their guide to servant led organizations.",date:"2025-08-26",url:"https://drive.google.com/file/d/1B_E2RPbPYG-_hv_oP1Nd3L1SyJhAckre/view"},
+  {title:"Servant Leadership and the Scanlon Approach",category:"Leadership Resources",theme:"Identity",format:"PDF",desc:"Explores the deep connection between Robert Greenleaf's servant leadership philosophy, the Scanlon tradition, and Lean.",date:"2025-08-26",url:"https://drive.google.com/file/d/1un6edJkfljRg34WKksErJugi9DoaaSdY/view"},
+  {title:"Dateline: Servant Leadership",category:"Video Library",theme:"Identity",format:"Video",desc:"A Dateline video that explores Robert Greenleaf's servant leadership philosophy.",date:"2025-11-14",url:"https://drive.google.com/file/d/1Tp8R1JP7wtihM7MAxLrfh3aeWP71iccX/view"},
+  {title:"Beth Israel Hospital: Scanlon Transformation Story",category:"Video Library",theme:"Participation",format:"Video",desc:"Case study of Beth Israel Hospital's transformation through Scanlon principles and participative management.",date:"2025-11-14",url:"https://drive.google.com/file/d/1IUodUHnjorltNxUPfj9hnURHP6iWjwA-/view"},
+  {title:"Scanlon: A Better Way to Work",category:"Video Library",theme:"Identity",format:"Video",desc:"A professionally created overview of the Scanlon Principles and Processes as told by employees of Herman Miller, Donnelly, Neelon Castings, and Firestone.",date:"2025-11-14",url:"https://drive.google.com/file/d/15BN1gT0XXjtmU4Sn3dm9ttNuhJF369or/view"},
+  {title:"Donnelly Corporation Tribute",category:"Video Library",theme:"Identity",format:"Video",desc:"Tribute to Donnelly Corporation, one of the most celebrated examples of the Scanlon Plan in American manufacturing.",date:"2025-10-20",url:"https://drive.google.com/file/d/1rBSvW5NUzWWjxAFlQlktC6WrB85baull/view"},
+  {title:"Becky Scanlon: Reflections on the Scanlon Legacy",category:"Video Library",theme:"Identity",format:"Video",desc:"Personal reflections from Becky Scanlon on her family's legacy and the enduring impact of Joe Scanlon's ideas.",date:"2025-10-20",url:"https://drive.google.com/file/d/1fagb6ibV26WrB2asINwXGCbL7gATNZEB/view"},
+  {title:"Participation WMW Trauma",category:"Video Library",theme:"Participation",format:"Video",desc:"A humorous video produced by Canadian Steelworkers on Participation at Wescast Industries.",date:"2025-08-26",url:"https://drive.google.com/file/d/1xPL-Gn044WUQMsGGeDoHFQjxnj5rwOcT/view"},
+  {title:"Sears: Scanlon Principles in Large-Scale Retail",category:"Video Library",theme:"Equity",format:"Video",desc:"Analyzes how the Scanlon Plan was adapted for SEARS and the results achieved.",date:"2025-10-20",url:"https://drive.google.com/file/d/1UmPlrX4AXfScSo6uLd_sKoHRprBGA1qs/view"},
+  {title:"Charlie: A Scanlon Story",category:"Video Library",theme:"Identity",format:"Video",desc:"A spoof of Charlie's Angels produced by employees at Wescast explaining the Scanlon Principles.",date:"2025-10-16",url:"https://drive.google.com/file/d/1jabWb5Jrk9kCL2JJrvS8pYMrHJQDv8cv/view"},
+  {title:"Competence: Sweet Plan of Mine",category:"Video Library",theme:"Competence",format:"Video",desc:"How a Scanlon Plan was implemented at Wescast, sung to the tune of Sweet Caroline.",date:"2025-10-16",url:"https://drive.google.com/file/d/1uzezLxXV_fY4Iy7fpfJMNQEjSOfUbrdL/view"},
+  {title:"Identity: I AM",category:"Video Library",theme:"Identity",format:"Video",desc:"Humorous video exploring the principle of Identity at Wescast Industries.",date:"2025-10-16",url:"https://drive.google.com/file/d/1mYdaWT6lsvoOmcEnAtyfibXHbZBT8FtY/view"},
+  {title:"Sustaining Strategy",category:"Continuous Improvement",theme:"Competence",format:"PDF",desc:"Article on sustaining strategy through the Lean Hoshin Process.",date:"2025-10-20",url:"https://drive.google.com/file/d/1jZdsIsUkXlkLydLE6j5VDkoMxbLHos4k/view"},
+  {title:"Leading Lean: Integrating Scanlon Principles with Lean Management",category:"Continuous Improvement",theme:"Competence",format:"PDF",desc:"Examines how Scanlon principles integrate with Lean management practices for sustainable organizational improvement.",date:"2025-10-20",url:"https://drive.google.com/file/d/1yejfWaE8LxZsq8-7rtAwcIfdEclWdEL8/view",duplicate:true},
+  {title:"The Scanlon Principles: A Foundation for Excellence",category:"Continuous Improvement",theme:"Competence",format:"PDF",desc:"Foundational overview of the core Scanlon principles that drive people-centered lean organizational transformation.",date:"2025-08-26",url:"https://drive.google.com/file/d/1ZHpdsK_aW4GvHyjxv5QzCeCJ9KWGfJ3-/view"},
+  {title:"Accountants as Change Agents in Scanlon Organizations",category:"Thought Leadership",theme:"Equity",format:"Article",desc:"Explores how accountants and finance professionals can serve as catalysts for organizational change using Scanlon principles.",date:"2025-10-20",url:"https://drive.google.com/file/d/1crnqQeZW8k2wAVNzH-plyATiRFvkyHkA/view"},
+  {title:"Human Treatment of Human Beings",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Collected writings of John Donnelly, a great Scanlon thinker and practitioner. Under his leadership Donnelly Corporation was a leader of People Centered Organizations.",date:"2025-10-20",url:"https://drive.google.com/file/d/1RHC7YzN0CuNnnZXMikYjZ8gcl83n1-Uu/view"},
+  {title:"Schuster Scanlon Plan",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article exploring 40 years of Scanlon Research.",date:"2025-10-20",url:"https://drive.google.com/file/d/1vPfgKz5zt0StvZfJ5iqTQ-tjPtxZKjfb/view"},
+  {title:"Exploring Scanlon",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A workbook that helps newcomers explore where Scanlon came from, the Principles, and how it is implemented.",date:"2025-10-20",url:""},
+  {title:"Books Beliefs",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A Scanlon Roadmap incorporating Lean Concepts.",date:"2025-10-20",url:"https://drive.google.com/file/d/1qiN0VXS-ZyKmSDk1LhPkiNMt4pf-mOEU/view"},
+  {title:"The Scanlon Principles: A Foundation for Excellence",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Foundational overview of the core Scanlon principles that drive people-centered lean organizational transformation.",date:"2025-10-20",url:"https://drive.google.com/file/d/1eOFSARQatJsHkj_t602HeRdIvQx6_wmt/view",duplicate:true},
+  {title:"Remembering Joe Scanlon",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"An article on Joe Scanlon, the man that launched the Scanlon movement.",date:"2025-10-20",url:"https://drive.google.com/file/d/1AlEFcMkodmK-iR6VhYvq2mGtpJWuV7iu/view"},
+  {title:"Intro to Scanlon Japan",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article showing how the Japanese studied Scanlon's work and incorporated it into their Lean systems.",date:"2025-10-20",url:"https://drive.google.com/file/d/13KFh4D9XMhPhuT3R-kUjtH4FhF5es5Ne/view"},
+  {title:"Every Man a Capitalist",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Historic article arguing that every person should be a player in our capitalistic system through Scanlon.",date:"2025-10-20",url:"https://drive.google.com/file/d/1773BEAVA3BUqKzFXTiprvmT4XQlgs71H/view"},
+  {title:"Enterprise for Everyman",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Fundamental article in Fortune Magazine that helped launch the Scanlon movement.",date:"2025-10-20",url:"https://drive.google.com/file/d/16N8sl5KOes_w9A2Si6JNoTS5yUNsyFMC/view"},
+  {title:"Cooperation or Conflict",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article that explores the benefits of cooperation and how to create trust through the Scanlon Principles.",date:"2025-10-20",url:"https://drive.google.com/file/d/1sB4C1va82riFgPJMLtRgztt3gzurcc2E/view"},
+  {title:"Boston Globe: Beth Israel Hospital",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article exploring how Beth Israel Hospital created trust through their Scanlon Process.",date:"2025-10-20",url:"https://drive.google.com/file/d/1JyDbYJJiczaBDvJ/view"},
+  {title:"Council of Equals — San Facon Spears 2010 Conference Presentation",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A presentation on the Servant Leadership 'Council of Equals' model for leading organizations.",date:"2025-08-26",url:"https://drive.google.com/file/d/1yOP8FolanqQVQsTBtiWqe6WycEnAN61F/view"},
+  {title:"Target Motivation",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article showing how to motivate employees.",date:"2025-08-26",url:"https://drive.google.com/file/d/1eimtCCtae4e8o1HuTvEe7H0u2AAoHASK/view"},
+  {title:"Frost: Anyone for Free Enterprise",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Historic article by Dr. Carl Frost on how Scanlon supports free enterprise.",date:"2025-08-26",url:"https://drive.google.com/file/d/1uZxYQZcf0O-sel7tY0hKoLWjWIsXvBUQ/view"},
+  {title:"Frost: Participative",category:"Articles & Essays",theme:"Participation",format:"PDF",desc:"Historic article by Dr. Carl Frost on how Scanlon creates participation.",date:"2025-08-26",url:"https://drive.google.com/file/d/1yRY6wK5GrYLuwAOyolfXPtk4TXYjT2xp/view"},
+  {title:"Measures",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article on measurement issues in Gainsharing.",date:"2025-08-26",url:"https://drive.google.com/file/d/1Qx-zyQdr0md2bynPvkmLagEjmGoVEglx/view"},
+  {title:"BI Participative Management",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article on Participative Management at Beth Israel Hospital.",date:"2025-08-26",url:"https://drive.google.com/file/d/1TA6H6-xS6cn7sqqOErnC1EZiIFlwpKQ0/view"},
+  {title:"Preparing Employees for Change",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article on how Scanlon Plans prepare employees for the future.",date:"2025-08-26",url:"https://drive.google.com/file/d/1e7O74CeUU3tE2xOdWqlDsb2qLY9tZODD/view"},
+  {title:"Davis ABC",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Chapter in Employee Law on the ABCs of gainsharing.",date:"2025-08-26",url:"https://drive.google.com/file/d/1sGbp7znfxW4h6-yI_vZxc8ImZLS44_wu/view"},
+  {title:"The ABCs of Gainsharing — Paul Davis & Majel Maes",category:"Articles & Essays",theme:"Equity",format:"Article",desc:"The ABCs of Gainsharing.",date:"2025-08-26",url:"https://drive.google.com/file/d/1yZUTV3bsKCdp57IfTwCVXKhQ0eaBUJHI/view"},
+  {title:"EPIC: Bridging the Gap",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article exploring Scanlon leadership principles and Servant Leadership.",date:"2025-08-26",url:"https://drive.google.com/file/d/1_UxDNKhEEGI93lHJozvfcpdpQwdVs37i/view"},
+  {title:"Scanlon Plans and Union Partnerships",category:"Articles & Essays",theme:"Participation",format:"PDF",desc:"Examines the unique relationship between unions and management under the Scanlon Plan framework.",date:"2025-10-20",url:"https://drive.google.com/file/d/1hUUZqZP1fjktYGL4DsiwdXBvp1GDZpmz/view"},
+  {title:"Max DePree on Leadership is an Art",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward Max DePree shares leadership insights from his best selling book Leadership is an Art.",date:"2026-02-18",url:"https://youtu.be/UWlNj_sXplg?si=DoSXd1yXdKVxRXD7"},
+  {title:"Max DePree on Leadership Jazz",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward Max DePree shares leadership insights from his best selling book Leadership Jazz.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFL2Ff0a0IvJp10L6rYU0qHU"},
+  {title:"Paul Davis: Scanlon Principles and Processes",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward and former Scanlon Network President explains the Scanlon Principles and Processes.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFIGVaZ0P-E0-TOgihayoA2x"},
+  {title:"Paul Davis on the Dan Mulhern Leadership Show",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward and former Scanlon Network President interviewed on Scanlon Leadership.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFKMXv18EyOe3Yu-d0IThxz2"},
+  {title:"Buzz Kersman, CEO of Lorin Industries on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Buzz Kersman, CEO of Lorin Industries explains how Scanlon works at Lorin.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFL9e3gpv4GZfVFLswoR5PNg"},
+  {title:"Tim Tindall, CEO of Spring Engineering on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Tim Tindall, CEO of Spring Engineering explains the Scanlon process at Spring.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFJKmkS3DfuyTZI9oiUcRUCR"},
+  {title:"Myron Marsh, CEO of Thomson-Shore on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Myron Marsh worked as an Executive at three different Scanlon Companies. He explains how to practice the Scanlon Principles.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFLyVUbsPr2e1GWadd2Z8UBB"},
+  {title:"John Chipman, CEO of Landscape Forms on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"John Chipman transformed his landscape business into a world leader in public space furniture using the Scanlon Principles.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFKtu5Ts9gubvCXFp_OOWokk"},
+  {title:"Dr. Bill Greenwood: How to Implement Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Dr. Greenwood was a student and later a partner with Dr. Carl Frost. He successfully helped many organizations develop their Scanlon Plans.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFJZ_Gl3gi19F8tgIdlOw1Ne"},
+  {title:"Dr. Dwane Baumgardner, CEO of Donnelly on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Dr. Baumgardner led Donnelly Corporation to become one of the most democratic and best places to work using Scanlon.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFLKsZmf_ylvAc3G2Fz-8HKf"},
+  {title:"Tom Hagg of SGS Tool Company — Scanlon Testimonial",category:"Video Library",theme:"",format:"Video",desc:"Short testimonial from Tom Hagg, CEO of SGS Tool Company on Scanlon.",date:"2026-02-18",url:"https://youtu.be/JNJ5gqDxBk4"}
+];
+
+// Category colors
+const catColors = {
+  "Scanlon Plans": "#c8a84b",
+  "Articles & Essays": "#1a6891",
+  "Case Studies": "#276221",
+  "Tools & Templates": "#876a00",
+  "Video Library": "#2b4fc0",
+  "Podcasts & Interviews": "#6b2bc0",
+  "Leadership Resources": "#7b2f82",
+  "Continuous Improvement": "#c06b2b",
+  "Thought Leadership": "#2bc06b"
+};
+
+function formatClass(f) {
+  const map = {PDF:'pdf', Video:'video', Podcast:'podcast', Article:'article', Template:'template', Document:'template', HTML:'template'};
+  return map[f] || '';
+}
+
+function themeClass(t) {
+  const map = {Identity:'tag-identity', Participation:'tag-participation', Equity:'tag-equity', Competence:'tag-competence'};
+  return map[t] || '';
+}
+
+function formatDate(d) {
+  if (!d) return '';
+  const date = new Date(d);
+  return date.toLocaleDateString('en-US', {year:'numeric', month:'short'});
+}
+
+function getIcon(format) {
+  const icons = {PDF:'📄', Video:'🎬', Podcast:'🎙️', Article:'📝', Template:'📋', Document:'📋'};
+  return icons[format] || '📄';
+}
+
+let activeCategory = '';
+
+function buildPills() {
+  const cats = ['All', ...Object.keys(catColors)];
+  const counts = {};
+  resources.forEach(r => { counts[r.category] = (counts[r.category]||0)+1; });
+  const container = document.getElementById('categoryPills');
+  cats.forEach(cat => {
+    const pill = document.createElement('button');
+    pill.className = 'stat-pill' + (cat === 'All' ? ' active' : '');
+    const count = cat === 'All' ? resources.length : (counts[cat]||0);
+    pill.innerHTML = cat + '<span>' + count + '</span>';
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.stat-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCategory = cat === 'All' ? '' : cat;
+      render();
+    });
+    container.appendChild(pill);
+  });
+}
+
+function render() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const theme = document.getElementById('themeFilter').value;
+  const format = document.getElementById('formatFilter').value;
+  const sort = document.getElementById('sortFilter').value;
+
+  let filtered = resources.filter(r => {
+    const matchSearch = !search || r.title.toLowerCase().includes(search) || r.desc.toLowerCase().includes(search);
+    const matchTheme = !theme || r.theme === theme;
+    const matchFormat = !format || r.format === format;
+    const matchCat = !activeCategory || r.category === activeCategory;
+    return matchSearch && matchTheme && matchFormat && matchCat;
+  });
+
+  filtered.sort((a, b) => {
+    if (sort === 'date-desc') return new Date(b.date) - new Date(a.date);
+    if (sort === 'date-asc') return new Date(a.date) - new Date(b.date);
+    if (sort === 'title-asc') return a.title.localeCompare(b.title);
+    if (sort === 'title-desc') return b.title.localeCompare(a.title);
+    return 0;
+  });
+
+  document.getElementById('resultsCount').textContent = filtered.length + ' resource' + (filtered.length !== 1 ? 's' : '');
+
+  const grid = document.getElementById('archiveGrid');
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="empty-state"><p>No resources match your filters. Try adjusting your search.</p></div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(r => `
+    <div class="resource-card">
+      ${r.duplicate ? '<span class="dup-badge">⚠ Duplicate</span>' : ''}
+      <div class="card-header">
+        <span style="font-size:1.5rem">${getIcon(r.format)}</span>
+        <span class="card-format ${formatClass(r.format)}">${r.format}</span>
+      </div>
+      <div class="card-title">${r.title}</div>
+      <div class="card-desc">${r.desc}</div>
+      <div class="card-meta">
+        <span class="card-tag tag-category" style="border-color:${catColors[r.category]||'#ccc'};color:${catColors[r.category]||'#666'}">${r.category}</span>
+        ${r.theme ? `<span class="card-tag ${themeClass(r.theme)}">${r.theme}</span>` : ''}
+        <span class="card-date">${formatDate(r.date)}</span>
+      </div>
+      ${r.url ? `<a class="card-link" href="${r.url}" target="_blank" rel="noopener">
+        Open Resource <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>` : '<span style="font-size:0.8rem;color:#aaa;margin-top:auto">Link pending</span>'}
+    </div>
+  `).join('');
+}
+
+buildPills();
+render();
+
+document.getElementById('searchInput').addEventListener('input', render);
+document.getElementById('themeFilter').addEventListener('change', render);
+document.getElementById('formatFilter').addEventListener('change', render);
+document.getElementById('sortFilter').addEventListener('change', render);
+
+// Podcasts nav link — filter to Podcast format and scroll to archive
+document.getElementById('podcastsNavLink').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('formatFilter').value = 'Podcast';
+  render();
+  document.getElementById('archive').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
+iewport" content="width=device-width, initial-scale=1.0"/>
   <title>Scanlon Leadership Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
   <style>
