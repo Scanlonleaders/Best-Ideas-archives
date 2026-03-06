@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="v<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Scanlon Leadership Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
@@ -186,6 +182,781 @@
   </div>
 </div>
 
+<!-- THOUGHT OF THE WEEK -->
+<section id="thought-of-week" style="background:var(--white);border-top:3px solid var(--gold);border-bottom:1px solid var(--border);padding:3rem 2rem;">
+  <div class="container" style="max-width:800px;">
+    <span class="section-label" style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.4rem;">From the Archive</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Scanlon <em style="font-style:italic;color:#c8a84b;">Thought of the Week</em></h2>
+    <div class="divider"></div>
+    <div id="totw-content" style="margin-top:1.5rem;"></div>
+    <div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+      <span id="totw-label" style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);"></span>
+      <div style="display:flex;gap:0.5rem;">
+        <button onclick="changeTip(-1)" style="background:none;border:1px solid var(--border);color:var(--navy);padding:0.4rem 0.9rem;border-radius:4px;cursor:pointer;font-family:'Source Serif 4',serif;font-size:0.82rem;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">← Previous</button>
+        <button onclick="changeTip(1)" style="background:none;border:1px solid var(--border);color:var(--navy);padding:0.4rem 0.9rem;border-radius:4px;cursor:pointer;font-family:'Source Serif 4',serif;font-size:0.82rem;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">Next →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const scannonTips = [
+  {
+    title: "Living a Life of No Regrets — The Importance of Dreams",
+    date: "July 2001",
+    body: `<p>I've recently returned from a hiking trip into the wilds of northern New Mexico. I managed to climb a 12,400 foot mountain and was able to spend time with my 15 year old son. Over 30 years ago I "dreamed" of going on this Trek, but was unable to at the time. I believe it is important to "dream."</p>
+<p><strong>Dreams are crucial.</strong> Without our dreams, we lose touch with a deeper, more profound part of ourselves. The more comfortable we become in our predictable lives, the more important it becomes to step out of our comfort zones and to take the risks in order to realize our deepest wishes.</p>
+<p>Like most 15-year-olds, John Goddard had a wealth of heart-pumping dreams. One ordinary day in 1940, he bothered to write 127 of his life dreams on a pad of yellow paper. In 1972, <em>Life</em> magazine reported that, at age 47, he had achieved 103 of his original dreams.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The tragedy of life is not death, rather, it is what we allow to die within us while we live." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Norman Cousins</cite></blockquote>
+<p><strong>Questions to Ponder:</strong> What do you want? How will you know when you get it? What dreams have you allowed to stay on your list too long?</p>`
+  },
+  {
+    title: "Leadership Truths for Thriving in Tough Times",
+    date: "March 2001",
+    body: `<p>Dr. Frost wrote this about Leadership: <em>"There is no unique opportunity in management, only the daily need to watch and help make things run. Leadership is about realizing the unique chance to change and accepting the once-in-a-lifetime opportunity to lead people toward something different."</em></p>
+<p><strong>Everything is connected.</strong> Success depends on our ability to create interdependent partnerships where everyone takes responsibility for positive results. As Eric Jantsch said, "In life, the issue is not control, but dynamic connectedness."</p>
+<p><strong>Relationships make the difference.</strong> The single most important variable in employee productivity and loyalty turns out to be not pay or perks or benefits — it's the quality of the relationship between employees and their direct supervisors.</p>
+<p><strong>Integrity matters.</strong> W. Edwards Deming said, "Without trust, there can be no cooperation between people, teams, departments, divisions." Tell the truth and deliver on commitments. Everyone is watching.</p>
+<p><strong>Everyone leads.</strong> Leadership is a matter of performance not position. Growing leaders is the best way to leverage your commitment to success.</p>`
+  },
+  {
+    title: "What is the Definition of a Leader?",
+    date: "March 2001",
+    body: `<p>Dr. Carl Frost defines a Leader as <em>someone perceived by the followers as the best means available for getting them where they want to go at a particular time.</em></p>
+<p><strong>First Truth about Leadership:</strong> It is the followers who determine who will lead them. People can be coerced and driven by those with power, but they will choose who they wish to lead them.</p>
+<p><strong>Second Truth about Leadership:</strong> Followers determine how long they will follow a leader. History is full of examples of Leaders who were followed for a time and then replaced when the followers no longer believed the leader was taking them where they wanted to go.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The first responsibility of a Leader is to define reality. The last is to say thank you. In between the Leader must become a servant and a debtor." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>Scanlon Leaders strive to become Servant Leaders. They recognize that "the success of a Leader is found by looking at their followers."</p>
+<p><strong>Questions to Ponder:</strong> Why have you chosen to lead others? Is your vision clear? Believable? Unique? How often do you say "Thanks"?</p>`
+  },
+  {
+    title: "Servant Leaders are Teachers",
+    date: "March 2001",
+    body: `<p>Education is the process Scanlon Leaders use to help their followers understand reality. <em>Instruct</em> is derived from two Latin words that mean "to pile up." <em>Educate</em> is derived from two Latin words that mean "to draw out." Scanlon Leaders seek to educate, not to instruct.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">Education at its best develops the inner resources of people to the point where they can learn — and will want to learn — on their own. <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— John Gardner</cite></blockquote>
+<p>Dr. Frost believes teaching is a four step process: (1) Help others <strong>know reality</strong>. (2) Help others <strong>understand the rational and relevance</strong> of past and present facts. (3) Help others <strong>comprehend consequences</strong>. (4) Help others <strong>accept reality</strong> — when reality is accepted, literacy is complete.</p>
+<p><strong>Questions to Ponder:</strong> What are your personal, professional, and organizational qualifications to teach? Where is your classroom? What gets your students' attention?</p>`
+  },
+  {
+    title: "Douglas McGregor, Revisited",
+    date: "March 2001",
+    body: `<p>Douglas McGregor — who coined Theory X and Theory Y and whose book <em>The Human Side of Enterprise</em> is considered a classic — envisioned this world:</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Scanlon's lasting contribution is his recognition — now effectively demonstrated in action — that one cannot successfully tackle this central task of management with gimmicks or procedures or programs. The real task of management is to create conditions that result in genuine collaboration throughout the organization. To create such conditions is to create a way of life."</blockquote>
+<p>McGregor on motivation: <em>"We do not motivate him, because he is motivated. When he is not, he is dead."</em> He believed the greatest disparity between reality and managerial perceptions is an underestimation of the potentialities of human beings for contributions to organizational effectiveness.</p>
+<p><strong>Questions to Ponder:</strong> In your experience are human beings internally or externally motivated? How do we create environments where natural motivation is released? How do we prevent "gimmicks" or "programs" from getting in the way of genuine collaboration?</p>`
+  },
+  {
+    title: "Why Should Anyone Be Led by You?",
+    date: "April 2001",
+    body: `<p>If you want to silence a room of executives, try this small trick. Ask them, <strong>"Why would anyone want to be led by you?"</strong> Without fail, the response is a sudden, stunned hush.</p>
+<p>Inspirational leaders share four unexpected qualities: They <strong>selectively show their weaknesses</strong> — by exposing some vulnerability, they reveal their approachability and humanity. They <strong>rely heavily on intuition</strong> to gauge the appropriate timing and course of their actions. They <strong>manage with tough empathy</strong> — caring intensely about the work employees do. And they <strong>reveal their differences</strong> — capitalizing on what's unique about themselves.</p>
+<p>Four popular myths: "Everyone can be a leader" — not true. "Leaders deliver business results" — not always. "People who get to the top are leaders" — not necessarily. "Leaders are great coaches" — rarely.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">Real leaders are found all over the organization, from the executive suite to the shop floor. By definition, leaders are simply people who have followers, and rank doesn't have much to do with that.</blockquote>
+<p><strong>Questions to Ponder:</strong> Why should anyone be led by you? What do you believe are the qualities of great leaders?</p>`
+  },
+  {
+    title: "Are You Ready to Lead? The Learning Organization",
+    date: "April–May 2001",
+    body: `<p><em>"To succeed as a leader, you have to be a learning machine. The best entrepreneurs have a strong vision but allow that vision to be affected by other great points of view. I'm interested in people who are committed to an outcome — and not attached to the ways and means."</em> — John Hamm</p>
+<p>Peter Senge on learning organizations: <em>"The senior executive's ability to implement a true learning organization is overrated. Most people who reach the top of an organization soon find they have little unilateral power to control its complex workings."</em> The CEO of an energy company called the word "drive" — as in "How do you drive change?" — the most useless word in the language: "You drive an automobile. You don't drive a human system."</p>
+<p>Successful team or organization leadership begins with successful self-leadership. Too many managers who aspire to lead and develop others haven't learned how to lead and develop themselves.</p>
+<p><strong>Questions to Ponder:</strong> How can I become a "Learning Machine"? Am I ready to lead? What is my self-development plan? Scanlon leaders believe in personal, professional, and organizational development.</p>`
+  },
+  {
+    title: "Four Obstacles to Change",
+    date: "May 2001",
+    body: `<p>Scanlon practitioners believe "change is a given." Individuals and organizations are constantly changing — they are in the process of getting better or worse; they cannot hover or remain in a constant state for long.</p>
+<p>Drawing on Carlos Castaneda's <em>The Teachings of Don Juan</em>, there are four obstacles to becoming a person of knowledge — or growing and changing:</p>
+<p><strong>1. Fear</strong> — Change can be scary. But fear is not good or bad; it is just a reality and can be judged as neutral. In spite of fear, we can make progress.<br>
+<strong>2. Clarity</strong> — If I have clarity, what reason is there for me to change? Clarity is the desire to remain as is. It is the opposite of an open mind.<br>
+<strong>3. Power</strong> — The holder of power will be tempted to maintain that power at the expense of others. Power underlies internal competition that, if not dealt with, will be the undoing of the organization.<br>
+<strong>4. Old Age (Complacency)</strong> — Complacency can be defined as lack of energy. Organizations can overcome this by getting people more engaged and raising the level of participation.</p>
+<p><strong>Questions to Ponder:</strong> How do the Scanlon Principles help to drive fear out of an organization? How does Servant Leadership and Participation combat "Power"?</p>`
+  },
+  {
+    title: "The High Price of Mediocre Managers",
+    date: "July 2001",
+    body: `<p>Research by Marcus Buckingham and Curt Coffman of the Gallup organization found that <strong>the single biggest stumbling block to corporate success is bad management in a company's middle levels.</strong> "The manager was the critical player in building a strong workplace."</p>
+<p>Each manager creates a culture within his or her department. The end result is that <strong>a company has as many cultures as it has managers.</strong> Companies need to recognize that each is a collection of cultures — and that best practice exists somewhere within their own organization.</p>
+<p>The best managers help workers answer these key questions with vigorous affirmation: Do I know what is expected of me? Do I have the tools I need? Do I have the opportunity to do what I do best every day? In the last seven days, have I received recognition or praise? Does someone at work care about me as a person? Is there someone who encourages my development?</p>
+<p><strong>Great managers want to set up their employees for success. They want to help employees become more of who they already are.</strong></p>`
+  },
+  {
+    title: "Accountability the Scanlon Way",
+    date: "August 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The modern emphasis upon the manager as a leader who strives to help his subordinates achieve both their own and the company's objectives is hardly consistent with the judicial role demanded by most appraisal plans." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Douglas McGregor</cite></blockquote>
+<p>Years ago DJ DePree decided that people are "either ordinary or truly extraordinary." He chose to lead his life looking at people as extraordinary. <strong>When you believe people are extraordinary there is no need to annually look for 10% to fire.</strong></p>
+<p>Scanlon organizations believe in accountability through the <strong>Three C's:</strong></p>
+<p><strong>Counting</strong> — We develop measures that are fair and reasonable with the person who will be using them.<br>
+<strong>Commitment</strong> — Because we participatively set goals and measurements, we are committed to achieving them.<br>
+<strong>Consequences</strong> — When a goal is not being met, we examine why. Is it a systems problem? Is the goal still reasonable? We make changes so that the goal can be met.</p>
+<p>W. Edwards Deming taught that companies must "drive out fear" — and that poor performance appraisal systems and forced ranking systems are primary causes of fear in organizations.</p>`
+  },
+  {
+    title: "\"Jack\" Frost — Leader as Teacher and Learner",
+    date: "August 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Once the people know the job, the exciting demands of the customer, the strengths of the competitors and costs within their control, they have got a focus on their target. They may not always hit the bull's eye, but they will score." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Carl "Jack" Frost</cite></blockquote>
+<p>The notion of the heroic leader is dead and should be replaced with the model of <strong>the leader as teacher and learner.</strong> The superior doesn't tell the subordinate what to do but helps them to learn, and learns in the process of teaching.</p>
+<p>Of Dr. Frost, Hugh DePree wrote: <em>"He taught us all we know about the humanities of a corporation — a priceless ingredient. His persistent yet gentle way of asking questions enabled him not only to gain acceptance but to learn from many of the troubles, difficulties, and snags, the details of the business. Jack had boundless confidence in the capacity of people to excel."</em></p>
+<p>Jack had such an impact on the workers at Herman Miller that they organized a plan — through payroll deduction — to fund the purchase of a new car and surprised him with the keys. <strong>Great leaders bring out the best in people. Great leaders are not separate and apart from those they serve.</strong></p>`
+  },
+  {
+    title: "The Purpose of a Business — Equity, Humanity, Profits",
+    date: "August 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"A business is rightly judged by its products and services, but it must also face scrutiny as to its humanity." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— DJ DePree</cite></blockquote>
+<p>A fundamental Scanlon Principle is Equity. All key stakeholders — customers, investors, and employees — must be treated fairly. Good products and services, great places to work, and fair profits are all the purpose of a Scanlon company.</p>
+<p>In 1957, a Holland businessman explained his philosophy: <em>"I found that if I was going to make money I had to pay proper wages. I had to produce as good, or better, product than my competition. I had to have good working conditions for my people — and all of these things came as a result of trying to make a profit."</em></p>
+<p>The free and self-interested pursuit of profit has created better living conditions for more people than at any time in the history of the world. Wealth creation is the greatest contribution that an individual or business can make to society.</p>
+<p><strong>Questions to Ponder:</strong> What is the purpose of your business? Do people understand the importance of profits to the health of your organization?</p>`
+  },
+  {
+    title: "Equity Formulas — Accountability to All Stakeholders",
+    date: "August 2001",
+    body: `<p>The Scanlon Equity Principle can be defined as <strong>"being accountable to the needs of the key stakeholders."</strong> Usually the Principle is depicted as an equilateral triangle with customers, investors, and employees. Some Scanlon organizations also include community and suppliers.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The proper man understands equity; the small man profits." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Confucius</cite></blockquote>
+<p>To create gains, Scanlon organizations use Identity and Participation. Identity helps ensure that everyone knows the reality the company faces, and Participation provides the vehicle that helps the organization perform better. <strong>In many non-Scanlon companies a bonus is given and employees have no idea what they did to create it. Companies that do this are doing nothing more than sponsoring a company-paid lottery.</strong></p>
+<p>Research by Jerry McAdams found that companies received over a <strong>134% net return</strong> on their gainsharing investment.</p>
+<p><strong>Questions to Ponder:</strong> Does your Equity system help you to be accountable to each stakeholder? Do people understand your formula, or are you running a lottery?</p>`
+  },
+  {
+    title: "An Appreciation of Labor",
+    date: "August 2001",
+    body: `<p>Joe Scanlon believed in the wisdom and dignity of the average worker — and this deep-seated belief is a foundation of every Scanlon Plan. Labor Day is a holiday that should have special meaning for those who follow the teachings of Joe Scanlon.</p>
+<p>Think of all the countless people whose labor has gone into making your life better. The miners who mined the ore, the sailors who transported it, the steel workers who made the steel, the factory workers who made the parts, and the engineers who designed the product. Give thanks for the work of others.</p>
+<p>A few thoughts on labor and work:</p>
+<p><em>"Find a job you love and you'll never have to work a day in your life."</em> — Jim Fox</p>
+<p><em>"Every calling is great when greatly pursued."</em> — Oliver Wendell Holmes</p>
+<p><em>"I believe in the dignity of labor, whether with head or hand; that the world owes no man a living but that it owes every man an opportunity to make a living."</em> — John D. Rockefeller</p>
+<p><em>"No race can prosper till it learns there is as much dignity in tilling a field as in writing a poem."</em> — Booker T. Washington</p>
+<p><strong>Questions to Ponder:</strong> Do I value work? How do I show appreciation to those whose labor benefits my life?</p>`
+  },
+  {
+    title: "Gifts Differing — Understanding Personality and Teamwork",
+    date: "September 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Together we can achieve the impossible." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Joe Scanlon</cite></blockquote>
+<p>The Myers-Briggs Type Indicator reminds us that everybody is different. In any room, fewer than a fourth of the people think as you do, arrive at decisions the way you do, or think about the big picture as you do. — Donald Petersen, Former CEO of Ford</p>
+<p>Scanlon Practitioners know the power of a group of people who understand what is going on, who take responsibility to participate, who believe in fairness, and who continually improve. Yet sometimes no matter how hard we try, it is very difficult to work with others. Groups of competent, dedicated people end up convinced their "team" is completely dysfunctional — and the cause of death is usually attributed to "communication problems."</p>
+<p>One of the best tools for understanding individuals and groups is the Myers-Briggs Type Indicator (MBTI), based on the personality theories of Carl Jung. Jung believed that most normal human behavior is not random but can be explained based on a few personality preferences. Isabel Briggs Myers took Jung's theories and made a practical assessment that enables people to evaluate their own preferences. Her last book was called <em>Gifts Differing</em> — a lifetime of studying people had convinced her that we all have unique and different gifts to bring to a group.</p>
+<p><strong>Questions to Ponder:</strong> Do I understand my own gifts? What do I bring to others? Do I appreciate the gifts of others? What do I lack that others are able to provide?</p>`
+  },
+  {
+    title: "Reflections on Crisis — The Scanlon Principles and Difficult Times",
+    date: "September 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"In essentials unity. In non-essentials freedom. In all things charity." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Saint Augustine</cite></blockquote>
+<p>Once Joe Scanlon and Douglas McGregor were at the Harvard Club with a union and management team deep in conflict. As they got more and more heated, Joe and McGregor slipped away and had a drink. Eventually the union and management team realized their hosts had left. When they calmed down, Joe asked them, <strong>"What do you want to do now?"</strong> By his simple question he took the focus from the past and put it into the future. He challenged them to envision a better way and to work for it.</p>
+<p>Margaret Wheatley, author of <em>Leadership and the New Science</em>, has written about a growing unhappiness — with much of the world in conflict — rooted in the myth of individualism: we have attempted to create a global economy where the meaning of interconnectedness has become unimportant. But we got it wrong. Globally, we are all interconnected — where our actions affect others we don't even know.</p>
+<p>Through the Scanlon Principle of Identity, we must learn all we can about the realities we face. A Scanlon assumption is that behavior is a consequence of how people have been treated. Understanding that connection is the first step toward building something better.</p>`
+  },
+  {
+    title: "Leadership in Times of Crisis",
+    date: "September 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Leaders are not commissioned or expected to renew or replicate what has been. Abraham Lincoln is not remembered for saving the Union but for emancipating the slaves." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Carl Frost</cite></blockquote>
+<p>No plan or leadership hierarchy can replace a group of dedicated, competent front-line workers in times of crisis. In times of crisis, the front-line worker must be able to make decisions because leadership may not be available and prior plans may not be adequate.</p>
+<p>Here are the things leaders must do in a crisis:</p>
+<p><strong>1. Share information.</strong> The more information that is shared and understood, the more front-line people can do.<br>
+<strong>2. Enable participation.</strong> In periods of crisis, people will not follow a leader who does not listen to them. Decision-making must be quick — with those most competent and impacted by the decision involved.<br>
+<strong>3. Ensure equity.</strong> Sacrifice must be shared. Leaders must demonstrate they are willing to make sacrifices themselves.<br>
+<strong>4. Build competence.</strong> Leaders must do all they can to increase the competence of their followers. Competence is how you prepare for crisis.</p>
+<p><strong>The bottom line:</strong> Leaders are only as good as their followers. Good leaders are servant leaders — they help their followers see what is necessary, provide resources, and get out of the way and let those close to the work do it.</p>`
+  },
+  {
+    title: "Loyalty Part 1 — The Economics of Employee Loyalty",
+    date: "September 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The greater the loyalty of a group toward the group, the greater is the motivation among the members to achieve the goals of the group." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Rensis Likert</cite></blockquote>
+<p>Southwest Airlines, after the September 2001 attacks, did not announce layoffs. A spokesperson said savings would come first from delaying the purchase of new planes. Some Southwest employees even volunteered to work at no pay to help their company. Southwest is considered one of the top 100 Best Companies to work for and has routinely turned a profit.</p>
+<p>Herman Miller employees were so loyal to Dr. Carl Frost that they bought him a new car through payroll deduction so he would be safer driving on his Scanlon missions. Delta employees once bought the company a plane through payroll deduction. How do some companies command such loyalty?</p>
+<p>Frederick Reichheld found in a wide range of industries that <strong>a 5% increase in customer retention rates yields a 25 to 100% increase in profits.</strong> Companies with higher employee retention rates outperformed companies with greater turnover — through lower hiring costs, greater return on training, greater efficiency, and better customer retention.</p>
+<p>However, employee loyalty alone is not enough. Scanlon Leaders believe that loyalty is no substitute for competence. Deadwood is deadwood.</p>`
+  },
+  {
+    title: "Loyalty Part 2 — How Loyal Customers Impact the Bottom Line",
+    date: "October 2001",
+    body: `<p>The Scanlon Equity Principle helps Scanlon companies understand and respond to the needs of customers, investors, and employees — giving Scanlon companies a very loyal base to work with. Research on loyalty is now showing the importance of loyalty to the bottom line.</p>
+<p>Reichheld found that a <strong>5% increase in customer retention yields a 25–100% increase in profits.</strong> Here is why:</p>
+<p><strong>Loyal customers lower acquisition costs.</strong> It costs money to bring new customers through the door. In some industries it takes years before a customer is truly profitable.<br>
+<strong>Loyal customers contribute longer to base profits.</strong> The longer a customer buys, the more they contribute.<br>
+<strong>Loyal customers lower operating costs.</strong> As customers get to know a business they need less help. As employees get to know customers, they can serve their needs more efficiently. Studies show most people would rather go to the same mechanic for their car — customers want to go where they are known.<br>
+<strong>Loyal customers make good referrals.</strong> When a customer makes a referral, it saves most acquisition costs. Since loyal customers know your business, they are more likely to make referrals who will be happy with your product.<br>
+<strong>Loyal customers pay price premiums.</strong> In many industries, loyal customers pay effectively higher prices than new ones.</p>`
+  },
+  {
+    title: "Loyalty Part 3 — Investor Loyalty and Long-Term Thinking",
+    date: "October 2001",
+    body: `<p>In the average publicly traded company today, over half of the investors will be replaced in just 11 months. Non-loyal investors destroy the wealth of a company.</p>
+<p>Max DePree, at a Scanlon Leadership Retreat hosted by Herman Miller, argued that in the old days when an investor bought into a company and had the company's best interests at heart, there was a partnership and a moral commitment. But today, short-term investors do not think of customers or employees as long-term assets. <strong>One of the quickest ways to boost short-term earnings is through asset exploitation — price increases and layoffs.</strong> This is devastating to the long-term health of a company.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"In a typical company today, customers are defecting at the rate of 10 to 30 percent per year; employee turnover rates of 15 to 25 percent are common; and the average annual investor churn now exceeds 50 percent per year. How can any manager be expected to grow a profitable business when 20 to 50 percent of the company's most valuable inventory vanishes without a trace each year?" <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Frederick Reichheld, The Loyalty Effect</cite></blockquote>
+<p>Short-term investors are a real threat to every Scanlon Process. Educate investors: communicate that long-term consistent profits are the rewards for loyalty. Target low-churn institutional investors who have a long-term outlook.</p>`
+  },
+  {
+    title: "Guidelines for Effective Participation",
+    date: "October 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Participation and Consultative Management... I need only mention the Scanlon Plan as the outstanding embodiment of these ideas in practice." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Douglas McGregor</cite></blockquote>
+<p>Dr. Frost's definition: <strong>Participation is the opportunity (which only management can provide) and the responsibility (which only employees can accept) to influence the decision-making process within one's area of competence.</strong></p>
+<p>Key guidelines for effective participation:</p>
+<p>• Employees cannot participate effectively without first becoming "literate" regarding business realities.<br>
+• Participation is neither paternalistic nor permissive; it is implemented only with high expectations to achieve significant results.<br>
+• Participation does not mean management's abdication of the responsibility to lead and to make decisions, but it does mean that management is open to competent influence.<br>
+• Participation is not unstructured or an end in itself. Its only rationale is as the means to become more competitive, productive, and profitable.<br>
+• Participation must include accountability — a system of commitment, counting, and consequences.<br>
+• Participation requires training in new skills: leadership, management style, problem-solving, coaching, and performance management.<br>
+• Participation must be managed; it requires continual renewal and innovation.</p>
+<p><strong>Questions to Ponder:</strong> Based on these guidelines, how effective are you at Participation? Does your participation "pussyfoot"?</p>`
+  },
+  {
+    title: "Lessons from the Leadership Retreat — Beth Israel and Herman Miller",
+    date: "October 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"I believe Scanlon Leaders do not live in such a flat universe." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Carl Frost</cite></blockquote>
+<p><strong>Beth Israel Deaconess Hospital</strong> — Scanlon can work well in a service industry. Beth Israel was considered one of the top 50 Best Places to Work in America. The Scanlon Process (Prepare 21) helped develop cooperation between departments. One of its great strengths was the communication vehicles implemented — everything translated into three languages. Lesson learned: the Board's lack of understanding of Scanlon and the failure to build a merger plan for Prepare 21 contributed to its demise when the hospital merged.</p>
+<p><strong>Herman Miller</strong> — Herman Miller has been successful because of four factors: the leadership of the DePree family and the Board; innovative design; Frost/Scanlon; and employee ownership and great employees. From 1955–2000: sales increased at an annual rate of 15%, profits at 18%, employment at 9%. Herman Miller continues to be considered one of the most admired corporations and one of the top best places to work.</p>
+<p>Lesson learned: New leaders will often reject some of the past. There is tremendous pressure in a public company to maximize stock price and profits. This can lead to short-term thinking. <strong>Scanlon is a long-term idea and a difficult process — today's leaders are under the gun for immediate payback.</strong></p>`
+  },
+  {
+    title: "Lessons from the Leadership Retreat — National Manufacturing",
+    date: "November 2001",
+    body: `<p>National Manufacturing recently celebrated their 100th year of operations and is today the only manufacturer of home hardware left in North America. Most hardware is now produced in lower-wage countries.</p>
+<p><strong>The Success Factors of National — People Making a Difference:</strong></p>
+<p><strong>Committed to delighting customers</strong> — developed do-it-yourself hardware, direct-to-store distribution, and a nationwide field sales force to help retailers.<br>
+<strong>Respect for people</strong> — gave 25% of shares to employees in 1902, became the preferred employer in the area, and adopted the Scanlon Plan in 1979.<br>
+<strong>Consistent reinvestment</strong> — state-of-the-art equipment was a consistent priority: an IBM tabulating machine in the 1940s, progressive dies, a mainframe computer in 1960, electronic order entry, and paperless electronic order picking installed in 1995.<br>
+<strong>Stability of ownership</strong> — company ownership in the 4th generation.</p>
+<p>National's story is a reminder that the combination of respect for people, loyal customer relationships, and consistent reinvestment in technology can sustain a company through a century of change — even as competitors move offshore.</p>`
+  },
+  {
+    title: "Lessons from the Leadership Retreat — Wescast Industries",
+    date: "November 2001",
+    body: `<p>Wescast Industries began in 1901 as Western Foundry in Wingham, Ontario. In 1983 they became the first foundry in North America to win the Ford Q1 quality award. Today they are considered one of the top 10 best places to work in Canada.</p>
+<p>Wescast's Scanlon Plan is called <strong>HEART: Helping Everyone Achieve Rewards Together.</strong> Their vision: to be the Supplier of Choice, the Investment of Choice, and the Employer of Choice.</p>
+<p>Key learnings from Wescast's Scanlon experience:</p>
+<p>• If Scanlon is truly part of the culture, each plant or unit must have its own Scanlon process. You can't inherit Scanlon programs — each unit needs to develop their own. Part of the power is in the ad-hoc creation process.<br>
+• It is a mistake to set the same targets. Each plant has its own unique needs.<br>
+• Union involvement is critical. Wescast tries to keep the Union informed and a partner in the process.<br>
+• Leadership is often viewed as an autocratic exercise — yet when employees are asked to describe the best leader they ever worked for, they describe a <em>participative</em> leader.</p>
+<p>Wescast even wrote the Scanlon process into their joint venture agreement in Hungary — proof that the principles travel across cultures.</p>`
+  },
+  {
+    title: "Myths About Change, Part 1 — Good to Great",
+    date: "November 2001",
+    body: `<p>Jim Collins's research team spent five years studying what it takes to change a good company into a great one — systematically examining 1,435 established companies to find those that made a leap from no-better-than-average results to great results. They found 11 companies that averaged returns <strong>6.9 times greater than the market's</strong> — more than twice the performance rate of General Electric under Jack Welch.</p>
+<p>Their finding: nearly all operating prescriptions for creating large-scale corporate change are <strong>myths.</strong></p>
+<p>The Myth of the Change Program. The Myth of the Burning Platform (crisis creates change). The Myth of Stock Options. The Myth of Fear-Driven Change. The Myth of Acquisitions. The Myth of Technology-Driven Change. The Myth of Revolution.</p>
+<p><strong>Wrong. Wrong. Wrong. Totally wrong.</strong></p>
+<p>Companies that made the change from good to great had no name for their transformation — and absolutely no program. They didn't "motivate" people — their people were self-motivated. Fear doesn't drive change, but it does perpetuate mediocrity. Two mediocrities never make one great company. And dramatic results do not come from dramatic process — not if you want them to last.</p>
+<p><strong>Questions to Ponder:</strong> What change "myths" are practiced in your organization? How does Scanlon keep people focused on change for the long haul?</p>`
+  },
+  {
+    title: "Myths About Change, Part 2 — How Change Actually Happens",
+    date: "November 2001",
+    body: `<p>Picture an egg. Day after day it sits there. Then one day the shell cracks and out jumps a chicken. The outside world sees a "Stunning Turnaround!" But from the chicken's point of view, the moment of breakthrough was simply one more step in a long chain of steps.</p>
+<p>That's exactly how change works in great companies. Take Walgreens — for more than 40 years an average company, tracking the general market. Then in 1975 it began to climb. From 1975 to 2000, one dollar invested in Walgreens beat one dollar invested in Intel by nearly 2 times, GE by nearly 5 times, and Coca-Cola by nearly 8 times. When asked when the transformation happened, a key Walgreens executive answered: "Sometime between 1971 and 1980."</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"It wasn't a blinding flash or sudden revelation from above." — Abbott Laboratories. "These things don't happen overnight. They grow." — Kimberly-Clark. "It wasn't a single switch that was thrown at one time." — Wells Fargo.</blockquote>
+<p>Good-to-great transformations came through a down-to-earth, pragmatic, committed-to-excellence process — a framework that kept each company, its leaders, and its people on track for the long haul. It was the triumph of the <strong>Flywheel Effect</strong> over the Doom Loop: steadfast discipline over the quick fix.</p>`
+  },
+  {
+    title: "Hoshin Planning Part 1 — Vision, Planning, and the 3 C's",
+    date: "November 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"It is important that an aim never be defined in terms of activity or methods. It must always relate directly to how life is better for everyone. The aim is a value judgment." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— W. Edwards Deming</cite></blockquote>
+<p>All real planning begins with a vision or dream. A successful vision inspires and begins to help people establish direction and priorities. Martin Luther King Jr.'s "I Have a Dream" speech established a vision for race relations. Did MLK's dream create that reality? Of course not — we still have many problems. But we are much closer today than we would have been if he had not given the speech.</p>
+<p>Joe Scanlon dreamed that "Together we can accomplish the impossible." He spent his life developing plans to bring his dream into reality.</p>
+<p>A vision or dream without a plan is nothing more than a daydream. Success requires the discipline of planning, setting goals, and creating objectives. In Scanlon we say this requires the <strong>3 C's: Commitment, Counting, and Consequences.</strong></p>
+<p>Without vision it is possible to make great speed going in the wrong direction.</p>
+<p><strong>Questions to Ponder:</strong> What is your organization's vision? Do people understand and own the plan to achieve it?</p>`
+  },
+  {
+    title: "Hoshin Planning Part 2 — Strategy Deployment in Practice",
+    date: "December 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Hoshin planning represents a very powerful tool for deploying the strategic direction of any organization. It not only ensures that everyone understands the strategic direction but also that they understand how their work fits together. It is a powerful tool for bringing out the best in everyone through participation." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dwane Baumgardner, CEO of Donnelly Corporation</cite></blockquote>
+<p>Hoshin Planning is a philosophy and set of tools that helps set direction and monitor performance. It is based on the Deming Plan-Do-Check-Act cycle for continuous improvement. It is very much aligned with the Scanlon Principles:</p>
+<p><strong>Identity:</strong> Information is shared so everyone knows the organization's objectives and where they fit.<br>
+<strong>Participation:</strong> People are involved in setting their own objectives and monitoring their own performance. They truly "own" it.<br>
+<strong>Equity:</strong> Hoshin ensures regular accountability for meeting the needs of customers, investors, and employees.<br>
+<strong>Competence:</strong> Hoshin builds the competencies of goal setting, measuring, and reporting at every level.</p>
+<p>The three steps: (1) Strategic Vision is established. (2) Objectives and strategies are developed for each level based on the vision. (3) Periodic review and adjustments are made based on performance.</p>`
+  },
+  {
+    title: "The Search for Meaning — Work as a Source of Life",
+    date: "December 2001",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Work should be and can be productive and rewarding, meaningful and maturing, enriching and fulfilling, healing and joyful. Work is one of our greatest privileges. Work can even be poetic." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>The social anthropologist Studs Terkel once wrote: <em>"Work is about a search for daily meaning as well as daily bread, for recognition as well as cash, for astonishment rather than torpor — in short, for a sort of life rather than a Monday-to-Friday sort of dying."</em></p>
+<p>One of the most powerful books ever written on this subject is <em>Man's Search for Meaning</em> by Viktor Frankl. Frankl was a Jewish-German psychiatrist interned in a Nazi concentration camp during World War II. He lost his wife and family — yet emerged in triumph. He observed that many prisoners died when undergoing less hardship than those who survived. The survivors tended to be people who envisioned a future for themselves despite their present suffering — people who believed they had meaning in life and did not surrender to despair.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Ultimately, man should not ask what the meaning of his life is, but rather must recognize that it is he who is asked. Each man is questioned by life and can only answer by being responsible. Responsibleness is the essence of human existence." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Viktor Frankl</cite></blockquote>
+<p><strong>Questions to Ponder:</strong> What brings meaning to my life? How does our Scanlon Plan help bring meaning to work? If being responsible is the essence of human existence, how does our Scanlon Plan help people become more responsible?</p>`
+  },
+  {
+    title: "Martin Luther King, Jr. on Leadership — Part 1",
+    date: "January 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"As people began to derive inspiration from their involvement, I realized that choice leaves your own hands. The people expect you to give them leadership. You see them growing as they move into action, and then you know you no longer have a choice — you must stay in it." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Martin Luther King, Jr.</cite></blockquote>
+<p>MLK came to prominence during the Montgomery bus boycott and later wrote: "I neither started the protest nor suggested it. I simply responded to the call of the people for a spokesman." King became a leader for the right reasons — not for power, glory, or fame, but from a deep desire to serve. Seven of his key leadership principles:</p>
+<p><strong>1. Listen first, then lead by being led.</strong> Hugh DePree discovered the same insight: "To lead the people, walk behind them." A Scanlon Leader is a servant leader. Listening is a key leadership competency.<br>
+<strong>2. Persuade through love and nonviolence.</strong> In a free society, a leader's greatest source of power lies in their ability to persuade. Southwest Airlines operates out of Love Field — love has become part of their corporate culture, and they are one of the few profitable airlines.<br>
+<strong>3. Learn, learn, learn.</strong> MLK subjected himself to "endless self-analysis," constantly questioning whether he was fulfilling the true meaning of his work. Scanlon Leaders believe in the Principle of Competence — seeking constant improvement personally, professionally, and organizationally.<br>
+<strong>4. Master the art of public speaking.</strong> Leaders must speak to groups. Fortunately, programs like Toastmasters and Dale Carnegie can help anyone learn this skill.<br>
+<strong>5. Awaken direct action.</strong> Gandhi often said "Action is my domain." Great leaders are reliably, tirelessly persistent and results-oriented.<br>
+<strong>6. Encourage creativity and innovation.</strong> MLK warned: "We will err and falter as we climb the unfamiliar slopes of steep mountains, but there is no alternative, well-trod, level path."<br>
+<strong>7. Involve everyone through alliances, teamwork, and diversity.</strong> MLK wrote: "We shall have to have people tied together in a long-term relationship." He practiced "a real sharing of power and responsibility" because "Freedom is participation in power."</p>`
+  },
+  {
+    title: "Martin Luther King, Jr. on Leadership — Part 2",
+    date: "January 2002",
+    body: `<p>Continuing the 16 leadership principles of Martin Luther King, Jr.:</p>
+<p><strong>8. Set goals and create a detailed plan of action.</strong> MLK believed "Goals must be clearly stated" and advised "don't aim too low." Goals unify people, motivate people, and stimulate action. A wise leader plans before taking action.<br>
+<strong>9. Be decisive.</strong> "Ultimately, a genuine leader is not a searcher for consensus, but a molder of consensus. I would rather be a man of conviction than a man of conformity." — MLK. Dr. Carl Frost added: "Leaders are not commissioned or expected to renew or replicate what has been."<br>
+<strong>10. Teach and preach.</strong> "We must demonstrate, teach and preach, until the very foundations of our nation are shaken." Education is the process for Identity, the first Scanlon Principle. As Dr. Frost said: "Education is not a simple process of distributing information to everyone — it requires great teachers, like great parents, who care."<br>
+<strong>11. March with the people.</strong> "I don't march because I like it. I march because I must." Dick Ruch (former CEO of Herman Miller), during a tough time, moved his office onto the factory floor. Tom Peters calls this "managing by wandering around."<br>
+<strong>12. Negotiate and compromise.</strong> Great leaders learn to get what they need while meeting the needs of others — working for win-win agreements.<br>
+<strong>13. Understand human nature.</strong> "The soft-minded man always fears change. He feels security in the status quo, and he has an almost morbid fear of the new. For him, the greatest pain is the pain of a new idea." MLK understood the basic psychology of people. So did Joe Scanlon.<br>
+<strong>14–16. Preach hope and compassion; maintain a sense of urgency; work for the long haul.</strong> Great leaders sustain their people through difficulty by keeping hope alive and staying committed to the journey, not just the destination.</p>`
+  },
+  {
+    title: "Leadership is a Series of Conversations",
+    date: "February 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Understanding depends primarily on answering the 'why' questions. Why now? Why not? Why him/her?" <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Carl Frost</cite></blockquote>
+<p>In his consulting work, Dr. Carl Frost began every exploration with a simple, disarming question: <strong>"What day is it?"</strong> Executives were often momentarily frustrated, having expected a program or an answer. Slowly they realized the initiative had been given to them. The question became a fundamental and mutual learning experience.</p>
+<p>Margaret Wheatley writes that leadership is "an interactive conversation that pulls people toward becoming comfortable with the language of personal responsibility and commitment." Five principles for respectful conversations:</p>
+<p><strong>1.</strong> When peers connect, change happens. Effective coaching can happen on the dance floor of conversation.<br>
+<strong>2.</strong> It's OK to confront the other person with questions that seem awkward but set the stage for a respectful exchange: "What are you here for? How do you want to spend our time together?"<br>
+<strong>3.</strong> Conversations are not meant to be structured. Be open to conversations you are unprepared for, focused on the interests of the other person.<br>
+<strong>4.</strong> Allow time for the person to get to what's really important. Provide space for them to express doubts and fears — without taking on the responsibility to fix or debate the issue.<br>
+<strong>5.</strong> Personal transformation happens when the right questions get asked — not by providing answers. When you allow people to answer their own questions, they discover what they were not aware of and what is needed to move forward.</p>
+<p><strong>Questions to Ponder:</strong> How do questions (instead of answers) help others? Why are the right questions more important than the right answers?</p>`
+  },
+  {
+    title: "Survival: Stress — Part 1 (Self)",
+    date: "February 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Stress is like the tension on a violin string. You need enough tension so you can make music, but not so much that it snaps." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Anonymous</cite></blockquote>
+<p>According to Hans Selye, stress is "the nonspecific response of the body to any demand made upon it." All stress is not bad — every emotion, including joy, puts stress on the body. The absence of stress is death. The key is learning how to teach our brains to rethink.</p>
+<p>Human Synergistics has identified 18 ways of thinking that impact how we react to stress. This week: the <strong>Self Cluster.</strong></p>
+<p><strong>Self Image:</strong> The great Scanlon Leader D.J. DePree believed that people were either "ordinary" or "extraordinary" and chose to treat everyone as extraordinary. When you treat others this way, you build their self image. Negative self image is linked to reduced immunity, chest pains, sleeplessness, irritability, and at work, resistance to challenge and suppression of creativity.</p>
+<p><strong>Past View:</strong> "Some people face the past and back into the future." — Joe Scanlon. People who dwell on the past are less prepared to deal with the present and the future. Dr. Carl Frost's famous question "What Day is it?" was used to help individuals and groups with a negative past view refocus on the present.</p>
+<p><strong>Control, Approval, Growth, and Effectiveness</strong> also shape how we experience stress. The bottom line: <em>"Human beings by changing the inner attitudes of their minds can change the outer attitudes of their lives."</em> — William James</p>`
+  },
+  {
+    title: "Survival: Stress — Part 2 (Others)",
+    date: "February 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"A Leader's true love should be the people who do the work." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>The way we relate to others has a huge impact on our well-being. The <strong>Others Cluster</strong> has four domains:</p>
+<p><strong>Inclusion</strong> — feelings of being accepted or rejected by others. People who feel included and valued have a powerful buffer against stress. In Scanlon companies, there are many opportunities to be involved. Coordinators and Leaders can help simply by inviting the person who normally isn't included to serve on a committee or ad-hoc team.</p>
+<p><strong>Interpersonal</strong> — how comfortable you feel around other people. One key to interpersonal relations is the ability to listen. Good listeners are almost always considered good conversationalists.</p>
+<p><strong>Intimacy</strong> — how close or distant we feel toward others. Research has shown clearly that people with close relationships have a mighty buffer against stress. Intimacy is not sex — it may mean a touch, a hug, showing you care. Research has even shown that not touching infants is a major contributing factor to illness and death.</p>
+<p><strong>Trust</strong> — the extent to which you believe others are trustworthy. People who trust others can delegate, collaborate, and build the kinds of teams that make Scanlon work. Low trust produces isolation and chronic stress symptoms.</p>
+<p>Goethe wrote: "We ought not to isolate ourselves, for we cannot remain in a state of isolation. Social intercourse makes us the more able to bear with ourselves and others."</p>`
+  },
+  {
+    title: "Survival: Stress — Part 3 (Process)",
+    date: "February 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Take care of the means, and the end will take care of itself." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Mahatma Gandhi</cite></blockquote>
+<p>How we go about the tasks in our lives has a direct impact on our stress levels. The <strong>Process Cluster</strong> has five domains:</p>
+<p><strong>Receptiveness</strong> — whether you are closed or open to other people's ideas. People who aren't receptive often go "by the book," are stubborn, and are poor team members. Scanlon Leaders must be receptive for the Principle of Participation to succeed. As Max DePree wrote: "The art of Leadership is liberating people to do what is required of them in the most effective and humane way possible."</p>
+<p><strong>Synergy</strong> — whether you believe there is power in working with others. "Together we can achieve the impossible." — Joe Scanlon. Research shows that managers who do not believe in synergy have much more illness. Fundamentally, Scanlon is a belief in the power of people to cooperate. <strong>A good Scanlon Process can reduce stress by creating opportunities for people to experience the benefits of synergy.</strong></p>
+<p><strong>Cooperation</strong> — competitive vs. cooperative thinking. Joe Scanlon believed individual reward systems fostered internal competition. He believed group rewards kept focus on the external competition — the real challenge.</p>
+<p><strong>Time Orientation and Time Utilization</strong> — how well you balance urgency with planning. People who use time well experience less distress and accomplish more without burning out.</p>`
+  },
+  {
+    title: "Survival: Stress — Part 4 (Goals)",
+    date: "March 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Ask yourself frequently: What truly gives meaning to my life?" <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>The final installment on stress examines the <strong>Goals Cluster</strong> — how what we pursue (and how we pursue it) shapes our stress levels.</p>
+<p><strong>Satisfaction</strong> — the extent to which a person derives pleasure from intrinsically motivated goals. People who follow their inner voice, who have their own goals and pursue them, are less stressed than those motivated by material reward, status, or prestige. A life without meaning or satisfaction is a life of stress.</p>
+<p><strong>Directedness</strong> — whether you are goal-directed or goalless. Every self-help tradition from Dale Carnegie to Stephen Covey stresses the importance of setting goals. People who have goals and are pursuing them have less stress. At work, those without goals experience higher absenteeism, resist volunteering, and do not take initiative.</p>
+<p><strong>Expectations</strong> — whether goals are realistic or unrealistic. People whose expectations are unrealistic experience more stress. "There are two types of doers: those smart enough to know it can be done, and those too foolish to know it cannot."</p>
+<p><strong>Future View</strong> — whether you see possibilities or obstacles ahead. People with a hopeful, optimistic view of the future experience far less chronic stress — and are better equipped to help their organizations survive and adapt.</p>
+<p>The antidote to stress-producing thinking is not willpower — it's building a different set of habits around how you interpret your world. Scanlon Principles, practiced consistently, create exactly that kind of environment.</p>`
+  },
+  {
+    title: "The 50 Best Ways to Approach Life",
+    date: "March 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"I think the Scanlon kind of people don't live in quite as flat a universe as do other people." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Carl Frost</cite></blockquote>
+<p>This list is an excellent tool for a self-audit. Note the items you do well and the items that need improvement.</p>
+<p><strong>Self Esteem:</strong> You understand that no one is more important than you are — and no one is less important. You realize there are no mistakes in life, only lessons. You promote self-confidence in the people around you. You walk the talk.</p>
+<p><strong>Courage:</strong> You adapt to change quickly. You see problems and challenges, and press on with a smile. You take risks and deal with uncertainty.</p>
+<p><strong>Stress Management:</strong> You pace yourself. You learn from the past, plan for the future, and live in the present. You see finish lines rather than deadlines. You understand that life is 10% what happens to us and 90% how we react to it. You are able to live in peace with what you cannot change, have the courage to change what you can, and have the wisdom to know the difference.</p>
+<p><strong>Creativity:</strong> You nurture your sense of humor — "No humor, no creativity; know humor, know creativity." You say "What if...?" instead of "Yes, but..." You take life seriously, but yourself not at all.</p>
+<p><strong>Effectiveness:</strong> You are positive, professional, proactive, progressive, productive, and profitable.</p>
+<p><strong>Communication and Quality Relationships:</strong> You have two ears and one mouth, and you remember to listen twice as much as you talk. You are forgiving and compassionate. You are patient, kind, courteous, and considerate.</p>
+<p><strong>Questions to Ponder:</strong> Which of these do you do well? Which need improvement? Are there others you would add?</p>`
+  },
+  {
+    title: "Love @ Work — The Most Powerful Force in Business",
+    date: "March 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"A Leader's true love should be the people who do the work." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>Margaret Wheatley writes: "We are refocusing on the deep longings we have for community, meaning, dignity, purpose, and love in our organizational lives. As we let go of the machine model of organizations and workers as replaceable cogs, we begin to see ourselves in much richer dimensions — and hopefully design organizations that honor the great gift of who we humans are."</p>
+<p>Tim Sanders argues that <strong>the most powerful force in business isn't greed, fear, or competition — it's love.</strong> The world is now one where lousy people finish last. Two reasons: the abundance of choice means no one has to put up with a company they don't respect; and the "new telegraph" of email and the web makes it almost impossible for a noxious company to keep its sad reality a secret.</p>
+<p>Philosopher Milton Mayeroff's definition of love: <em>"the selfless promotion of the growth of the other."</em> In a professional context: love is the act of intelligently and sensibly sharing your knowledge, networks, and compassion with your business partners.</p>
+<p>Share your knowledge aggressively. Expand your network of people who share your values. Be as openly human as you can be. And behave this way not because you expect something in return — but because it's the right way to behave. <strong>The less you expect in return for acts of professional generosity, the more you will receive.</strong></p>`
+  },
+  {
+    title: "Investors in Tough Times — The Equity Principle",
+    date: "March 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Any business arrangement that is not profitable to the other person will in the end prove unprofitable for you. The bargain that yields mutual satisfaction is the only one that is apt to be repeated." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— B.C. Forbes</cite></blockquote>
+<p>Scanlon Practitioners believe that for a business to succeed over time, all key stakeholders must be satisfied. We depict this as a triangle — employees, customers, and investors — each constantly asking themselves: "Is my relationship with this company fair and equitable?"</p>
+<p>One lesson from the Enron collapse: it can be a huge investment disaster to have all your retirement savings in one company's stock. Employees were trapped as their investments disappeared.</p>
+<p>Most of us are not company owners, and so it can be hard to imagine the pressures investors face in tough times — or the role they play in sustaining communities. Many investors take very seriously their responsibility to maintain employment for their workers and the families dependent on their wages. Many pay the bulk of taxes that support the community. Many donate to charities, serve on school boards, and contribute in countless unseen ways.</p>
+<p>The Scanlon Equity Principle asks us to see the full picture — to understand the legitimate interests of investors alongside the interests of employees and customers. Equity is not about treating everyone the same. It is about treating everyone <em>fairly</em> — which sometimes looks quite different.</p>`
+  },
+  {
+    title: "Life is Change. Growth is Optional. Choose Wisely.",
+    date: "April 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Change is a universal given. Change is our only hope." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Carl Frost</cite></blockquote>
+<p>Scanlon Leaders believe that the ability to change and adapt is the key to personal, professional, and organizational survival. But people throughout the ages have always felt the pressure of change:</p>
+<p><em>"The world is too big for us. There is too much doing, too many crimes, casualties, violence, and excitements. It is an incessant strain to keep pace and still you lose ground."</em> — Atlantic Journal, <strong>1837.</strong></p>
+<p><em>"A new factor, that of rapid change, has come into the world. We have not yet learned how to adjust ourselves to its economic and social consequences."</em> — Harvard Business Review, <strong>1932.</strong></p>
+<p><em>"All is flux, nothing stays still."</em> — Heraclitus, <strong>500 BC.</strong></p>
+<p>Warren Bennis said: "I can't recall a period of time that was as volatile, complex, ambiguous and tumultuous." He then quoted Jack Welch: "If you're not confused, you don't know what's going on." See — you do know what's going on.</p>
+<p>Alvin Toffler estimated that of humanity's roughly 800 lifetimes of recorded history, 650 were spent in caves. Only in the last two lifetimes has anyone used an electric motor. The overwhelming majority of everything we use daily was developed in the 800th lifetime — ours.</p>
+<p><strong>Life is change. Growth is optional. Look at change as a chance to learn and grow, and you'll find yourself a survivor.</strong></p>`
+  },
+  {
+    title: "Non-Heroic Leadership — The Power of the Average Person",
+    date: "April 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"To lead the people, walk behind them." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Hugh DePree</cite></blockquote>
+<p>When we think of times of crisis, we think of great leaders. But we rarely think of the thousands of people toiling in the trenches. D-Day required brilliant planning from Eisenhower — but those who have studied the event often credit the thousands of soldiers on the ground. Many of the best plans did not work. Small teams working together pulled off the invasion.</p>
+<p>There are dangers in hero worship. If we only focus on the leader, we may not provide followers with the recognition and resources they need. We can see the leader myth in action when we look at the growing gap between top leader compensation and front-line compensation — K-Mart executives receiving giant bonuses while average workers are denied severance as stores close.</p>
+<p>The great Scanlon Leaders Hugh and Max DePree recognized this early at Herman Miller. They required that the top leader's salary and the lower-level salaries be linked — as the top rose, so did wages below. They honored long-service employees with the "water carrier tradition," engraving names on a statue in the corporate courtyard, and ensured all workers would receive a golden parachute in the event of a merger.</p>
+<p>Albert Schweitzer, one of the most genuinely heroic figures of the 20th century, wrote in his autobiography: <em>"Of all the will toward the ideal in mankind, only a small part can manifest itself in public action. All the rest must be expressed in small and obscure deeds."</em> <strong>The signs of outstanding leadership are found among the followers.</strong> — Max DePree</p>`
+  },
+  {
+    title: "Faith at Work — Meaning, Purpose, and the Scanlon Tradition",
+    date: "April 2002",
+    body: `<p>Many of the great Scanlon Leaders had a very deep religious faith. John Donnelly was studying for the priesthood when called home to lead the family business. D.J. DePree, founder of Herman Miller, was a top leader in the Gideons. Dr. Carl Frost and Max DePree credit their faith with guiding many of their decisions.</p>
+<p>Joe Scanlon's faith seemed to be an instinctive humanism — a belief in the worth of people. The Scanlon Leadership Network is nondenominational. Yet as we look at the great Scanlon Leaders, it is clear that faith has been an important part of their development. Faith and meaning are two important human needs that do not stop when a person comes to work.</p>
+<p>Fortune magazine reported that baby boomers turning 50 want their work to deliver more than a paycheck. They are anxious to know what really matters. As our knowledge grows, we realize there is more we don't know — more knowledge leads us to search for more meaning in our personal and professional lives.</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Why would we want to look for God in our work? The simple answer is most of us spend so much time working, it would be a shame if we couldn't find God there. There is a creative energy in work that is somehow tied to God's creative energy. If we can understand that connection, perhaps we can use it to transform the workplace into something remarkable." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Gregory Pierce, author of Spirituality@Work</cite></blockquote>
+<p>Scanlon provides meaning by showing leaders a way that they can serve others — and by reinforcing the belief in the worth of every person.</p>`
+  },
+  {
+    title: "Pointed in the Same Direction — Making Goals Visible",
+    date: "May 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The first job of a leader is to define reality. The last is to say thank you. In between, a leader must be a servant and a debtor." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>One way to survive in tough times is to make sure that everyone is pointed in the same direction. During tough times — especially when layoffs are involved — it is natural for people to worry about their jobs, question the value of others, and protect their turf. Just when people need to work together the most, they end up going off in different directions.</p>
+<p>A typical problem with plans is that once they are created, they get buried in a file. Most people in the organization either don't know what the plan says or don't know how the plan is progressing.</p>
+<p><strong>Landscape Forms solved this brilliantly</strong> — they turned their annual plan into a giant wall poster. Office employees as well as factory employees see the plan every time they walk down the hall. As objectives are met, they are noted on the plan. This allows everyone in the organization to see the big picture of where the organization wants to go and how it is progressing. According to Becky Fulgoni, VP for People at Landscape Forms, another benefit was that it forced leadership to be clear and succinct in their planning.</p>
+<p><strong>Questions to Ponder:</strong> How does your organization help point people in the same direction? What could you do today to help people better understand reality?</p>`
+  },
+  {
+    title: "Hardy People — The 3 C's of Stress Resilience",
+    date: "May 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The ancestor of every action is thought." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Ralph Waldo Emerson</cite></blockquote>
+<p>Research shows that some people seem to thrive in high-stress environments while others sicken. While genetics, exercise, and diet play a role, the main difference between hardy personalities and those who get sick is <strong>the difference in the way they think.</strong></p>
+<p>Hardy personalities practice the <strong>3 C's</strong> — and the Scanlon Process directly supports all three:</p>
+<p><strong>Change:</strong> They view change as a challenge, not something to be feared. Scanlon teaches us to embrace change as a constant and to build the organizational capacity to adapt.</p>
+<p><strong>Commitment:</strong> They are engaged in life. They have something they are committed to. Scanlon fosters commitment — and commitment is the process that creates competence. People need a reason for living, something worth their time and energy.</p>
+<p><strong>Control:</strong> Hardy personalities believe their effort makes a difference. They believe they have control and are not just a victim of luck or fate. The Scanlon Identity and Participation Principles help people take meaningful control of their work lives.</p>
+<p><strong>Scanlon helps reduce stress</strong> by building exactly this kind of hardy culture — one where people understand the business, contribute to it, and see the connection between their effort and results.</p>`
+  },
+  {
+    title: "Stand on the Shoulders of Giants",
+    date: "May 2002",
+    body: `<p>One of the unique opportunities that human beings possess is the opportunity to learn from others on the road of life. Through language — both spoken and written — we can learn from others and "stand on the shoulders of giants." No matter what stress we may be under, odds are someone in some other time and place dealt with the same issue, or maybe something even harder. All people experience stress, pain, and sorrow sometime in their lives. The giants are able to see beyond their suffering and lead the way.</p>
+<p>Helen Keller lost both her sight and hearing due to illness when she was young. Despite her handicaps she led a rich and useful life. Her words speak directly to the Scanlon spirit:</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"I am only one, but I am still one. I cannot do everything, but I can do something. I will not refuse to do the something I can do." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Helen Keller</cite></blockquote>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"So I try to make the light in other's eyes my sun, the music in other's ears my symphony, the smile on other's lips my happiness." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Helen Keller</cite></blockquote>
+<p><strong>Questions to Ponder:</strong> Who are the giants you admire? What makes them giants in your mind? What can you learn from your giants?</p>`
+  },
+  {
+    title: "Lessons from the 2002 Conference — Survival: The Scanlon Way",
+    date: "May 2002",
+    body: `<p>Over 400 Scanlon practitioners gathered in Grand Rapids for the 38th Annual Scanlon Conference. Here are the key lessons that emerged:</p>
+<p><strong>"There is no limit to the creativity of people who are given the opportunity to exercise their creativity."</strong> We were able to see this in the skits, workshops, and presentations. People rise to the occasion when trusted to contribute.</p>
+<p><strong>"We cannot change the direction of the wind, but we can adjust our sails and steer to safety."</strong> Randy Straka gave a powerful speech demonstrating his humanity and a deep understanding of the leadership skills needed in tough times.</p>
+<p><strong>"Scanlon Principles help us survive."</strong> Myron Marsh showed how the Principles help us in tough times as well as good times. The framework of Identity, Participation, Equity, and Competence is not just for prosperity — it is the structure that makes organizations resilient.</p>
+<p><strong>"I am strong and I'm worthy."</strong> Virginia Evans demonstrated that our "self-talk" is powerful and impacts everyone around us. The stories we tell ourselves about our capabilities shape what we and our organizations can become.</p>
+<p><strong>Scanlon is growing.</strong> New companies, new consultants, new energy — and the 50th year of Scanlon at Donnelly Corporation. The tradition that Joe Scanlon began at MIT in the 1940s continues to find new life in organizations willing to genuinely trust their people.</p>`
+  },
+  {
+    title: "What We Learned at Sears — Research on the Scanlon Plan",
+    date: "June 2002",
+    body: `<p>Sears has a long history with incentive systems. Profit sharing did not produce "a clear line of sight" for the average associate. A gainsharing experiment contributed to a major scandal in Sears auto repair facilities — mechanics were rewarded for the number of things repaired, and some repaired things that were not broken. With a new CEO and a mandate for change, Sears explored other approaches and found their way to Herman Miller and the Scanlon Leadership Network.</p>
+<p>Sears began experimenting with "Goalsharing" — their version of the Scanlon Plan. Because the retail industry has turnover rates often exceeding 50%, they needed new ways to teach. They developed Sears University and several "learning maps." They also developed excellent customer and employee satisfaction measures.</p>
+<p>Because goalsharing was not mandatory and Sears is a large organization, they were able to compare goalsharing units to a control group. <strong>Here is what they found:</strong></p>
+<p>• Within the first year, goalsharing impacted employee and customer satisfaction positively.<br>
+• Within three years, there was also a positive impact on financial performance.<br>
+• Goalsharing units exceeded control stores on customer satisfaction, employee satisfaction, <em>and</em> financial performance.<br>
+• The positive change in employee satisfaction occurred mostly because of the high level of satisfaction of design team members — suggesting the participative installation process is critical.<br>
+• Even when Scanlon exceeds other methods and produces documented results, it can fall victim to corporate restructuring.</p>
+<p>The research was nearly lost when A. Martinez left Sears and massive layoffs followed. It stands as a rare controlled study validating what Scanlon practitioners have known for decades.</p>`
+  },
+  {
+    title: "Winning with Low Turnover — What Basketball Teams Teach Business",
+    date: "June 2002",
+    body: `<p>Many Scanlon organizations use teams to increase participation. Research published in the Academy of Management Journal shows just how much continuity matters to team performance.</p>
+<p>Researchers compared the records of 23 NBA teams from 1980 to 1994, measuring both overall tenure on the team and actual on-court minutes to calculate "shared experience." Adjusting for player quality and age, they found that <strong>teams with low turnover tended to improve their win-loss records significantly.</strong></p>
+<p>One striking finding: member stability gave a big boost even to <em>losing</em> teams, which presumably had little incentive to stay with their old rosters. Teams with more losses than wins won an average of <strong>5.7 more games</strong> the following year if their shared experience rose — but only <strong>1.2 more games</strong> if they had shuffled their rosters. Teams that stayed together played a lot better together.</p>
+<p>The business parallel is clear. When people work together over time, they develop the kind of tacit knowledge, trust, and coordination that can't be hired or mandated — it can only be grown. High turnover destroys exactly the organizational competence that Scanlon is designed to build.</p>
+<p><strong>Questions to Ponder:</strong> Do you know the true cost of turnover to your teams? How can you reduce turnover and build the shared experience that leads to sustained performance?</p>`
+  },
+  {
+    title: "The Beliefs of Dick Ruch — A Life of Integrity at Herman Miller",
+    date: "July 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Integrity is the essential quality that determines, defines, articulates and implements justice." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Dr. Carl Frost</cite></blockquote>
+<p>Dick Ruch served for many years at Herman Miller and was the first recipient of the Scanlon Stewardship Award. During tough times in 1971, when he was leading Herman Miller, he felt it was important that people understood his management beliefs — so he wrote them down and distributed them to all employees.</p>
+<p>Every leader must decide what they believe. It is the first step in leading a life of integrity.</p>
+<p><strong>Dick Ruch's Beliefs:</strong></p>
+<p>I believe management should be based on caring or love for people.<br>
+I believe in the value of each person — the diversity of gifts idea.<br>
+I believe each of us must take a stewardship responsibility for the gifts we have been given.<br>
+I believe in hard work and commitment to a cause.<br>
+I believe in our responsibility to and for each other.<br>
+I believe every person can change for better or for worse.<br>
+I believe in the power of the group to be synergistic and to accomplish more than individuals working alone.<br>
+I believe in results.<br>
+I believe in servant leadership.<br>
+I believe good managers develop strong trust relationships with others.<br>
+I believe we must avoid thinking we have all the answers.</p>
+<p><strong>Questions to Ponder:</strong> What are your beliefs? Are they conspicuous and known to others? Are your organization's beliefs practiced — and can they create competitive advantage?</p>`
+  },
+  {
+    title: "The Beliefs of Hugh DePree — Business as Unusual",
+    date: "July 2002",
+    body: `<p>Hugh DePree was CEO of Herman Miller and a Scanlon Steward. He lived a life of integrity and service. His book <em>Business as Unusual</em> describes the early days of Herman Miller, his philosophy about leadership, and his faith in the Scanlon Process. Hugh believed "the faithful stewardship of talents and resources will change the world."</p>
+<p>Conspicuous personal values matter to Scanlon Leaders for at least two reasons: they are a fundamental building block of a life of integrity, and they are a fundamental requirement for being a servant leader. Followers choose who they will allow to lead them. They want to know if your values and their values are compatible. They watch to see if your behaviors match your values.</p>
+<p><strong>The Beliefs and Values of Hugh DePree:</strong></p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">To lead the people, walk behind them.<br><br>
+A leader offers the people the gift of dignity.<br><br>
+Implicit in the idea of leadership is the concept of service — it is through serving that one leads.<br><br>
+Excellence is not the exclusive realm of an elite group. Managing through the Scanlon Plan extends the principle of excellence to every activity in the company and fosters it through every degree of ability.<br><br>
+People need to be needed, want to be productive, need to be responsible, have the right to know, and need and want to own the problem. The Scanlon Plan can answer such needs.<br><br>
+Trust is the father of openness — and openness demands a commitment to believing that there is usually someone close to the problem who is able to solve it, or someone close to the opportunity who is able to exploit it.</blockquote>
+<p><strong>Questions to Ponder (from Hugh DePree's <em>Business as Unusual</em>):</strong> Who are we? What are we good at? What should we be doing for society? What difference can we make?</p>`
+  },
+  {
+    title: "Leaders and Followers — 45 Years at Herman Miller",
+    date: "July 2002",
+    body: `<p>Dick Ruch, the first recipient of the Scanlon Stewardship Award and known as "Mr. Scanlon" by the Herman Miller workforce, distilled 45 years of management experience into a book. Here are some of the central themes:</p>
+<p><strong>Why people work:</strong> People seek meaningful work. This is the foundation — without understanding this, no management system can succeed.</p>
+<p><strong>Whose company is it?</strong> It is important for everyone to "own" the company. A young man asked a wise one: "What shall I do to get the most for what I spend?" The wise one answered: "Look for the priceless ingredient — the honor and integrity of him who makes it. Consider the name before you buy."</p>
+<p><strong>No leader can do it themselves.</strong> The ultimate leader is willing to develop people who will be able to surpass her or his own abilities. Good leaders attract competent and committed people — and then get out of their way.</p>
+<p><strong>On equity and CEO compensation:</strong> "Executive pay is not rational to most employees." — Dr. Carl Frost. The gap between executive and front-line compensation is not just an equity issue — it is a trust issue that directly undermines the participative culture Scanlon is designed to build.</p>
+<p><strong>On people:</strong> People are in a state of becoming. Theory Y is not naive — it is the accurate view of human potential. Paternalism must be replaced by self-reliance. The worker and the workplace deserve mutual respect.</p>`
+  },
+  {
+    title: "Equity: Who Comes First — Customers, Employees, or Investors?",
+    date: "August 2002",
+    body: `<p>The Scanlon Equity Principle is depicted as an equilateral triangle. At the tips we normally include customers, investors, and employees. Several Scanlon companies also include suppliers and community as key stakeholders.</p>
+<p>Three compelling arguments — each made by serious Scanlon thinkers — place a different stakeholder at the top:</p>
+<p><strong>The customer comes first.</strong> Dick Ruch argues that without customers, there can be no employees and no return to investors. Companies that do not satisfy customers go out of business. Dr. Frost in <em>Changing Forever</em> also depicts the customer at the top.</p>
+<p><strong>The employee comes first.</strong> Bobby & Steve's Auto World — widely benchmarked for world-class customer service in the Twin Cities — focuses not on the customer but on "the Associate." Unless employees are happy and productive, there can be no customer service. Research at Sears supports this: value is created best by satisfying the employee who satisfies the customer who then satisfies the investor.</p>
+<p><strong>The investor comes first.</strong> It is the investor's money that creates the company that hires the employee who is then able to satisfy the customer. Focusing on profit and return disciplines the entire system.</p>
+<p>Dwane Baumgardner, CEO of Donnelly, says Scanlon people are <strong>"balancers"</strong> — operating with the tension of satisfying multiple stakeholders. No one stakeholder is more important. All are needed. All have unique needs and expectations. The triangle's power is not in the hierarchy — it is in the balance.</p>`
+  },
+  {
+    title: "Labor Day — A Tribute to the Workers Who Built Our World",
+    date: "August 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"What we are trying to say is simply this: that the average man knows his own job better than anyone else and there are a great many things that he could do if he has a complete understanding of what is necessary. Given this opportunity of expressing his intelligence and ingenuity, he becomes a more useful and more valuable citizen in any given community or in any industrial operation." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Joe Scanlon</cite></blockquote>
+<p>Samuel Gompers, founder of the American Federation of Labor, said of Labor Day: "All other holidays are in a more or less degree connected with conflicts and battles of man's prowess over man, of strife and discord for greed and power. Labor Day is devoted to no man, living or dead, to no sect, race, or nation."</p>
+<p>Labor Day is dedicated to the social and economic achievements of workers — a yearly national tribute to the contributions workers have made to the strength, prosperity, and well-being of our country.</p>
+<p>Don Barkman offered this vision of the Equity Triangle: <em>"The triangle is like a tumbleweed. It is forever turning. At one moment the customer is on top, the next the employee, then the investor — and on and over it goes. At times it comes to rest with one on top, but the relentless winds of change blow ever forward and the weed shakes and moves and the cycle repeats in endless variations."</em></p>
+<p><strong>Questions to Ponder:</strong> Who made and processed the food for your picnic? Who constructed the highway that takes you to the cottage? Who built the car you ride in? Who is working to keep you safe while you celebrate? How do you honor the unnamed workers whose labor has made your life better?</p>`
+  },
+  {
+    title: "Superstitions and Cause-and-Effect Thinking",
+    date: "September 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"When you believe in things that you don't understand, then you suffer... Superstition ain't the way." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Stevie Wonder</cite></blockquote>
+<p>What does a superstition have to do with Scanlon? More than you might think.</p>
+<p>Psychologists have studied high-achieving individuals and found a universal trait they possess: <strong>cause-and-effect thinking.</strong> High achievers do not believe they are governed by luck, fate, chance, or magic. Instead they strive to understand and predict events using logic. They believe their effort makes a difference.</p>
+<p>They use what some call "the scientific method" — learning to predict events by forming a hypothesis, conducting a test or experiment, and observing what actually happens. In a study of Toyota and "Lean Manufacturing," researchers concluded that the DNA of lean is in reality the way Toyota helps employees use the scientific method to improve.</p>
+<p>It is only a small step from believing that Friday the 13th is bad, to believing that "my efforts don't make a difference" — to believing "there is no way we can improve productivity or quality." The Scanlon Principles of Identity and Participation directly address this: they give people the information and the mechanism to act — and to see the results of their actions.</p>
+<p><strong>Questions to Ponder:</strong> How do superstitions — or "fixed mindsets" — limit you personally, professionally, and organizationally? How can Identity and Participation help people develop cause-and-effect thinking?</p>`
+  },
+  {
+    title: "The Common Good — Leadership, Equity, and Corporate Responsibility",
+    date: "September 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"We're seeing a movement among leaders in American corporate life toward individualism, and to me this signifies less concern for the common good. You see this when leaders place their own interest above all other stakeholders — for instance with extravagant severance packages even for executives who have performed poorly." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Max DePree</cite></blockquote>
+<p>On a study tour of Japan near Hiroshima, visiting Mazda, what was most impressive was how workers and leaders worked together. The managers explained how they had built that trust:</p>
+<p><strong>First,</strong> the leaders viewed the workers as the most important part of the plant. In tough times, the first people to experience pay cuts were the leaders. They reasoned that since they made the most money, it only made sense that they would take the largest hit.</p>
+<p><strong>Second,</strong> they felt responsible for the health of the organization. They believed it was their decisions that frequently determined whether the company was profitable.</p>
+<p><strong>Third,</strong> they limited the most visible executive perks. They had offices near the workers, did not wear suits and ties, wore company uniforms, and ate in the same cafeterias.</p>
+<p>When Mazda's rotary engine launch failed during the OPEC oil embargo, Mazda leaders took workers off the line and made them door-to-door car salesmen — saving jobs, helping save the company, and discovering that some of their best salespeople were autoworkers. FYI: the Japanese learned to manage this way by studying the work of Joe Scanlon.</p>
+<p>During Max DePree's tenure as CEO of Herman Miller, he capped his pay so it would not exceed 20 times the pay of the lowest-paid workers. Today's executives are frequently paid over 500 times that amount. <strong>"When leaders indulge themselves with lavish perks and the trappings of power, they are not showing appropriate restraint, and they are damaging their standing as leaders."</strong> — Max DePree</p>`
+  },
+  {
+    title: "The Common Good — A Case Study: National Manufacturing",
+    date: "September 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Folks are saying, OK this is a lousy thing to have happen, but it's being dealt with in a fair way." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Keith Benson, CEO, National Manufacturing</cite></blockquote>
+<p>National Manufacturing, a 100-year-old firm in Sterling, Illinois, faced a crisis when a major customer demanded exclusivity. Not willing to put all their eggs in one basket, National said no — and promptly lost about $6 million in profits. Here is how the Scanlon Principles guided their response:</p>
+<p><strong>Identity:</strong> Leadership promptly informed the entire workforce of the problem and why they had made the decision they did. In frequent communications, leadership explained "what day it was" at National.</p>
+<p><strong>Participation:</strong> Everyone got into the act. The sales force went after new business and brought in $9 million toward a goal of $13 million. Other employees identified areas of waste and cost savings. Over $3 million in permanent annual cost reductions were made. Employees continued lean initiatives to drive out waste.</p>
+<p><strong>Equity:</strong> Investors gave up dividends. Executive bonuses were eliminated. Some employees took early retirement. Jobs were rearranged so that sacrifice was shared.</p>
+<p><strong>Competence:</strong> National continued to invest in increasing competence. Employees were trained in a new Scanlon participation process built around area teams.</p>
+<p><strong>Result:</strong> In less than one year, working together, National returned the $6 million back to their bottom line — while many of their competitors moved production to Asia.</p>`
+  },
+  {
+    title: "How to Make Gainsharing Successful — 14 Lessons from the Field",
+    date: "October 2002",
+    body: `<p>Based on experience at 17 different facilities, consultant Robert Masternak identified 14 critical success factors for gainsharing. Here they are, with Scanlon commentary:</p>
+<p><strong>1. Customize the plan.</strong> One size does not fit all. Dr. Frost taught us that each company is unique.<br>
+<strong>2. Use a design team.</strong> No individual, no matter how smart, will come up with a plan as good as the one a design team creates. The design team becomes the sales force for the plan.<br>
+<strong>3. Put the bonus formula in perspective.</strong> Beginners always focus on the formula. Many different types of formulas will work.<br>
+<strong>4. Establish fair baselines.</strong> Baselines need to be fair to the customer, employees, and investors.<br>
+<strong>5. Provide for ongoing employee involvement.</strong> Participation is what drives successful gainsharing — not greed.<br>
+<strong>6. Communicate often.</strong> People need to know what is going on (Identity) before they can truly participate.<br>
+<strong>7. Give frequent recognition.</strong><br>
+<strong>8. Get the timing right.</strong> It is easier to implement gainsharing when business conditions are favorable.<br>
+<strong>9. Make the plan dynamic.</strong> Things need to be flexible — change is a given.<br>
+<strong>10. Lavish the training.</strong> Competency makes all the other Principles easier to practice.<br>
+<strong>11. Know that money matters.</strong> As plans mature, larger bonuses may be needed to sustain attention.<br>
+<strong>12. Pay often.</strong> Monthly is better than quarterly, which is better than yearly.<br>
+<strong>13. Build pervasive commitment.</strong> Commitment at all levels is the key to success.<br>
+<strong>14. Success breeds success.</strong> Don't focus only on what is wrong — celebrate what is right.</p>`
+  },
+  {
+    title: "Respect — The Fifth Scanlon Principle",
+    date: "October 2002",
+    body: `<p>Spring Engineering and Management added a fifth principle to the four Frost/Scanlon principles: <strong>Respect.</strong> Despite years of manufacturing recession, eliminated bonuses, wage freezes, and layoffs, Spring's employee satisfaction survey scored higher than ever — and higher than any other Scanlon company that had taken the survey.</p>
+<p>Isabel Myers, creator of the Myers-Briggs Type Indicator, was once asked the best way men could help children. She said: "Love and respect their mother." The same philosophy applies at work:</p>
+<p>What is the best way to help employees? <em>Respect their supervisors.</em><br>
+What is the best way to develop supervisors? <em>Respect their managers.</em><br>
+What is the best way to develop managers? <em>Respect their executives and boards.</em></p>
+<p>At Buick City, a participative team-based plant where the leadership team was in conflict and the Union had issued an ultimatum — "Get your act together or we will not support the team concept" — the key to turning things around was developing respect for each other. <strong>You don't have to like someone to show them respect. When you learn to show respect, eventually it becomes a habit.</strong></p>
+<p>At the NUMMI Toyota-GM joint venture, after a heated argument in a staff meeting full of personal attacks, the Japanese manager said quietly: "There are no SOBs working here." From then on, staff meetings were held with respect. The result: one of the highest-quality GM cars ever produced, and a 15% increase in Buick's market share.</p>`
+  },
+  {
+    title: "A Credo for Respect — Relationships Built on Mutual Dignity",
+    date: "October 2002",
+    body: `<p>Dr. Thomas Gordon, founder of Gordon Training International, spent a lifetime helping people understand how to better relate to others. His <em>Credo for My Relationships With Others</em> is a foundational document for any Scanlon leader:</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">You and I are in a relationship, which I value and want to keep. Yet each of us is a separate person with unique needs and the right to meet those needs.<br><br>
+When you are having problems meeting your needs I will listen with genuine acceptance so as to facilitate your finding your own solutions instead of depending on mine. I also will respect your right to choose your own beliefs and develop your own values, different though they may be from mine.<br><br>
+However, when your behavior interferes with what I must do to get my own needs met, I will tell you openly and honestly how your behavior affects me, trusting that you respect my needs and feelings enough to try to change the behavior that is unacceptable to me.<br><br>
+At those times when one of us cannot change to meet the other's needs, let us acknowledge that we have a conflict and commit ourselves to resolve each such conflict without either of us resorting to the use of power to win at the expense of the other's losing. So let us always strive to search for a solution that will be acceptable to both of us. Your needs will be met, and so will mine — neither will lose, both will win.</blockquote>
+<p><strong>Questions to Ponder:</strong> What is your own credo for relationships with others? How can respect create better relationships — personally, professionally, and organizationally?</p>`
+  },
+  {
+    title: "Trust — The Foundation of Great Organizations",
+    date: "November 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Scanlon believed that the typical organization did not elicit the full potential from employees. He felt that employee interest and contribution could best be stimulated by providing the employee with a maximum amount of information about company problems and successes, and by soliciting his contribution as to how he felt the problem might best be solved." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Lesieur and Puckett</cite></blockquote>
+<p>A recent study of 13,000 employees found fewer than two out of five have trust in their senior leaders. The public ranked business leaders below used car salesmen on trust. The lack of trust is truly a nightmare — and it is measurable: the 100 Best Companies to Work For delivered a 1,289% return over ten years compared to 346% for the S&P 500.</p>
+<p>Employees in a study of 3,000 workers identified five elements of trust they care about most: <strong>Openness</strong> (freely expressing opinions and receiving information); <strong>Consistency</strong> (words that match deeds); <strong>Autonomy</strong> (being trusted to use their own judgment); <strong>Feedback</strong> (having supervisors stand behind employee decisions); and <strong>Shared values</strong> (understanding management's expectations).</p>
+<p><strong>A 12-step program to rebuild trust:</strong> Get leaders in front of people. Avoid spin — don't shade the facts. Tell the news you have, even bad news. Connect with all stakeholders. Offer dialogue, not memos. Balance high-tech with high-touch. Listen. Communicate and involve more — not less. When you feel like you've told your story over and over, you're on target. Remind people of the fundamentals — repeat <em>why</em> you are in business.</p>`
+  },
+  {
+    title: "Employee Engagement — The Emotion-Driven Economy",
+    date: "November 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"All too often the Scanlon Plan is thought of only as a device for increasing motivational forces arising from economic needs. As Scanlon emphasized, however, the plan requires the development of an interaction-influence system in which ideas for developing better products and reducing costs can flow readily, be assessed, improved, and expeditiously applied." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— R. Likert, The Human Organization</cite></blockquote>
+<p>Great organizations have discovered a secret: they connect with their employees and customers on an <strong>emotional level.</strong> When that happens, customers return because of the way they feel — they are not merely loyal, they are emotionally engaged. And engaged employees, utilizing their natural talents, provide an instant and constant competitive edge.</p>
+<p>Just about every possible source of traditional competitive advantage has been maxed out. Price matters less. Products are more similar. What remains is the quality of human relationships — with employees and with customers. The economy of emotional engagement is much bigger than the economy of reason.</p>
+<p>Great organizations do not treat employees as mini-computers whose every action can be calculated in advance. They have turned from the "hard" view of people responding like machines to the "soft" side of human nature, guided by emotions. <strong>Engaging both employees and customers emotionally is the approach that steers organizations toward greatness.</strong></p>
+<p>This is exactly what Scanlon has been teaching for decades — that the worth of every person is real, that participation is not a gimmick but a source of genuine competitive power, and that how people <em>feel</em> at work determines what they are capable of achieving.</p>`
+  },
+  {
+    title: "Employee Engagement — Re-Igniting the 55% Who Are 'Checked Out'",
+    date: "November 2002",
+    body: `<p>Gallup research indicates that <strong>55% of employees are "not engaged"</strong> in their jobs — essentially checked out, sleepwalking through their workday, putting in time but not energy or passion. Only about 20% are actively engaged. The remaining 25% are actively disengaged — stuck in reverse and dead set on dragging others down with them.</p>
+<p>Not-engaged employees are different from actively disengaged ones. They don't necessarily have a negative attitude — they simply don't feel a connection with their company, their manager, or their coworkers. They don't feel a sense of achievement. They become fixated on the steps of their role instead of the outcomes, doing the minimum to get by.</p>
+<p>The level of engagement in your employees can be a good indication of where your company stands in the implementation of the Scanlon Principles. Engagement takes traditional Scanlon goals — employee commitment and involvement — and views them through the lens of energy and passion.</p>
+<p><strong>How can managers re-engage "not engaged" employees?</strong> Start with a dialogue about the expectations of the role. Ask them: "What are the outcomes you are supposed to achieve? What were you hired to do? How do you contribute to making this a great place to work? Are you creating engaged customers?" Managers must provide expectations, clarification, and measurement — and help employees stop using a microscope to view their work and start seeing the broader picture they are part of.</p>`
+  },
+  {
+    title: "In Support of Association — The Myth of the Self-Made Person",
+    date: "December 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The Scanlon Plan attempts to exploit the possibilities of participation AND distribute the benefits among all. It does not pussyfoot." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Robert T. Golembiewski, Men, Management, and Morality, 1965</cite></blockquote>
+<p>Occasionally I encounter a person who believes they are "self-made" — who speaks with pride about succeeding without help from anyone. Of course, this is a complete fantasy. Every human being at least owes their existence to their parents and the caretakers who raised them from infancy.</p>
+<p>Beyond these basics, the "self-made" person usually drives a car assembled by someone else, using gasoline refined by someone else, over roads made by someone else. They live in a house constructed by someone else and eat food grown by someone else. In no time in history have people been more interdependent. By working together and cooperating, human beings have survived and created a much higher standard of living than any individual could.</p>
+<p>The Scanlon Leadership Network was created in 1964 when several companies decided to cooperate and learn together. Few companies make it on their own. Just like individual leaders, most successful companies have learned the power of association.</p>
+<p><strong>Steps to improve your associations with others:</strong> Take time to listen. Find others who do a job similar to yours and agree to share information. Become active in your profession's association. In the associations you belong to, take an active leadership role.</p>`
+  },
+  {
+    title: "The Importance of a Written Plan — Covenant, Not Contract",
+    date: "December 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"The best way to become acquainted with a subject is to write a book about it." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Benjamin Disraeli</cite></blockquote>
+<p>Many organizations document their Scanlon process in a written plan. In many ways the plan becomes the "Constitution" and the design process the "Constitutional Convention" of a Scanlon company. The written plan and the process used to write it is a major difference between a Scanlon company and most non-Scanlon companies.</p>
+<p>When a company follows the roadmap, there are a series of secret ballot votes that ultimately result in an "ad-hoc" design team creating the plan document. Typically organized around the four Scanlon Principles, the document covers how information will be shared (Identity), how the involvement system will work (Participation), how the bonus plan works (Equity), and how employees access resources to improve their skills (Competence). When finished, it is signed by all team members, shared with all employees, and voted in — typically requiring 80–90% approval.</p>
+<p>I believe a written Scanlon Plan, if written in the same spirit as a Constitution, has a powerful positive impact. It is a democratic undertaking that forces a company to think through and integrate a number of practices and systems into a positive whole. It involves a large number of people in creating workplace systems they will use to govern themselves.</p>
+<p><strong>A written plan becomes a problem when:</strong> it tries to cover too much; it is not shared or updated; it becomes a "contract" instead of a "covenant"; it is written by a few people with little input; or it is copied from another company without customization.</p>`
+  },
+  {
+    title: "How Does Scanlon Differ from Good Management?",
+    date: "December 2002",
+    body: `<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"There is no unique opportunity in management; only the daily need to watch things run. Leadership is all about realizing the unique chance to change and accepting the once-in-a-lifetime opportunity to lead and the critical responsibility for enabling the members to achieve change." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Carl Frost</cite></blockquote>
+<p>When Joe Scanlon discovered the power of participation and cooperation, it was not considered good management — early adopters were often ridiculed. It is a tribute to Scanlon's genius that today many managers share information, involve employees, create equity systems, and encourage continuous learning. More and more of the business world is concluding that good management is Scanlon management.</p>
+<p><strong>Scanlon as leadership:</strong> Scanlon Leaders believe that leadership is an opportunity to serve others and to help others adapt and change. This is still a rare concept in business — and a major difference between Scanlon organizations and typical business organizations.</p>
+<p><strong>Scanlon as "open source" philosophy:</strong> Joe Scanlon never copyrighted or trademarked his work. Other gainsharing systems are trademarked; other management systems are promoted by consultants. Scanlon is a collection of ideas created and refined by its users — more flexible and less costly to implement than most other systems.</p>
+<p><strong>Scanlon as philosophy and systems:</strong> From the very beginning, Scanlon has been both a philosophy about people and systems that enable the philosophy to succeed. Very few other philosophies are as well developed, and very few have effective systems linked to them. This is a major differentiator.</p>
+<p><strong>Scanlon has been tested:</strong> In study after study, independent researchers have documented the effectiveness of the Scanlon approach. Many popular management philosophies have never faced the same research scrutiny.</p>`
+  },
+  {
+    title: "Building a Vision and Mission from Core Values",
+    date: "January 2003",
+    body: `<p>The fundamental distinguishing dynamic of enduring great companies, according to Jim Collins, is that they <strong>preserve a cherished core ideology while simultaneously stimulating progress and change in everything that is not part of the core ideology.</strong></p>
+<p>They understand the difference between what should never change and what should be open for change — between what is truly sacred and what is not. By being clear about what should never change, they are better able to stimulate change and progress in everything else.</p>
+<p>A well-conceived vision consists of two major components:</p>
+<p><strong>Core Ideology = Core Values + Core Purpose.</strong> Core values are the organization's essential and enduring tenets — timeless guiding principles that require no external justification. Core purpose is the organization's fundamental reason for being, reflecting the importance people attach to the company's work and its deeper reasons for existence beyond just making money.</p>
+<p><strong>Envisioned Future = BHAG + Vivid Descriptions.</strong> A BHAG ("Big Hairy Audacious Goal") is a 10-to-30-year objective — like a big mountain to climb — that serves as a unifying focal point of effort. A vivid description translates the vision from words into pictures, creating an image that people can carry in their heads.</p>
+<p>Sony in the early 1950s set a BHAG to become the company most known for changing the worldwide image of Japanese products as being of poor quality. Their core purpose: "to experience the sheer joy of innovation and the application of technology for the benefit and pleasure of the general public." The rest is history. <strong>The Scanlon Principles are core ideology — never changing. How they are practiced is always evolving.</strong></p>`
+  },
+  {
+    title: "Remembrance for the Columbia Crew — Unexpressed Competence",
+    date: "February 2003",
+    body: `<p>On February 1, 2003, the Space Shuttle Columbia broke apart during reentry. This tip was dedicated to the crew and their families.</p>
+<p>The crew reflected the progress that has been made in creating opportunities for people to express their competency and follow their dreams. When Paul Davis's wife was growing up, she was told by counselors that she could teach or be a nurse. She wanted to be a symphony conductor — but was told no woman could have such a job. Growing up in the south, it would have been impossible for a Black man to be an astronaut.</p>
+<p><strong>Scanlon Leaders believe that unexpressed competence appears to the world to be incompetence.</strong> We try to create opportunities for people to express their competency personally, professionally, and organizationally.</p>
+<p>The following poem was written for Marie Robinson, a 19-year-old pilot who died in World War II, by her friend and fellow pilot Elizabeth Magid. Its message is timeless:</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">She is not dead —<br>
+But only flying higher,<br>
+Higher than she's flown before,<br>
+And earthly limitations<br>
+Will hinder her no more.<br><br>
+For she is universal<br>
+Like courage, love and hope,<br>
+And all free, sweet emotions<br>
+Of vast and godly scope.<br><br>
+She is not dead.<br>
+You should have known<br>
+That she is only flying higher,<br>
+Higher than she's ever flown.<br>
+<cite style="display:block;margin-top:0.75rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Elizabeth MacKethan Magid</cite></blockquote>
+<p><strong>Question to Ponder:</strong> How can I provide opportunities for others to express their competency and follow their dreams?</p>`
+  },
+  {
+    title: "Research on Scanlon Suggestion Systems — Quality Over Quantity",
+    date: "February 2003",
+    body: `<p>Many Scanlon companies implement a formal suggestion system as part of their process. In new Scanlon companies, the launch of the suggestion system is often followed by an overwhelming deluge of cost-saving ideas. Then, as time passes, the number of suggestions drops — and the value of the process is often questioned.</p>
+<p>Academic research by Jeffrey Arthur and Lynda Aiman-Smith, published in the Academy of Management Journal, explains exactly what is happening — and why it is actually a sign of maturity, not decline.</p>
+<p>They studied a Midwestern Scanlon manufacturing company with 1,500 workers, reviewing all suggestions from 1989 through 1992. They classified suggestions into two types:</p>
+<p><strong>First Order suggestions</strong> did not involve changing major systems — they related to material savings and keeping work in-house. These are the quick wins that flood in at the beginning.</p>
+<p><strong>Second Order suggestions</strong> were about process and design changes — deeper, more systemic improvements that require broader understanding of the organization.</p>
+<p><strong>Their findings:</strong> First Order suggestions decreased over time, while the percentage of Second Order suggestions increased as employees learned more about processes and their ability to influence them.</p>
+<p>The authors conclude: <strong>it is a mistake to equate the success of a Scanlon Process with the number of suggestions.</strong> A decline in suggestion volume may mean employees are moving from fixing symptoms to changing systems — which is exactly what a mature Scanlon process should produce.</p>`
+  },
+  {
+    title: "Washington, Lincoln, and Love — On Giving Everyone a Chance",
+    date: "February 2003",
+    body: `<p>In honor of Valentine's Day and Presidents' Day, a few reflections from Abraham Lincoln on the themes that matter most to Scanlon Leaders:</p>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"I am not ashamed to confess that twenty-five years ago I was a hired labourer, hauling rails, at work on a flatboat — just what might happen to any poor man's son. <strong>I want every man to have a chance.</strong>" <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Abraham Lincoln</cite></blockquote>
+<blockquote style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.5rem;margin:1.25rem 0;font-style:italic;color:var(--navy);">"Die when I may, I want it said of me by those who know me best that I always plucked a thistle and planted a flower when I thought a flower would grow." <cite style="display:block;margin-top:0.4rem;font-style:normal;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">— Abraham Lincoln</cite></blockquote>
+<p>Lincoln's story is the Scanlon story. He came from nothing, believed in the dignity of work, wanted every person to have a chance, and understood that the promise of America — like the promise of a Scanlon organization — is not just national independence but something more: a great promise to all people, to all time to come.</p>
+<p>On Washington, Lincoln wrote that the men of the founding generation struggled for something "more than national independence" — something that "held out a great promise to all the people of the world to all time to come." A Scanlon organization, at its best, carries a similar promise: that every person's contribution matters, that information and power should be shared, and that together we can achieve what no individual could accomplish alone.</p>
+<p><strong>Questions to Ponder:</strong> How do you help every person to have a chance? How does your Scanlon Process help every person to have a chance?</p>`
+  }
+];
+
+let currentTipIndex = 0;
+
+function getCurrentWeekTip() {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = now - start;
+  const oneWeek = 1000 * 60 * 60 * 24 * 7;
+  const weekNumber = Math.floor(diff / oneWeek);
+  return weekNumber % scannonTips.length;
+}
+
+function renderTip(index) {
+  const tip = scannonTips[index];
+  document.getElementById('totw-content').innerHTML = `
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.4;">${tip.title}</h3>
+    <div style="font-size:0.95rem;line-height:1.75;color:var(--text);">${tip.body}</div>
+  `;
+  document.getElementById('totw-label').textContent = `Tip ${index + 1} of ${scannonTips.length} · Originally published ${tip.date}`;
+}
+
+function changeTip(direction) {
+  currentTipIndex = (currentTipIndex + direction + scannonTips.length) % scannonTips.length;
+  renderTip(currentTipIndex);
+}
+
+// Initialize on page load
+currentTipIndex = getCurrentWeekTip();
+renderTip(currentTipIndex);
+</script>
+
 <section class="about-section-wrap" id="about">
   <div class="container" style="max-width:800px;">
     <span class="section-label" style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.4rem;">About This Site</span>
@@ -217,7 +988,7 @@
     <!-- STATS -->
     <div class="about-stats-row">
       <div class="about-stat-box"><span class="about-stat-number">60+</span><span class="about-stat-label">Resources</span></div>
-      <div class="about-stat-box"><span class="about-stat-number">8</span><span class="about-stat-label">Categories</span></div>
+      <div class="about-stat-box"><span class="about-stat-number">9</span><span class="about-stat-label">Categories</span></div>
       <div class="about-stat-box"><span class="about-stat-number">5</span><span class="about-stat-label">Formats</span></div>
       <div class="about-stat-box"><span class="about-stat-number">70+</span><span class="about-stat-label">Years of History</span></div>
     </div>
@@ -287,11 +1058,12 @@
       <span class="section-label">Collection</span>
       <h3>What You'll Find Here</h3>
       <div class="divider"></div>
-      <p>The archive spans eight categories, ranging from foundational theory to practitioner tools, across multiple formats.</p>
+      <p>The archive spans nine categories, ranging from foundational theory to practitioner tools, across multiple formats.</p>
       <ul class="about-cat-list">
+        <li><span class="about-cat-dot" style="background:#c8a84b;"></span>Scanlon Plans<span class="about-cat-count">6</span></li>
         <li><span class="about-cat-dot" style="background:#1a6891;"></span>Articles &amp; Essays<span class="about-cat-count">29</span></li>
         <li><span class="about-cat-dot" style="background:#7b2f82;"></span>Case Studies<span class="about-cat-count">7</span></li>
-        <li><span class="about-cat-dot" style="background:#c8a84b;"></span>Tools &amp; Templates<span class="about-cat-count">6</span></li>
+        <li><span class="about-cat-dot" style="background:#876a00;"></span>Tools &amp; Templates<span class="about-cat-count">6</span></li>
         <li><span class="about-cat-dot" style="background:#2b4fc0;"></span>Video Library<span class="about-cat-count">11</span></li>
         <li><span class="about-cat-dot" style="background:#6b2bc0;"></span>Podcasts &amp; Interviews<span class="about-cat-count">10</span></li>
         <li><span class="about-cat-dot" style="background:#276221;"></span>Leadership Resources<span class="about-cat-count">2</span></li>
@@ -496,599 +1268,6 @@ const catColors = {
 
 function formatClass(f) {
   const map = {PDF:'pdf', Video:'video', Podcast:'podcast', Article:'article', Template:'template', Document:'template', HTML:'template'};
-  return map[f] || '';
-}
-
-function themeClass(t) {
-  const map = {Identity:'tag-identity', Participation:'tag-participation', Equity:'tag-equity', Competence:'tag-competence'};
-  return map[t] || '';
-}
-
-function formatDate(d) {
-  if (!d) return '';
-  const date = new Date(d);
-  return date.toLocaleDateString('en-US', {year:'numeric', month:'short'});
-}
-
-function getIcon(format) {
-  const icons = {PDF:'📄', Video:'🎬', Podcast:'🎙️', Article:'📝', Template:'📋', Document:'📋'};
-  return icons[format] || '📄';
-}
-
-let activeCategory = '';
-
-function buildPills() {
-  const cats = ['All', ...Object.keys(catColors)];
-  const counts = {};
-  resources.forEach(r => { counts[r.category] = (counts[r.category]||0)+1; });
-  const container = document.getElementById('categoryPills');
-  cats.forEach(cat => {
-    const pill = document.createElement('button');
-    pill.className = 'stat-pill' + (cat === 'All' ? ' active' : '');
-    const count = cat === 'All' ? resources.length : (counts[cat]||0);
-    pill.innerHTML = cat + '<span>' + count + '</span>';
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.stat-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      activeCategory = cat === 'All' ? '' : cat;
-      render();
-    });
-    container.appendChild(pill);
-  });
-}
-
-function render() {
-  const search = document.getElementById('searchInput').value.toLowerCase();
-  const theme = document.getElementById('themeFilter').value;
-  const format = document.getElementById('formatFilter').value;
-  const sort = document.getElementById('sortFilter').value;
-
-  let filtered = resources.filter(r => {
-    const matchSearch = !search || r.title.toLowerCase().includes(search) || r.desc.toLowerCase().includes(search);
-    const matchTheme = !theme || r.theme === theme;
-    const matchFormat = !format || r.format === format;
-    const matchCat = !activeCategory || r.category === activeCategory;
-    return matchSearch && matchTheme && matchFormat && matchCat;
-  });
-
-  filtered.sort((a, b) => {
-    if (sort === 'date-desc') return new Date(b.date) - new Date(a.date);
-    if (sort === 'date-asc') return new Date(a.date) - new Date(b.date);
-    if (sort === 'title-asc') return a.title.localeCompare(b.title);
-    if (sort === 'title-desc') return b.title.localeCompare(a.title);
-    return 0;
-  });
-
-  document.getElementById('resultsCount').textContent = filtered.length + ' resource' + (filtered.length !== 1 ? 's' : '');
-
-  const grid = document.getElementById('archiveGrid');
-  if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty-state"><p>No resources match your filters. Try adjusting your search.</p></div>';
-    return;
-  }
-
-  grid.innerHTML = filtered.map(r => `
-    <div class="resource-card">
-      ${r.duplicate ? '<span class="dup-badge">⚠ Duplicate</span>' : ''}
-      <div class="card-header">
-        <span style="font-size:1.5rem">${getIcon(r.format)}</span>
-        <span class="card-format ${formatClass(r.format)}">${r.format}</span>
-      </div>
-      <div class="card-title">${r.title}</div>
-      <div class="card-desc">${r.desc}</div>
-      <div class="card-meta">
-        <span class="card-tag tag-category" style="border-color:${catColors[r.category]||'#ccc'};color:${catColors[r.category]||'#666'}">${r.category}</span>
-        ${r.theme ? `<span class="card-tag ${themeClass(r.theme)}">${r.theme}</span>` : ''}
-        <span class="card-date">${formatDate(r.date)}</span>
-      </div>
-      ${r.url ? `<a class="card-link" href="${r.url}" target="_blank" rel="noopener">
-        Open Resource <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>` : '<span style="font-size:0.8rem;color:#aaa;margin-top:auto">Link pending</span>'}
-    </div>
-  `).join('');
-}
-
-buildPills();
-render();
-
-document.getElementById('searchInput').addEventListener('input', render);
-document.getElementById('themeFilter').addEventListener('change', render);
-document.getElementById('formatFilter').addEventListener('change', render);
-document.getElementById('sortFilter').addEventListener('change', render);
-
-// Podcasts nav link — filter to Podcast format and scroll to archive
-document.getElementById('podcastsNavLink').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.getElementById('formatFilter').value = 'Podcast';
-  render();
-  document.getElementById('archive').scrollIntoView({ behavior: 'smooth' });
-});
-</script>
-</body>
-</html>
-iewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scanlon Leadership Archive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #1a2640;
-      --gold: #c8a84b;
-      --gold-light: #e8d49a;
-      --cream: #f8f5ee;
-      --text: #2c2c2c;
-      --muted: #6b6b6b;
-      --white: #ffffff;
-      --border: #ddd5c0;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Source Serif 4', serif; background: var(--cream); color: var(--text); font-size: 16px; line-height: 1.7; }
-
-    /* NAV */
-    nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
-    .nav-logo { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 0; text-decoration: none; }
-    .nav-logo-mark { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
-    .nav-logo-mark img { width: 36px; height: 36px; object-fit: contain;  }
-    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 600; }
-    .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.875rem; padding: 0.5rem 0.85rem; border-radius: 4px; transition: color 0.2s, background 0.2s; }
-    .nav-links a:hover { color: var(--gold); background: rgba(255,255,255,0.06); }
-    .nav-cta { background: var(--gold) !important; color: var(--navy) !important; font-weight: 600 !important; padding: 0.5rem 1.1rem !important; border-radius: 4px; }
-
-    /* HERO */
-    .hero { background: var(--navy); color: var(--white); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(200,168,75,0.12) 0%, transparent 65%); pointer-events: none; }
-    .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; max-width: 720px; margin: 0 auto 1rem; }
-    .hero h1 em { font-style: italic; color: var(--gold-light); }
-    .hero p { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto; font-weight: 300; }
-
-    /* ARCHIVE SECTION */
-    .archive-section { padding: 3rem 2rem; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .section-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: block; }
-    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 0.5rem; }
-    .divider { width: 50px; height: 3px; background: var(--gold); margin: 0.75rem 0 1.5rem; }
-
-    /* CONTROLS */
-    .controls { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
-    .control-group { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-width: 160px; }
-    .control-group label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-    .control-group select, .control-group input { padding: 0.6rem 0.85rem; border: 1px solid var(--border); border-radius: 4px; font-family: 'Source Serif 4', serif; font-size: 0.9rem; color: var(--text); background: var(--cream); appearance: none; cursor: pointer; }
-    .control-group select:focus, .control-group input:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
-    .search-box { flex: 2; min-width: 220px; }
-    .results-count { font-size: 0.85rem; color: var(--muted); align-self: center; white-space: nowrap; }
-
-    /* STATS BAR */
-    .stats-bar { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .stat-pill { background: var(--white); border: 1px solid var(--border); border-radius: 30px; padding: 0.4rem 1rem; font-size: 0.82rem; color: var(--muted); cursor: pointer; transition: all 0.2s; }
-    .stat-pill:hover, .stat-pill.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .stat-pill span { font-weight: 700; color: var(--gold); margin-left: 0.25rem; }
-    .stat-pill.active span { color: var(--gold-light); }
-
-    /* GRID */
-    .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
-
-    /* CARD */
-    .resource-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.2s, transform 0.2s; position: relative; }
-    .resource-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.09); transform: translateY(-2px); }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
-    .card-format { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--cream); border: 1px solid var(--border); border-radius: 3px; padding: 0.2rem 0.5rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
-    .card-format.pdf { background: #fff0f0; border-color: #f5c6c6; color: #c0392b; }
-    .card-format.video { background: #f0f4ff; border-color: #c6d3f5; color: #2b4fc0; }
-    .card-format.podcast { background: #f5f0ff; border-color: #d3c6f5; color: #6b2bc0; }
-    .card-format.article { background: #f0fff4; border-color: #c6f5d3; color: #2bc06b; }
-    .card-format.template { background: #fffbf0; border-color: #f5e6c6; color: #c08b2b; }
-    .card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.35; }
-    .card-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; flex: 1; }
-    .card-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
-    .card-tag { font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 600; letter-spacing: 0.05em; }
-    .tag-identity { background: #e8f4fd; color: #1a6891; }
-    .tag-participation { background: #edf8e9; color: #276221; }
-    .tag-equity { background: #fef9e7; color: #876a00; }
-    .tag-competence { background: #fdf2fb; color: #7b2f82; }
-    .tag-category { background: var(--cream); color: var(--muted); border: 1px solid var(--border); }
-    .card-date { font-size: 0.75rem; color: #aaa; margin-left: auto; }
-    .card-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 600; margin-top: auto; transition: color 0.2s; }
-    .card-link:hover { color: var(--navy); }
-    .card-link svg { width: 14px; height: 14px; }
-
-    /* DUPLICATE WARNING */
-    .dup-badge { position: absolute; top: 0.75rem; right: 0.75rem; background: #fff3cd; border: 1px solid #ffc107; border-radius: 3px; font-size: 0.65rem; padding: 0.15rem 0.4rem; color: #856404; font-weight: 600; }
-
-    /* EMPTY STATE */
-    .empty-state { text-align: center; padding: 4rem 2rem; color: var(--muted); grid-column: 1/-1; }
-    .empty-state p { font-size: 1.1rem; }
-
-    /* ABOUT SECTION */
-    .about-section-wrap { background: var(--cream); padding: 4rem 2rem 5rem; border-top: 1px solid var(--border); }
-    .about-lead { font-size: 1.15rem; line-height: 1.8; color: var(--navy); font-weight: 400; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
-    .about-lead strong { font-weight: 600; }
-    .about-block { margin-bottom: 3rem; }
-    .about-block h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
-    .about-block p { color: var(--text); margin-bottom: 1rem; font-size: 1rem; }
-    .about-block p:last-child { margin-bottom: 0; }
-    .about-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
-    .epic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-    .epic-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.4rem 1.5rem; position: relative; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
-    .epic-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
-    .epic-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
-    .epic-card.equity::before { background: #c8a84b; }
-    .epic-card.participation::before { background: #276221; }
-    .epic-card.identity::before { background: #1a6891; }
-    .epic-card.competence::before { background: #7b2f82; }
-    .epic-bg-letter { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; line-height: 1; opacity: 0.1; position: absolute; top: 0.75rem; right: 1rem; }
-    .epic-card.equity .epic-bg-letter { color: #c8a84b; }
-    .epic-card.participation .epic-bg-letter { color: #276221; }
-    .epic-card.identity .epic-bg-letter { color: #1a6891; }
-    .epic-card.competence .epic-bg-letter { color: #7b2f82; }
-    .epic-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
-    .epic-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
-    .about-stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
-    .about-stat-box { background: var(--navy); border-radius: 6px; padding: 1.4rem 1rem; text-align: center; }
-    .about-stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; margin-bottom: 0.3rem; }
-    .about-stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
-    .about-cat-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 1.25rem; }
-    .about-cat-list li { display: flex; align-items: center; gap: 0.6rem; background: var(--white); border: 1px solid var(--border); border-radius: 5px; padding: 0.65rem 1rem; font-size: 0.9rem; color: var(--text); transition: border-color 0.2s; }
-    .about-cat-list li:hover { border-color: var(--gold); }
-    .about-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .about-cat-count { margin-left: auto; font-size: 0.75rem; font-weight: 700; color: var(--gold); background: #f5edd8; padding: 0.1rem 0.45rem; border-radius: 20px; }
-    .about-pull-quote { border-left: 3px solid var(--gold); padding: 1rem 0 1rem 1.75rem; margin: 2rem 0; }
-    .about-pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--navy); line-height: 1.65; margin: 0; }
-    .about-pull-quote cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-style: normal; }
-    .about-cta { background: var(--navy); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; margin-top: 1rem; }
-    .about-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(200,168,75,0.1) 0%, transparent 65%); pointer-events: none; }
-    .about-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
-    .about-cta p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 420px; margin-left: auto; margin-right: auto; }
-    .about-cta-btn { display: inline-block; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.05em; padding: 0.75rem 2rem; border-radius: 4px; transition: background 0.2s, transform 0.15s; }
-    .about-cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-    @media (max-width: 640px) {
-      .epic-grid { grid-template-columns: 1fr; }
-      .about-stats-row { grid-template-columns: repeat(2, 1fr); }
-      .about-cat-list { grid-template-columns: 1fr; }
-    }
-
-    /* FOOTER */
-    footer { background: #111c2e; color: rgba(255,255,255,0.6); padding: 3rem 2rem; margin-top: 4rem; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom { font-size: 0.82rem; }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .archive-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-mark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAC7CAYAAACkaDbfAAAHJ0lEQVR4nO2dSZLiMBREBVF34hLsOSN7LsGp3IsOVRnjQbL+kF/Kt+2OAqUfKXkKXaZpSpF5P+/iA7g9XhfpvxmFSyQhNA5+CSMJAi2ElwB79C4HnBCIEmzRoxwwQkQSYUlPYrgKEVmCLaLL4SJEjyIsiSrG1foDR5AhpbjjNGuIqAFJEKkt1IUYWYQlEcRQnTIowycR8lBriAiD9wS1LVSEoAzloIkhKgRFOA+KGGJrCMrQBkp+Ig2BMphe8GyLZiEogx4eYjQJQRlssBTjtBCoMpwND3U8cyzEOCUESniaAaGMcYm2FNVCeAflMa96j3kNrRyqhPAMBuE8HU0MjUzghUAQYY1e5SgWwjoAVBGWIIkhkVmREJRhHyQpUmrL71AIy8FGE2FJD2KYP0K3RXQZUvo/BqRxnBF0tyGsjEcKUYqobbEphMWAehRhSTQx3IQYQYY5UcRwWUOMJkNKeGPeEnS1ITRtRgvGA+S2MBWCMnyCKMaXEJTBHiQxTNYQlGEfpOsXMBemCMYPR10IhEFGwrstPoRAmstGx0sM1YZgO7RjnSHXEAGwbIvf007p6YLtoIfm1M6GCIjmj01FCLaDPlrTyDUlnl1ERloMThmdICHG7fG6iAvB6cKXVjHYEJ1yVowfjS9D6lhbw0k17e3xutSsEX+4oPThKPf87xJi5L9RcqxFpwyuH455P+9TzY9Q8gdbcnw4ZRjRcmAt24JCKCI9HVuIQSEU0F6XaYiRoRBCeCzO38/7JL1uoxCNeJ+lSbZFShTiNN4iLJESg0JUgCbBGq1iUIgCIoggBYXYIKIEEusICrFgVBEyFCLFlCAlnVsFQwtBEb75qb09Gp2oY7W6cThMQ0QUIfybW6iho36vLTzf7xymISKA8DwJhXAGQYI515Rkv1S0evbC+7X/LdgQhiAKsIRCGBBBhIzKexmcNv6DOi3s8StEtC+OTEQRMkO8uWV9cGoftUdCTYiogUgSUYwPIaLWHDqRxFCdMqKEYEWEPNTXEBFCsAS9Lb6E4LRhA6oYJmcZiANHAU2MVSE0WgJp0Iig5DPEdYgoILSF+a58nmsU77BrCf/EVAnRDoonHlntCqFlKKUoxzqrw4YYWQqUU3DLtYXrojKKFEhiaH9GkRCagSCsrEtAEUM7q+KGQAgDAQQxhtgeIdpe495iaOVVJYR2AFGmjzm9SVHdEBYBRBPDsy2kczo1ZVgN3luK2s/3EkMyJ5g1xBbR2iIln2lEKqPTQng8uGr5ea14tIVERk0NwaeZj7EWozWf5ikjcj1aEkWK3dvfVl+ihTNB13zXyA8LnfnuYotKz9OuaI2BfJbWzQYqWmJoyeZ9pXOL7nbli9YYFld/a/5/tzv7Uoo/arJQuzCFUImR2sI7q4z6lUqEgUYRQ/NHVDp+sdPOIyIckC16utZyNBazexkIU0gkvLIyv7lFKXw5ah6Xu53RpIh0FbYVt9vfnELKsL507v48BMU4xjIfdyEyFMOWrZaAESJDMdaxygROiAyl+MYiE1ghUmJbaLM2bUALkaEYf2jnEEKIjPfzFl6fbUkoIVJiW6Sku79JOCEyFEOHsEJEuaWthdaPIdQGKiMLoMn7eZ+yYCGEoAh2QE8Zo08LR2gsLuEaggL4AiMERcDAfcrgtNCG9NmGS0NEFGCUax5mQlACfN7P+6QuRDQRRpNgiZoQFCEm4kJQhNiICEEJ+qFJCIrQHzAXprSgBHU0CZHDRmwKinAOkYa4PV4XBCkoQTtiU4ZnW1AEOcTXEJZiUAR5foWYH0CJoLXEoAS6rN7tlDyIUgeQD9XasDllZCk824IC2HOZpqnoQGm+C6D5WSMg2ejFi0qLxqAI/hQ3xBweOBwgtljiY299cnu8Lk3PVFKM/hB5yJZS+ACxTeMWbIs+EH8Mn2LEJJ8oqL2XQTF0gdjq+QwUIxZmb25RCjk0szR9lY9tgcn8QuPV4wBRjPNo5+b6si+lqMMiL779PTjL+1JXlBtVFGMfq2x+99xCOxgooiJguf/Wdf6PSAcBTVAvrHP4WkOgSTGyGB5j392mEe1gIMmqjXb2W1kW7dtJMWzxfKelaiNXJDF6lcL7BafqnX2RpEipHzEscxUVIkMx5ECRISWBvb+RxIgmhXV2JfmIbQaPJEZK2HIg7xQsJkSGYmzjmU1pDuJCpIQnRcZLDu88asatIkTGO4g9tOVAGXvtOFWFSAknmCNaBEEd45kxqQuRQQ2tV84KbiZEhmLo09J25kJkKIYOrWsjNyEyFEMOiYWy+zOVSNcJIiOVo3tDzGFbnEPyRwUlRIZilCPdsJBCZCjGNlpTrfsaYg+uL9bRzAW6IeawLWx+IGGEyIwqhlVbhhMiM4oY1tNmWCHm9CiH1/qpCyEy0cVAWER3JcScKHIgSDCnWyHmoMmBJsGcIYSYg/yAKwLDCbEGd/354x8GTTuOj8nusgAAAABJRU5ErkJggg==" alt="Scanlon Network Logo"></div>
-    <span class="nav-logo-text">Scanlon Network</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#archive">Archive</a></li>
-    <li><a href="#archive" id="podcastsNavLink">Podcasts</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="leaders.html">Leaders</a></li>
-    <li><a href="#archive" class="nav-cta">Get Started</a></li>
-  </ul>
-</nav>
-
-<div class="hero" id="home">
-  <p class="hero-eyebrow">Resource Library</p>
-  <h1>The Scanlon <em>Leadership Archive</em></h1>
-  <p>A growing collection of timeless insights, resources, and tools capturing the legacy of the Scanlon Leadership Network.</p>
-  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-    <a href="#archive" style="background:var(--gold);color:var(--navy);text-decoration:none;font-family:'Playfair Display',serif;font-weight:700;font-size:0.9rem;padding:0.75rem 1.75rem;border-radius:4px;letter-spacing:0.04em;">Browse the Archive</a>
-    <a href="leaders.html" style="background:transparent;color:var(--white);text-decoration:none;font-family:'Playfair Display',serif;font-weight:600;font-size:0.9rem;padding:0.75rem 1.75rem;border-radius:4px;letter-spacing:0.04em;border:1px solid rgba(255,255,255,0.35);">Meet the Leaders →</a>
-  </div>
-</div>
-
-<section class="about-section-wrap" id="about">
-  <div class="container" style="max-width:800px;">
-    <span class="section-label" style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.4rem;">About This Site</span>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Preserving a <em style="font-style:italic;color:#c8a84b;">Legacy</em> of People-Centered Leadership</h2>
-    <div class="divider"></div>
-
-    <p class="about-lead">
-      The <strong>Scanlon Leadership Archive</strong> is a living collection of documents, videos, podcasts, and tools
-      that preserve and extend the legacy of one of the most enduring movements in organizational management —
-      the Scanlon Plan. It exists because great ideas deserve to be found.
-    </p>
-
-    <!-- WHAT IS THIS SITE -->
-    <div class="about-block">
-      <span class="section-label">The Archive</span>
-      <h3>What This Site Is</h3>
-      <div class="divider"></div>
-      <p>This is a curated, searchable library of primary and secondary resources documenting the Scanlon tradition
-      from its origins in 1930s labor-management cooperation through its evolution into a comprehensive leadership
-      philosophy practiced by organizations worldwide.</p>
-      <p>The archive draws together materials that have previously existed only in filing cabinets, institutional
-      memories, and private collections — newsletters from the 1990s, landmark case studies, foundational essays,
-      practitioner interviews, and training tools developed over decades of field work. Brought together in one place,
-      they tell a coherent story about what it looks like when organizations genuinely trust their people.</p>
-      <p>Resources are organized by category and tagged against the EPIC framework — the four principles
-      (Equity, Participation, Identity, Competence) — so visitors can explore thematically or browse the full collection.</p>
-    </div>
-
-    <!-- STATS -->
-    <div class="about-stats-row">
-      <div class="about-stat-box"><span class="about-stat-number">60+</span><span class="about-stat-label">Resources</span></div>
-      <div class="about-stat-box"><span class="about-stat-number">8</span><span class="about-stat-label">Categories</span></div>
-      <div class="about-stat-box"><span class="about-stat-number">5</span><span class="about-stat-label">Formats</span></div>
-      <div class="about-stat-box"><span class="about-stat-number">70+</span><span class="about-stat-label">Years of History</span></div>
-    </div>
-
-    <hr class="about-divider">
-
-    <!-- THE SCANLON TRADITION -->
-    <div class="about-block">
-      <span class="section-label">Background</span>
-      <h3>The Scanlon Tradition</h3>
-      <div class="divider"></div>
-      <p>Joe Scanlon was a steelworker, union leader, and later a lecturer at MIT whose ideas about labor-management
-      cooperation were radical in his time and remain quietly revolutionary today. His core insight was simple:
-      the people doing the work know the most about how to improve it, and organizations that ignore that knowledge
-      leave enormous value — human and financial — on the table.</p>
-      <p>From that insight grew a full management philosophy: gainsharing plans that distribute productivity gains
-      equitably; participative committees that give employees meaningful voice; identity-building practices that
-      connect people to organizational purpose; and competence development that treats every worker as worth investing in.</p>
-
-      <blockquote class="about-pull-quote">
-        <p>"Every man a capitalist" — the idea that every person should be a genuine stakeholder in the enterprise they give their working life to.</p>
-        <cite>— Joe Scanlon, foundational principle</cite>
-      </blockquote>
-
-      <p>Scanlon's ideas influenced the development of Japanese Lean manufacturing, shaped management practices at
-      iconic American companies like Herman Miller, Donnelly Corporation, and Landscape Forms, and continue to
-      inform how forward-thinking organizations design work today.</p>
-    </div>
-
-    <hr class="about-divider">
-
-    <!-- EPIC -->
-    <div class="about-block">
-      <span class="section-label">The Framework</span>
-      <h3>The EPIC Principles</h3>
-      <div class="divider"></div>
-      <p>All resources in the archive are tagged against one or more of the four EPIC principles — the conceptual
-      pillars of the Scanlon approach.</p>
-      <div class="epic-grid">
-        <div class="epic-card equity">
-          <div class="epic-bg-letter">E</div>
-          <div class="epic-name">Equity</div>
-          <p class="epic-desc">Fair sharing of gains, risks, and information. Scanlon organizations distribute the fruits of improved performance — financially and otherwise — to the people who create them.</p>
-        </div>
-        <div class="epic-card participation">
-          <div class="epic-bg-letter">P</div>
-          <div class="epic-name">Participation</div>
-          <p class="epic-desc">Genuine employee voice in decisions that affect their work. Real authority and accountability at every level of the organization — not consultation theater.</p>
-        </div>
-        <div class="epic-card identity">
-          <div class="epic-bg-letter">I</div>
-          <div class="epic-name">Identity</div>
-          <p class="epic-desc">Clarity of organizational purpose, values, and belonging. People work best when they understand why their organization exists and feel genuinely connected to its mission.</p>
-        </div>
-        <div class="epic-card competence">
-          <div class="epic-bg-letter">C</div>
-          <div class="epic-name">Competence</div>
-          <p class="epic-desc">Commitment to developing the skills and knowledge of every person in the organization. Learning is treated as a strategic imperative, not a perk.</p>
-        </div>
-      </div>
-    </div>
-
-    <hr class="about-divider">
-
-    <!-- WHAT'S IN THE ARCHIVE -->
-    <div class="about-block">
-      <span class="section-label">Collection</span>
-      <h3>What You'll Find Here</h3>
-      <div class="divider"></div>
-      <p>The archive spans eight categories, ranging from foundational theory to practitioner tools, across multiple formats.</p>
-      <ul class="about-cat-list">
-        <li><span class="about-cat-dot" style="background:#1a6891;"></span>Articles &amp; Essays<span class="about-cat-count">29</span></li>
-        <li><span class="about-cat-dot" style="background:#7b2f82;"></span>Case Studies<span class="about-cat-count">7</span></li>
-        <li><span class="about-cat-dot" style="background:#c8a84b;"></span>Tools &amp; Templates<span class="about-cat-count">6</span></li>
-        <li><span class="about-cat-dot" style="background:#2b4fc0;"></span>Video Library<span class="about-cat-count">11</span></li>
-        <li><span class="about-cat-dot" style="background:#6b2bc0;"></span>Podcasts &amp; Interviews<span class="about-cat-count">10</span></li>
-        <li><span class="about-cat-dot" style="background:#276221;"></span>Leadership Resources<span class="about-cat-count">2</span></li>
-        <li><span class="about-cat-dot" style="background:#c0392b;"></span>Thought Leadership<span class="about-cat-count">1</span></li>
-        <li><span class="about-cat-dot" style="background:#2bc06b;"></span>Continuous Improvement<span class="about-cat-count">2</span></li>
-      </ul>
-      <p style="margin-top:1.5rem;">Highlights include the full Max DePree interview series on servant leadership;
-      employee-produced videos from Wescast Industries; CEO testimonials from Donnelly Corporation, Landscape Forms,
-      SGS Tools, Lorin Industries, and Thomson-Shore; foundational texts by Dr. Carl Frost; the original
-      <em>Fortune Magazine</em> article that helped launch the movement; and the definitive EPIC Leadership guidebook
-      synthesizing decades of research and practice.</p>
-    </div>
-
-    <hr class="about-divider">
-
-    <!-- WHO IT'S FOR -->
-    <div class="about-block">
-      <span class="section-label">Audience</span>
-      <h3>Who This Archive Is For</h3>
-      <div class="divider"></div>
-      <p>This archive is designed for anyone who believes the relationship between organizations and the people
-      inside them can — and should — be better.</p>
-      <p><strong>Practitioners</strong> implementing or renewing a Scanlon Plan will find implementation roadmaps,
-      sample agreements, measurement guides, and case studies from organizations that have done it successfully.
-      <strong>Leaders</strong> wrestling with culture, engagement, or transformation will find a coherent
-      philosophical framework backed by decades of evidence. <strong>Researchers and students</strong> will find
-      primary sources and practitioner voices unavailable anywhere else in one place. And <strong>anyone curious</strong>
-      about why some workplaces feel fundamentally more alive and trusting will find the answer here.</p>
-    </div>
-
-    <!-- CTA -->
-    <div class="about-cta">
-      <h3>Explore the Archive</h3>
-      <p>Browse the full collection, filter by theme or format, and discover where the Scanlon tradition can take your organization.</p>
-      <a href="#archive" class="about-cta-btn">Browse All Resources →</a>
-    </div>
-  </div>
-</section>
-
-<section class="archive-section" id="archive">
-  <div class="container">
-    <span class="section-label">Browse All Resources</span>
-    <h2>Archive Collection</h2>
-    <div class="divider"></div>
-
-    <!-- CATEGORY PILLS -->
-    <div class="stats-bar" id="categoryPills"></div>
-
-    <!-- CONTROLS -->
-    <div class="controls">
-      <div class="control-group search-box">
-        <label>Search</label>
-        <input type="text" id="searchInput" placeholder="Search titles, descriptions, authors…" />
-      </div>
-      <div class="control-group">
-        <label>Theme (EPIC)</label>
-        <select id="themeFilter">
-          <option value="">All Themes</option>
-          <option value="Identity">Identity</option>
-          <option value="Participation">Participation</option>
-          <option value="Equity">Equity</option>
-          <option value="Competence">Competence</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Format</label>
-        <select id="formatFilter">
-          <option value="">All Formats</option>
-          <option value="PDF">PDF</option>
-          <option value="Video">Video</option>
-          <option value="Podcast">Podcast</option>
-          <option value="Article">Article</option>
-          <option value="Template">Template</option>
-          <option value="Document">Document</option>
-        </select>
-      </div>
-      <div class="control-group">
-        <label>Sort By</label>
-        <select id="sortFilter">
-          <option value="date-desc">Newest First</option>
-          <option value="date-asc">Oldest First</option>
-          <option value="title-asc">Title A–Z</option>
-          <option value="title-desc">Title Z–A</option>
-        </select>
-      </div>
-      <div class="results-count" id="resultsCount"></div>
-    </div>
-
-    <!-- GRID -->
-    <div class="archive-grid" id="archiveGrid"></div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="nav-logo" style="padding:0;">
-      <div class="nav-logo-mark"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAC7CAYAAACkaDbfAAAHJ0lEQVR4nO2dSZLiMBREBVF34hLsOSN7LsGp3IsOVRnjQbL+kF/Kt+2OAqUfKXkKXaZpSpF5P+/iA7g9XhfpvxmFSyQhNA5+CSMJAi2ElwB79C4HnBCIEmzRoxwwQkQSYUlPYrgKEVmCLaLL4SJEjyIsiSrG1foDR5AhpbjjNGuIqAFJEKkt1IUYWYQlEcRQnTIowycR8lBriAiD9wS1LVSEoAzloIkhKgRFOA+KGGJrCMrQBkp+Ig2BMphe8GyLZiEogx4eYjQJQRlssBTjtBCoMpwND3U8cyzEOCUESniaAaGMcYm2FNVCeAflMa96j3kNrRyqhPAMBuE8HU0MjUzghUAQYY1e5SgWwjoAVBGWIIkhkVmREJRhHyQpUmrL71AIy8FGE2FJD2KYP0K3RXQZUvo/BqRxnBF0tyGsjEcKUYqobbEphMWAehRhSTQx3IQYQYY5UcRwWUOMJkNKeGPeEnS1ITRtRgvGA+S2MBWCMnyCKMaXEJTBHiQxTNYQlGEfpOsXMBemCMYPR10IhEFGwrstPoRAmstGx0sM1YZgO7RjnSHXEAGwbIvf007p6YLtoIfm1M6GCIjmj01FCLaDPlrTyDUlnl1ERloMThmdICHG7fG6iAvB6cKXVjHYEJ1yVowfjS9D6lhbw0k17e3xutSsEX+4oPThKPf87xJi5L9RcqxFpwyuH455P+9TzY9Q8gdbcnw4ZRjRcmAt24JCKCI9HVuIQSEU0F6XaYiRoRBCeCzO38/7JL1uoxCNeJ+lSbZFShTiNN4iLJESg0JUgCbBGq1iUIgCIoggBYXYIKIEEusICrFgVBEyFCLFlCAlnVsFQwtBEb75qb09Gp2oY7W6cThMQ0QUIfybW6iho36vLTzf7xymISKA8DwJhXAGQYI515Rkv1S0evbC+7X/LdgQhiAKsIRCGBBBhIzKexmcNv6DOi3s8StEtC+OTEQRMkO8uWV9cGoftUdCTYiogUgSUYwPIaLWHDqRxFCdMqKEYEWEPNTXEBFCsAS9Lb6E4LRhA6oYJmcZiANHAU2MVSE0WgJp0Iig5DPEdYgoILSF+a58nmsU77BrCf/EVAnRDoonHlntCqFlKKUoxzqrw4YYWQqUU3DLtYXrojKKFEhiaH9GkRCagSCsrEtAEUM7q+KGQAgDAQQxhtgeIdpe495iaOVVJYR2AFGmjzm9SVHdEBYBRBPDsy2kczo1ZVgN3luK2s/3EkMyJ5g1xBbR2iIln2lEKqPTQng8uGr5ea14tIVERk0NwaeZj7EWozWf5ikjcj1aEkWK3dvfVl+ihTNB13zXyA8LnfnuYotKz9OuaI2BfJbWzQYqWmJoyeZ9pXOL7nbli9YYFld/a/5/tzv7Uoo/arJQuzCFUImR2sI7q4z6lUqEgUYRQ/NHVDp+sdPOIyIckC16utZyNBazexkIU0gkvLIyv7lFKXw5ah6Xu53RpIh0FbYVt9vfnELKsL507v48BMU4xjIfdyEyFMOWrZaAESJDMdaxygROiAyl+MYiE1ghUmJbaLM2bUALkaEYf2jnEEKIjPfzFl6fbUkoIVJiW6Sku79JOCEyFEOHsEJEuaWthdaPIdQGKiMLoMn7eZ+yYCGEoAh2QE8Zo08LR2gsLuEaggL4AiMERcDAfcrgtNCG9NmGS0NEFGCUax5mQlACfN7P+6QuRDQRRpNgiZoQFCEm4kJQhNiICEEJ+qFJCIrQHzAXprSgBHU0CZHDRmwKinAOkYa4PV4XBCkoQTtiU4ZnW1AEOcTXEJZiUAR5foWYH0CJoLXEoAS6rN7tlDyIUgeQD9XasDllZCk824IC2HOZpqnoQGm+C6D5WSMg2ejFi0qLxqAI/hQ3xBweOBwgtljiY299cnu8Lk3PVFKM/hB5yJZS+ACxTeMWbIs+EH8Mn2LEJJ8oqL2XQTF0gdjq+QwUIxZmb25RCjk0szR9lY9tgcn8QuPV4wBRjPNo5+b6si+lqMMiL779PTjL+1JXlBtVFGMfq2x+99xCOxgooiJguf/Wdf6PSAcBTVAvrHP4WkOgSTGyGB5j392mEe1gIMmqjXb2W1kW7dtJMWzxfKelaiNXJDF6lcL7BafqnX2RpEipHzEscxUVIkMx5ECRISWBvb+RxIgmhXV2JfmIbQaPJEZK2HIg7xQsJkSGYmzjmU1pDuJCpIQnRcZLDu88asatIkTGO4g9tOVAGXvtOFWFSAknmCNaBEEd45kxqQuRQQ2tV84KbiZEhmLo09J25kJkKIYOrWsjNyEyFEMOiYWy+zOVSNcJIiOVo3tDzGFbnEPyRwUlRIZilCPdsJBCZCjGNlpTrfsaYg+uL9bRzAW6IeawLWx+IGGEyIwqhlVbhhMiM4oY1tNmWCHm9CiH1/qpCyEy0cVAWER3JcScKHIgSDCnWyHmoMmBJsGcIYSYg/yAKwLDCbEGd/354x8GTTuOj8nusgAAAABJRU5ErkJggg==" alt="Scanlon Network Logo"></div>
-      <span class="nav-logo-text">Scanlon Network</span>
-    </div>
-    <div class="footer-bottom">© 2026 Scanlon Leadership Network Archive.</div>
-  </div>
-</footer>
-
-<script>
-const resources = [
-  {title:"The Filene Story: Cooperative Leadership in Action",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A White Paper by the Filene Institute (Credit Union Think Tank) that explored Scanlon at Watermark Credit Union",date:"2026-02-03",url:"https://drive.google.com/file/d/1LUp0CETbkPciRdyAAAh-IzXb0Osp4d-t/view"},
-  {title:"The Filene Story: Cooperative Leadership in Action",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A White Paper by the Filene Institute (Credit Union Think Tank) that explored Scanlon at Watermark Credit Union",date:"2025-10-20",url:"https://drive.google.com/file/d/10bW7wSEdSLwYMbZvL_lmANLymN_ELr-l/view",duplicate:true},
-  {title:"EPIC Leadership: A Guide to People-Centered Transformation",category:"Articles & Essays",theme:"Competence",format:"PDF",desc:"The definitive book on Scanlon history, Principles and Processes containing historic and current research and case studies.",date:"2025-10-20",url:"https://drive.google.com/file/d/1qhaumXGpUqG_fk6egkeq18idYp3bgaOY/view"},
-  {title:"Why Scanlon Matters: The Case for People-Centered Management",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A brief essay on the Scanlon Principles and Processes with comments by famous organizational scholars.",date:"2025-08-26",url:"https://drive.google.com/file/d/1APE1uT73HHbr8OQTvnEFMrfX-xFWItsa/view"},
-  {title:"Leading Lean: Integrating Scanlon Principles with Lean Management",category:"Articles & Essays",theme:"Competence",format:"PDF",desc:"Examines how Scanlon principles integrate with Lean management practices for sustainable organizational improvement.",date:"2025-10-20",url:"https://drive.google.com/file/d/1rlqF-lwAZ2KRkf675aLbxGuIs9uiJb7m/view"},
-  {title:"Performance-Based Participative Management",category:"Articles & Essays",theme:"Participation",format:"PDF",desc:"The definitive guide on the Scanlon Principles of Equity, Participation, Identity and Competence.",date:"2025-10-20",url:"https://drive.google.com/file/d/10SHub3-u-D_hkPfEUOjpp77GtHfv3k4F/view"},
-  {title:"The Yarrow Story: Scanlon Principles in Practice",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A workbook created for a Scanlon Top Level Leadership Retreat to help leaders understand their unique roles in Scanlon.",date:"2025-08-25",url:"https://drive.google.com/file/d/1Yqu1RvkvZyglTbKVHdWl__1DoLdLTY3p/view"},
-  {title:"Scanlon Leadership Network — Summer 1997 Newsletter",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Scanlon Leadership Network newsletter featuring updates, practitioner stories, and resources from Summer 1997.",date:"2025-10-20",url:"https://drive.google.com/file/d/1FT_wFS6s6I-2BwYwp64-D0ShR8au_wKJ/view"},
-  {title:"Scanlon Leadership Network — Summer 2000 Newsletter",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Scanlon Leadership Network newsletter featuring updates, practitioner stories, and resources from Summer 2000.",date:"2025-10-20",url:"https://drive.google.com/file/d/197pDiGfP9kPatu59hst5J1wnm2OBjvLt/view"},
-  {title:"Scanlon Leadership Network — Spring 2000 Newsletter",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Scanlon Leadership Network newsletter with articles and updates from the Scanlon community, Spring 2000.",date:"2025-10-20",url:"https://drive.google.com/file/d/1x8NSJz_gWHeEZL0OjTNNjjRU1iwmp7Fw/view"},
-  {title:"Scanlon Leadership Network — Spring Newsletter",category:"Case Studies",theme:"Identity",format:"PDF",desc:"Newspaper article on Scanlon Company Spring Engineering.",date:"2025-10-20",url:"https://drive.google.com/file/d/1mz_bxclzg95uSTKA4WFFyxhfZneGSWa-/view"},
-  {title:"Landscape Forms Inc. — Scanlon Case Study Part 2",category:"Case Studies",theme:"Identity",format:"PDF",desc:"How Landscape Forms Inc. applied the Scanlon Plan to build a culture of participation and excellence.",date:"2025-10-20",url:"https://drive.google.com/file/d/1vChtTOlFrLLzcQMz2xH4mP8R4uBCD9EQ/view"},
-  {title:"Landscape Forms Inc. — Scanlon Case Study",category:"Case Studies",theme:"Identity",format:"PDF",desc:"A newspaper article on how Landscape Forms Inc. applied the Scanlon Plan to build a culture of participation and excellence.",date:"2025-10-20",url:"https://drive.google.com/file/d/1UkvJ_p5bUO2lJzg5zHB2bk6YITpc_EJY/view"},
-  {title:"The Filene Story: Cooperative Leadership in Action",category:"Case Studies",theme:"Identity",format:"PDF",desc:"A White Paper by the Filene Institute exploring Scanlon at Watermark Credit Union.",date:"2026-02-03",url:"https://drive.google.com/file/d/1aNvuAW_aBYHY2b6D3tpAZCpEcp53n1uw/view"},
-  {title:"WCU Learners Guide: Scanlon Principles for Education",category:"Case Studies",theme:"Competence",format:"PDF",desc:"Educational resource designed to introduce Scanlon principles to Watermark Credit Union Employees.",date:"2025-08-26",url:"https://drive.google.com/file/d/10iuGTrCTUkWWpPS4L8LBOoeYpbu_FoFC/view"},
-  {title:"WCU Learners Guide (Summary Edition)",category:"Case Studies",theme:"Competence",format:"PDF",desc:"Summary educational resource for introducing Scanlon principles to Watermark Credit Union Employees.",date:"2025-08-26",url:"https://drive.google.com/file/d/1WHZGOIlFcEejJ43YQLf_YG6j1Nj_pEhX/view"},
-  {title:"Strategic Healthcare: Scanlon Plan Implementation",category:"Case Studies",theme:"Participation",format:"PDF",desc:"Explores the implementation of Scanlon principles in a healthcare setting, focusing on employee engagement and patient outcomes.",date:"2025-08-26",url:"https://drive.google.com/file/d/1Pw-V9BYuJFlE6FMjF3yzdE2RCG6lDseT/view"},
-  {title:"The Scanlon Plan in Retail Organizations",category:"Case Studies",theme:"Equity",format:"PDF",desc:"Analyzes how the Scanlon Plan was adapted for retail organizations and the results achieved.",date:"2025-08-26",url:"https://drive.google.com/file/d/1m4TdzfynnAkdC5Co1FN5NtmZ-2awxdXz/view"},
-  {title:"SGS Tools: A Scanlon Success Story",category:"Case Studies",theme:"Equity",format:"PDF",desc:"Case study of SGS Tools and their successful implementation of the Scanlon Plan.",date:"2025-08-26",url:"https://drive.google.com/file/d/1ZChep_KJbE8aTCoenVU0U44kir44se9K/view"},
-  {title:"Sample Union-Management Scanlon Agreement",category:"Tools & Templates",theme:"Participation",format:"PDF",desc:"Template document showing how a union-management Scanlon agreement can be structured.",date:"2025-10-20",url:"https://drive.google.com/file/d/1jr2z3BMIwmF2vYF73lwJhrW7u27K3oyq/view"},
-  {title:"The Mandate for Participative Leadership",category:"Tools & Templates",theme:"Participation",format:"PDF",desc:"Explains how leaders must create a mandate for change with examples.",date:"2025-10-20",url:"https://drive.google.com/file/d/1p6Bi1C35Ci7O4TAV2zE9q7UcpwysuA6K/view"},
-  {title:"Scanlon Implementation Roadmap",category:"Tools & Templates",theme:"Competence",format:"PDF",desc:"A Learning Map showing visually the steps to implement a Scanlon Plan.",date:"2025-10-20",url:"https://drive.google.com/file/d/1qusj3BNI0fGjBjlEFBCTRba_24-T84Xr/view"},
-  {title:"Scanlon Conference Trip Planner",category:"Tools & Templates",theme:"Competence",format:"PDF",desc:"The handout that goes with the Learning Map to help a group understand the Scanlon Implementation Roadmap.",date:"2025-10-20",url:"https://drive.google.com/file/d/1uGDOoNzgWWovpwDTGDtO8UTm79gS4iyl/view"},
-  {title:"Scanlon Resource Binder — Tab Dividers",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Organizational dividers for the Scanlon Listening Skills Resource Binder training materials.",date:"2025-10-16",url:"https://drive.google.com/file/d/1qOxICZVTGoUbI8Os9_gpuNCppZN1RWWp/view"},
-  {title:"Scanlon Resource Binder — Covers",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Cover pages for the Scanlon Listening Skills Resource Binder used in training programs.",date:"2025-10-16",url:"https://drive.google.com/file/d/1wxWTKS6BuR9T7GOYR8Dpb6V2qG_PCGWm/view"},
-  {title:"The Art of Listening (Illustration)",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Cartoon highlighting the importance of active listening in participative management.",date:"2025-10-16",url:"https://drive.google.com/file/d/1ppnQ_ftG1BFFaJI9JsESKkvqh6aFvYFX/view"},
-  {title:"Scanlon Resource Kit — Getting Started Guide",category:"Tools & Templates",theme:"Competence",format:"Template",desc:"Orientation guide for the Scanlon Innovation Resource Kit — start here before exploring other materials.",date:"2025-10-16",url:"https://drive.google.com/file/d/1bdXSHVQv8lmRKhXRtv16ZXffEOmHCbcZ/view"},
-  {title:"Within Your Reach — Bill Bottum (2010)",category:"Leadership Resources",theme:"Identity",format:"PDF",desc:"Bill Bottum's reflections on the Beatitudes and their guide to servant led organizations.",date:"2025-08-26",url:"https://drive.google.com/file/d/1B_E2RPbPYG-_hv_oP1Nd3L1SyJhAckre/view"},
-  {title:"Servant Leadership and the Scanlon Approach",category:"Leadership Resources",theme:"Identity",format:"PDF",desc:"Explores the deep connection between Robert Greenleaf's servant leadership philosophy, the Scanlon tradition, and Lean.",date:"2025-08-26",url:"https://drive.google.com/file/d/1un6edJkfljRg34WKksErJugi9DoaaSdY/view"},
-  {title:"Dateline: Servant Leadership",category:"Video Library",theme:"Identity",format:"Video",desc:"A Dateline video that explores Robert Greenleaf's servant leadership philosophy.",date:"2025-11-14",url:"https://drive.google.com/file/d/1Tp8R1JP7wtihM7MAxLrfh3aeWP71iccX/view"},
-  {title:"Beth Israel Hospital: Scanlon Transformation Story",category:"Video Library",theme:"Participation",format:"Video",desc:"Case study of Beth Israel Hospital's transformation through Scanlon principles and participative management.",date:"2025-11-14",url:"https://drive.google.com/file/d/1IUodUHnjorltNxUPfj9hnURHP6iWjwA-/view"},
-  {title:"Scanlon: A Better Way to Work",category:"Video Library",theme:"Identity",format:"Video",desc:"A professionally created overview of the Scanlon Principles and Processes as told by employees of Herman Miller, Donnelly, Neelon Castings, and Firestone.",date:"2025-11-14",url:"https://drive.google.com/file/d/15BN1gT0XXjtmU4Sn3dm9ttNuhJF369or/view"},
-  {title:"Donnelly Corporation Tribute",category:"Video Library",theme:"Identity",format:"Video",desc:"Tribute to Donnelly Corporation, one of the most celebrated examples of the Scanlon Plan in American manufacturing.",date:"2025-10-20",url:"https://drive.google.com/file/d/1rBSvW5NUzWWjxAFlQlktC6WrB85baull/view"},
-  {title:"Becky Scanlon: Reflections on the Scanlon Legacy",category:"Video Library",theme:"Identity",format:"Video",desc:"Personal reflections from Becky Scanlon on her family's legacy and the enduring impact of Joe Scanlon's ideas.",date:"2025-10-20",url:"https://drive.google.com/file/d/1fagb6ibV26WrB2asINwXGCbL7gATNZEB/view"},
-  {title:"Participation WMW Trauma",category:"Video Library",theme:"Participation",format:"Video",desc:"A humorous video produced by Canadian Steelworkers on Participation at Wescast Industries.",date:"2025-08-26",url:"https://drive.google.com/file/d/1xPL-Gn044WUQMsGGeDoHFQjxnj5rwOcT/view"},
-  {title:"Sears: Scanlon Principles in Large-Scale Retail",category:"Video Library",theme:"Equity",format:"Video",desc:"Analyzes how the Scanlon Plan was adapted for SEARS and the results achieved.",date:"2025-10-20",url:"https://drive.google.com/file/d/1UmPlrX4AXfScSo6uLd_sKoHRprBGA1qs/view"},
-  {title:"Charlie: A Scanlon Story",category:"Video Library",theme:"Identity",format:"Video",desc:"A spoof of Charlie's Angels produced by employees at Wescast explaining the Scanlon Principles.",date:"2025-10-16",url:"https://drive.google.com/file/d/1jabWb5Jrk9kCL2JJrvS8pYMrHJQDv8cv/view"},
-  {title:"Competence: Sweet Plan of Mine",category:"Video Library",theme:"Competence",format:"Video",desc:"How a Scanlon Plan was implemented at Wescast, sung to the tune of Sweet Caroline.",date:"2025-10-16",url:"https://drive.google.com/file/d/1uzezLxXV_fY4Iy7fpfJMNQEjSOfUbrdL/view"},
-  {title:"Identity: I AM",category:"Video Library",theme:"Identity",format:"Video",desc:"Humorous video exploring the principle of Identity at Wescast Industries.",date:"2025-10-16",url:"https://drive.google.com/file/d/1mYdaWT6lsvoOmcEnAtyfibXHbZBT8FtY/view"},
-  {title:"Sustaining Strategy",category:"Continuous Improvement",theme:"Competence",format:"PDF",desc:"Article on sustaining strategy through the Lean Hoshin Process.",date:"2025-10-20",url:"https://drive.google.com/file/d/1jZdsIsUkXlkLydLE6j5VDkoMxbLHos4k/view"},
-  {title:"Leading Lean: Integrating Scanlon Principles with Lean Management",category:"Continuous Improvement",theme:"Competence",format:"PDF",desc:"Examines how Scanlon principles integrate with Lean management practices for sustainable organizational improvement.",date:"2025-10-20",url:"https://drive.google.com/file/d/1yejfWaE8LxZsq8-7rtAwcIfdEclWdEL8/view",duplicate:true},
-  {title:"The Scanlon Principles: A Foundation for Excellence",category:"Continuous Improvement",theme:"Competence",format:"PDF",desc:"Foundational overview of the core Scanlon principles that drive people-centered lean organizational transformation.",date:"2025-08-26",url:"https://drive.google.com/file/d/1ZHpdsK_aW4GvHyjxv5QzCeCJ9KWGfJ3-/view"},
-  {title:"Accountants as Change Agents in Scanlon Organizations",category:"Thought Leadership",theme:"Equity",format:"Article",desc:"Explores how accountants and finance professionals can serve as catalysts for organizational change using Scanlon principles.",date:"2025-10-20",url:"https://drive.google.com/file/d/1crnqQeZW8k2wAVNzH-plyATiRFvkyHkA/view"},
-  {title:"Human Treatment of Human Beings",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Collected writings of John Donnelly, a great Scanlon thinker and practitioner. Under his leadership Donnelly Corporation was a leader of People Centered Organizations.",date:"2025-10-20",url:"https://drive.google.com/file/d/1RHC7YzN0CuNnnZXMikYjZ8gcl83n1-Uu/view"},
-  {title:"Schuster Scanlon Plan",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article exploring 40 years of Scanlon Research.",date:"2025-10-20",url:"https://drive.google.com/file/d/1vPfgKz5zt0StvZfJ5iqTQ-tjPtxZKjfb/view"},
-  {title:"Exploring Scanlon",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A workbook that helps newcomers explore where Scanlon came from, the Principles, and how it is implemented.",date:"2025-10-20",url:""},
-  {title:"Books Beliefs",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A Scanlon Roadmap incorporating Lean Concepts.",date:"2025-10-20",url:"https://drive.google.com/file/d/1qiN0VXS-ZyKmSDk1LhPkiNMt4pf-mOEU/view"},
-  {title:"The Scanlon Principles: A Foundation for Excellence",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Foundational overview of the core Scanlon principles that drive people-centered lean organizational transformation.",date:"2025-10-20",url:"https://drive.google.com/file/d/1eOFSARQatJsHkj_t602HeRdIvQx6_wmt/view",duplicate:true},
-  {title:"Remembering Joe Scanlon",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"An article on Joe Scanlon, the man that launched the Scanlon movement.",date:"2025-10-20",url:"https://drive.google.com/file/d/1AlEFcMkodmK-iR6VhYvq2mGtpJWuV7iu/view"},
-  {title:"Intro to Scanlon Japan",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article showing how the Japanese studied Scanlon's work and incorporated it into their Lean systems.",date:"2025-10-20",url:"https://drive.google.com/file/d/13KFh4D9XMhPhuT3R-kUjtH4FhF5es5Ne/view"},
-  {title:"Every Man a Capitalist",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Historic article arguing that every person should be a player in our capitalistic system through Scanlon.",date:"2025-10-20",url:"https://drive.google.com/file/d/1773BEAVA3BUqKzFXTiprvmT4XQlgs71H/view"},
-  {title:"Enterprise for Everyman",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Fundamental article in Fortune Magazine that helped launch the Scanlon movement.",date:"2025-10-20",url:"https://drive.google.com/file/d/16N8sl5KOes_w9A2Si6JNoTS5yUNsyFMC/view"},
-  {title:"Cooperation or Conflict",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article that explores the benefits of cooperation and how to create trust through the Scanlon Principles.",date:"2025-10-20",url:"https://drive.google.com/file/d/1sB4C1va82riFgPJMLtRgztt3gzurcc2E/view"},
-  {title:"Boston Globe: Beth Israel Hospital",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article exploring how Beth Israel Hospital created trust through their Scanlon Process.",date:"2025-10-20",url:"https://drive.google.com/file/d/1JyDbYJJiczaBDvJ/view"},
-  {title:"Council of Equals — San Facon Spears 2010 Conference Presentation",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"A presentation on the Servant Leadership 'Council of Equals' model for leading organizations.",date:"2025-08-26",url:"https://drive.google.com/file/d/1yOP8FolanqQVQsTBtiWqe6WycEnAN61F/view"},
-  {title:"Target Motivation",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article showing how to motivate employees.",date:"2025-08-26",url:"https://drive.google.com/file/d/1eimtCCtae4e8o1HuTvEe7H0u2AAoHASK/view"},
-  {title:"Frost: Anyone for Free Enterprise",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Historic article by Dr. Carl Frost on how Scanlon supports free enterprise.",date:"2025-08-26",url:"https://drive.google.com/file/d/1uZxYQZcf0O-sel7tY0hKoLWjWIsXvBUQ/view"},
-  {title:"Frost: Participative",category:"Articles & Essays",theme:"Participation",format:"PDF",desc:"Historic article by Dr. Carl Frost on how Scanlon creates participation.",date:"2025-08-26",url:"https://drive.google.com/file/d/1yRY6wK5GrYLuwAOyolfXPtk4TXYjT2xp/view"},
-  {title:"Measures",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article on measurement issues in Gainsharing.",date:"2025-08-26",url:"https://drive.google.com/file/d/1Qx-zyQdr0md2bynPvkmLagEjmGoVEglx/view"},
-  {title:"BI Participative Management",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article on Participative Management at Beth Israel Hospital.",date:"2025-08-26",url:"https://drive.google.com/file/d/1TA6H6-xS6cn7sqqOErnC1EZiIFlwpKQ0/view"},
-  {title:"Preparing Employees for Change",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article on how Scanlon Plans prepare employees for the future.",date:"2025-08-26",url:"https://drive.google.com/file/d/1e7O74CeUU3tE2xOdWqlDsb2qLY9tZODD/view"},
-  {title:"Davis ABC",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Chapter in Employee Law on the ABCs of gainsharing.",date:"2025-08-26",url:"https://drive.google.com/file/d/1sGbp7znfxW4h6-yI_vZxc8ImZLS44_wu/view"},
-  {title:"The ABCs of Gainsharing — Paul Davis & Majel Maes",category:"Articles & Essays",theme:"Equity",format:"Article",desc:"The ABCs of Gainsharing.",date:"2025-08-26",url:"https://drive.google.com/file/d/1yZUTV3bsKCdp57IfTwCVXKhQ0eaBUJHI/view"},
-  {title:"EPIC: Bridging the Gap",category:"Articles & Essays",theme:"Identity",format:"PDF",desc:"Article exploring Scanlon leadership principles and Servant Leadership.",date:"2025-08-26",url:"https://drive.google.com/file/d/1_UxDNKhEEGI93lHJozvfcpdpQwdVs37i/view"},
-  {title:"Scanlon Plans and Union Partnerships",category:"Articles & Essays",theme:"Participation",format:"PDF",desc:"Examines the unique relationship between unions and management under the Scanlon Plan framework.",date:"2025-10-20",url:"https://drive.google.com/file/d/1hUUZqZP1fjktYGL4DsiwdXBvp1GDZpmz/view"},
-  {title:"Max DePree on Leadership is an Art",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward Max DePree shares leadership insights from his best selling book Leadership is an Art.",date:"2026-02-18",url:"https://youtu.be/UWlNj_sXplg?si=DoSXd1yXdKVxRXD7"},
-  {title:"Max DePree on Leadership Jazz",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward Max DePree shares leadership insights from his best selling book Leadership Jazz.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFL2Ff0a0IvJp10L6rYU0qHU"},
-  {title:"Paul Davis: Scanlon Principles and Processes",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward and former Scanlon Network President explains the Scanlon Principles and Processes.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFIGVaZ0P-E0-TOgihayoA2x"},
-  {title:"Paul Davis on the Dan Mulhern Leadership Show",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Scanlon Steward and former Scanlon Network President interviewed on Scanlon Leadership.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFKMXv18EyOe3Yu-d0IThxz2"},
-  {title:"Buzz Kersman, CEO of Lorin Industries on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Buzz Kersman, CEO of Lorin Industries explains how Scanlon works at Lorin.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFL9e3gpv4GZfVFLswoR5PNg"},
-  {title:"Tim Tindall, CEO of Spring Engineering on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Tim Tindall, CEO of Spring Engineering explains the Scanlon process at Spring.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFJKmkS3DfuyTZI9oiUcRUCR"},
-  {title:"Myron Marsh, CEO of Thomson-Shore on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Myron Marsh worked as an Executive at three different Scanlon Companies. He explains how to practice the Scanlon Principles.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFLyVUbsPr2e1GWadd2Z8UBB"},
-  {title:"John Chipman, CEO of Landscape Forms on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"John Chipman transformed his landscape business into a world leader in public space furniture using the Scanlon Principles.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFKtu5Ts9gubvCXFp_OOWokk"},
-  {title:"Dr. Bill Greenwood: How to Implement Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Dr. Greenwood was a student and later a partner with Dr. Carl Frost. He successfully helped many organizations develop their Scanlon Plans.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFJZ_Gl3gi19F8tgIdlOw1Ne"},
-  {title:"Dr. Dwane Baumgardner, CEO of Donnelly on Scanlon",category:"Podcasts & Interviews",theme:"",format:"Podcast",desc:"Dr. Baumgardner led Donnelly Corporation to become one of the most democratic and best places to work using Scanlon.",date:"2026-02-18",url:"https://www.youtube.com/playlist?list=PL8DzvrT7ypFLKsZmf_ylvAc3G2Fz-8HKf"},
-  {title:"Tom Hagg of SGS Tool Company — Scanlon Testimonial",category:"Video Library",theme:"",format:"Video",desc:"Short testimonial from Tom Hagg, CEO of SGS Tool Company on Scanlon.",date:"2026-02-18",url:"https://youtu.be/JNJ5gqDxBk4"}
-];
-
-// Category colors
-const catColors = {
-  "Articles & Essays": "#1a6891",
-  "Case Studies": "#276221",
-  "Tools & Templates": "#876a00",
-  "Video Library": "#2b4fc0",
-  "Podcasts & Interviews": "#6b2bc0",
-  "Leadership Resources": "#7b2f82",
-  "Continuous Improvement": "#c06b2b",
-  "Thought Leadership": "#2bc06b"
-};
-
-function formatClass(f) {
-  const map = {PDF:'pdf', Video:'video', Podcast:'podcast', Article:'article', Template:'template', Document:'template'};
   return map[f] || '';
 }
 
