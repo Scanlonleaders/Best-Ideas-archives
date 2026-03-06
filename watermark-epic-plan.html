@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scanlon Plans — Watermark Credit Union EPIC Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       #C9963A;
+      --gold-light: #E8B85A;
+      --brown:      #3E2B1A;
+      --cream:      #F5EDD8;
+      --parchment:  #EAD9B2;
+      --rust:       #8B3A1A;
+      --ink:        #1E1208;
+      --shadow:     rgba(30,18,8,.18);
+    }
+
+    body {
+      background: var(--brown);
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #2a1a0a 0%, #4a2e12 60%, #3a2010 100%);
+      padding: 80px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--gold);
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='%23C9963A' stroke-width='.3' stroke-dasharray='3 6'/%3E%3Cline x1='0' y1='30' x2='60' y2='30' stroke='%23C9963A' stroke-width='.2' stroke-dasharray='4 8'/%3E%3Cline x1='30' y1='0' x2='30' y2='60' stroke='%23C9963A' stroke-width='.2' stroke-dasharray='4 8'/%3E%3C/svg%3E") repeat;
+      opacity: .12;
+    }
+    .hero-eyebrow {
+      font-family: 'Source Serif 4', serif;
+      font-size: .75rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: var(--cream);
+      line-height: 1.12;
+      position: relative;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      margin-top: 22px;
+      color: #b8a07a;
+      font-size: 1.05rem;
+      font-weight: 300;
+      max-width: 560px;
+      margin-left: auto; margin-right: auto;
+      position: relative;
+      line-height: 1.7;
+    }
+    .compass-divider {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin: 36px auto 0; position: relative;
+    }
+    .compass-divider::before,
+    .compass-divider::after {
+      content: ''; flex: 1; max-width: 180px;
+      height: 1px; background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .compass-divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
+    .compass-icon {
+      font-size: 1.5rem; color: var(--gold); line-height: 1;
+    }
+
+    /* ── INTRO BAND ── */
+    .intro-band {
+      background: var(--parchment);
+      padding: 52px 40px;
+      text-align: center;
+      border-bottom: 2px solid #d4b87a;
+    }
+    .intro-band p {
+      max-width: 740px; margin: 0 auto;
+      font-size: 1.1rem; line-height: 1.85;
+      color: #3a2510;
+    }
+    .plan-badge {
+      display: inline-block;
+      background: var(--rust);
+      color: var(--cream);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 2px;
+      margin-bottom: 18px;
+    }
+
+    /* ── PRINCIPLES GRID ── */
+    .principles-section {
+      background: var(--cream);
+      padding: 70px 40px;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--brown);
+      margin-bottom: 10px;
+    }
+    .section-rule {
+      width: 60px; height: 3px;
+      background: var(--gold);
+      margin: 0 auto 50px;
+      border-radius: 2px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .principle-card {
+      background: #fff;
+      border: 1px solid #ddd0b0;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+    }
+    .principle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 36px rgba(30,18,8,.22);
+    }
+
+    .card-header {
+      padding: 28px 28px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-header.identity   { background: linear-gradient(135deg, #2a1a0a, #5a3820); }
+    .card-header.participation { background: linear-gradient(135deg, #8B3A1A, #c05420); }
+    .card-header.equity     { background: linear-gradient(135deg, #1a3a2a, #2a6040); }
+    .card-header.competence { background: linear-gradient(135deg, #1a2a4a, #2a4a80); }
+
+    .card-letter {
+      position: absolute; right: -10px; top: -16px;
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem; font-weight: 700;
+      color: rgba(255,255,255,.07);
+      line-height: 1; user-select: none;
+    }
+    .card-tag {
+      font-size: .65rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 8px;
+    }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem; font-weight: 700;
+      color: #fff; line-height: 1.2;
+    }
+
+    .card-body {
+      padding: 26px 28px 30px;
+    }
+    .card-tagline {
+      font-style: italic;
+      font-size: .95rem;
+      color: var(--rust);
+      margin-bottom: 14px;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+      line-height: 1.5;
+    }
+    .card-desc {
+      font-size: .92rem;
+      line-height: 1.78;
+      color: #3a2510;
+      margin-bottom: 20px;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .card-features li {
+      font-size: .85rem;
+      color: #5a3820;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px dashed #e0d0b0;
+      line-height: 1.5;
+    }
+    .card-features li:last-child { border-bottom: none; }
+    .card-features li::before {
+      content: '◆';
+      position: absolute; left: 0;
+      font-size: .5rem; color: var(--gold);
+      top: 8px;
+    }
+
+    .card-cta {
+      display: inline-block;
+      background: var(--brown);
+      color: var(--gold-light);
+      font-size: .75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .card-cta:hover { background: var(--rust); }
+
+    /* ── DETAIL PANELS (expandable) ── */
+    .detail-panel {
+      display: none;
+      background: #fffdf5;
+      border-top: 2px solid var(--gold);
+      padding: 28px 28px 32px;
+      animation: slideDown .3s ease;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .detail-panel.open { display: block; }
+    .detail-panel h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--brown);
+      margin: 18px 0 8px;
+    }
+    .detail-panel h4:first-child { margin-top: 0; }
+    .detail-panel p, .detail-panel li {
+      font-size: .88rem; line-height: 1.75; color: #3a2510;
+    }
+    .detail-panel ul { list-style: disc; padding-left: 20px; margin-top: 6px; }
+    .detail-panel li { margin-bottom: 4px; }
+    .close-detail {
+      display: inline-block; margin-top: 18px;
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--rust); cursor: pointer; text-decoration: underline;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: linear-gradient(90deg, #2a1a0a 0%, #4a2e12 50%, #2a1a0a 100%);
+      padding: 50px 40px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+    }
+    .stats-grid {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 30px; text-align: center;
+    }
+    .stat-item {}
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+      color: #b8a07a; margin-top: 8px;
+    }
+
+    /* ── FOOTER NOTE ── */
+    .footer-note {
+      background: var(--parchment);
+      padding: 40px 40px;
+      text-align: center;
+      border-top: 1px solid #d4b87a;
+    }
+    .footer-note p {
+      font-size: .85rem; color: #6a4828; line-height: 1.7;
+      max-width: 620px; margin: 0 auto;
+    }
+    .footer-note strong { color: var(--rust); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero, .intro-band, .principles-section { padding: 40px 20px; }
+      .stats-strip { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">Scanlon Plan Library &nbsp;·&nbsp; Real-World Examples</p>
+  <h1>Watermark Credit Union<br><em>EPIC Plan</em></h1>
+  <p class="hero-sub">A fully realized Scanlon-based gainsharing and participation program adopted in 2005, built around four interconnected principles.</p>
+  <div class="compass-divider"><span class="compass-icon">✦</span></div>
+</header>
+
+<!-- INTRO -->
+<section class="intro-band">
+  <div class="plan-badge">Scanlon / Frost Plan · Financial Services · 2005</div>
+  <p>Watermark Credit Union (formerly Seattle Telco FCU) developed the <strong>EPIC Plan</strong> — standing for <strong>Equity, Participation, Identity, and Competence</strong> — as their route to becoming a billion-dollar credit union. Designed by an elected and appointed team of employees, it represents a textbook application of Scanlon principles in a service-sector organization. Each principle works in concert to create a culture of shared ownership, continuous improvement, and financial transparency.</p>
+</section>
+
+<!-- PRINCIPLES GRID -->
+<section class="principles-section">
+  <h2 class="section-title">The Four Principles</h2>
+  <div class="section-rule"></div>
+
+  <div class="principles-grid">
+
+    <!-- IDENTITY -->
+    <div class="principle-card" id="card-identity">
+      <div class="card-header identity">
+        <div class="card-letter">I</div>
+        <p class="card-tag">Principle One</p>
+        <h3 class="card-title">Identity</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-tagline">"Identity is the process of knowing ourselves — where we've come from, where we are now, and where we're going."</p>
+        <p class="card-desc">The Identity Principle ensures every employee understands the Credit Union's history, mission, competitive landscape, and strategic direction. Informed employees can align their daily work with organizational goals.</p>
+        <ul class="card-features">
+          <li>History from 1938 founding as Seattle Telco FCU</li>
+          <li>Strategic goal: $1 billion in assets by 2012</li>
+          <li>Board structure, duties of care, loyalty & obedience</li>
+          <li>Why the Expense-to-Asset Ratio must improve</li>
+          <li>Capital's impact on members, employees & the CU</li>
+        </ul>
+        <a class="card-cta" onclick="toggleDetail('identity')">Learn More ▾</a>
+      </div>
+      <div class="detail-panel" id="detail-identity">
+        <h4>Why Identity Matters</h4>
+        <p>Watermark's Strategic Plan called for growing assets to $1 billion with a 9% Capital Ratio by year-end 2012 — requiring 12% average annual growth. That meant five new Puget Sound branches, membership growing past 100,000, and staff expanding from 160 to ~260. Without every employee understanding this context, suggestions and decisions lack direction.</p>
+        <h4>Business Literacy Focus</h4>
+        <p>The plan dedicated training resources to making employees "business literate" — understanding the Expense-to-Asset Ratio (historically over 4% vs. an industry average of 3.5%), how capital is built and lost, and how their individual actions affect the Credit Union's long-term viability.</p>
+        <h4>Organizational Context</h4>
+        <p>Credit unions differ from banks: members are both owners and customers. This dual role is central to Watermark's equity model and gives the Identity Principle its cooperative character.</p>
+        <span class="close-detail" onclick="toggleDetail('identity')">▲ Close</span>
+      </div>
+    </div>
+
+    <!-- PARTICIPATION -->
+    <div class="principle-card" id="card-participation">
+      <div class="card-header participation">
+        <div class="card-letter">P</div>
+        <p class="card-tag">Principle Two</p>
+        <h3 class="card-title">Participation</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-tagline">"The opportunity, which only management can give, and the responsibility, which only employees can accept, to influence decisions in their areas of competence."</p>
+        <p class="card-desc">The Participation Principle creates a structured system for employees to submit suggestions, serve on committees, and drive change — harnessing the untapped knowledge of every staff member.</p>
+        <ul class="card-features">
+          <li>Department-level Review Committees (2–5 elected members)</li>
+          <li>Organization-wide Screening Committee</li>
+          <li>Department & Watermark Improvement Teams (DITs & WITs)</li>
+          <li>Formal Suggestion Process with business-case requirements</li>
+          <li>EPIC Coordinator role (20+ hrs/week dedicated position)</li>
+        </ul>
+        <a class="card-cta" onclick="toggleDetail('participation')">Learn More ▾</a>
+      </div>
+      <div class="detail-panel" id="detail-participation">
+        <h4>Committee Structure</h4>
+        <p>Each department/branch has a Review Committee, led by the manager and staffed by 2–5 elected employees on one-year terms. These committees evaluate suggestions within their scope, charter Department Improvement Teams, and elect a representative to the Screening Committee.</p>
+        <h4>The Screening Committee</h4>
+        <p>A mixed body of elected and appointed members (appointed members can never outnumber elected), the Screening Committee handles cross-functional suggestions, charters Watermark Improvement Teams, approves budgets, and ensures the organization's resources are directed at its highest-impact opportunities.</p>
+        <h4>Suggestion Types Encouraged</h4>
+        <ul>
+          <li>Increase operational efficiencies or reduce expenses</li>
+          <li>Increase revenue or member service quality</li>
+          <li>Improve productivity, quality, or employee morale</li>
+        </ul>
+        <h4>Response Options</h4>
+        <p>Every suggestion receives a formal response: Approved, Queued (approved but awaiting resources), Forwarded (sent to appropriate committee), Declined with feedback, or Appealed. No suggestion disappears without explanation.</p>
+        <span class="close-detail" onclick="toggleDetail('participation')">▲ Close</span>
+      </div>
+    </div>
+
+    <!-- EQUITY -->
+    <div class="principle-card" id="card-equity">
+      <div class="card-header equity">
+        <div class="card-letter">E</div>
+        <p class="card-tag">Principle Three</p>
+        <h3 class="card-title">Equity</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-tagline">"Only when the best interests of the whole are met, can the individual needs of each constituent group also be met."</p>
+        <p class="card-desc">The Equity Principle governs how financial gains from productivity improvements are measured and shared among the organization, its members, and its employees — fairly and transparently.</p>
+        <ul class="card-features">
+          <li>Gainsharing formula: Expense-to-Gross-Income productivity ratio</li>
+          <li>Quarterly distributions: 50% to CU capital, 40% to employees, 10% reserve</li>
+          <li>Reserve account absorbs deficit quarters</li>
+          <li>Distribution as % of compensation (FLSA compliant)</li>
+          <li>Fairness System for unfairness complaints & peer recognition</li>
+        </ul>
+        <a class="card-cta" onclick="toggleDetail('equity')">Learn More ▾</a>
+      </div>
+      <div class="detail-panel" id="detail-equity">
+        <h4>The Gainsharing Formula</h4>
+        <p>The productivity ratio is Operating Expenses ÷ Gross Income (excluding expenses employees can't influence). A three-year historical average sets the baseline. Each quarter, if actual expenses are lower than what the baseline ratio would predict given actual gross income, a gain is generated.</p>
+        <h4>Distribution Example</h4>
+        <p>Using a sample gain of $100,000: $50,000 goes to the Credit Union (capital), $40,000 is distributed to eligible employees as a percentage of their compensation, and $10,000 goes to a reserve account to offset future deficit quarters.</p>
+        <h4>Eligibility</h4>
+        <p>Full-time, part-time, temp-to-hire, and Investment/Insurance/Travel department employees are all eligible from day one — except temporary employees on assignment.</p>
+        <h4>Formula Review</h4>
+        <p>The formula is reviewed every six months for the first two years, then annually. Unusual circumstances can trigger an adjustment review by the EPIC Plan Evaluation Committee.</p>
+        <h4>Fairness System</h4>
+        <p>A 3–5 member Fairness Committee (led by the EPIC Coordinator) reviews requests from employees who feel treated unfairly or wish to recognize exceptional colleague performance. All decisions are communicated in writing with a detailed explanation.</p>
+        <span class="close-detail" onclick="toggleDetail('equity')">▲ Close</span>
+      </div>
+    </div>
+
+    <!-- COMPETENCE -->
+    <div class="principle-card" id="card-competence">
+      <div class="card-header competence">
+        <div class="card-letter">C</div>
+        <p class="card-tag">Principle Four</p>
+        <h3 class="card-title">Competence</h3>
+      </div>
+      <div class="card-body">
+        <p class="card-tagline">"Competence is the ability to respond to the constant demand for improvement and change."</p>
+        <p class="card-desc">The Competence Principle ensures both the organization and individuals continuously build the skills, knowledge, and capabilities needed to make the EPIC Plan succeed and deliver high-quality service.</p>
+        <ul class="card-features">
+          <li>Tuition assistance ($2,500/yr full-time; prorated part-time)</li>
+          <li>CUES Online University — 120+ credit union–specific courses</li>
+          <li>4-level internal course system (100 through 400 level)</li>
+          <li>16-session Supervisor's Management & Development Program</li>
+          <li>Deming Quality Management Training (17 sessions)</li>
+        </ul>
+        <a class="card-cta" onclick="toggleDetail('competence')">Learn More ▾</a>
+      </div>
+      <div class="detail-panel" id="detail-competence">
+        <h4>EPIC-Specific Training Courses</h4>
+        <ul>
+          <li><strong>EPIC 101</strong> — Scanlon History & EPIC Principles Overview</li>
+          <li><strong>EPIC 102</strong> — The Suggestion System (lifecycle, business case writing, appeals)</li>
+          <li><strong>EPIC 103</strong> — Introduction to Business Literacy (financial reports, SWOT, critical measures)</li>
+          <li><strong>EPIC 210</strong> — Active Team Participation (PDCA, Conway Process Improvement)</li>
+          <li><strong>EPIC 310</strong> — Leading & Working in Teams</li>
+          <li><strong>EPIC 311</strong> — Review & Screening Committee Roles & Responsibilities</li>
+        </ul>
+        <h4>Internal Training Architecture</h4>
+        <p>Courses range from 100-level broad surveys (no prerequisites) to 400-level specialized practicums. CORE job-skills training, On-the-Job Training with peer coaches, software skills, and professional development are all integrated.</p>
+        <h4>Deming Philosophy</h4>
+        <p>CEO Chuck Cockburn introduced Deming Quality Management in 2001. The 17-session program covers all 14 Deming principles and anchors the organizational culture that EPIC builds upon — quality, data-driven decisions, and elimination of waste.</p>
+        <h4>Senior Leadership Development</h4>
+        <p>A dedicated pipeline identifies leaders, provides 360-degree evaluations, developmental assignments, and promotes from within — treating leadership development as a long-term organizational investment.</p>
+        <span class="close-detail" onclick="toggleDetail('competence')">▲ Close</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-strip">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-label">Core Principles</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">80%</div>
+      <div class="stat-label">Staff Approval Required</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">40%</div>
+      <div class="stat-label">Gains to Employees</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">$1B</div>
+      <div class="stat-label">Asset Goal by 2012</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">120+</div>
+      <div class="stat-label">Training Courses Available</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER NOTE -->
+<footer class="footer-note">
+  <p>This plan was designed in 2005 by an elected and appointed Design Team at <strong>Watermark Credit Union</strong> (Seattle, WA), formerly Seattle Telco Federal Credit Union. It was submitted for employee ratification on October 10, 2005, requiring at least 80% staff approval to take effect. It represents an authentic, complete Scanlon Plan adapted for a growing financial services cooperative.</p>
+</footer>
+
+<script>
+  function toggleDetail(id) {
+    const panel = document.getElementById('detail-' + id);
+    panel.classList.toggle('open');
+    const btn = document.querySelector('#card-' + id + ' .card-cta');
+    if (panel.classList.contains('open')) {
+      btn.textContent = 'Close ▴';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      btn.textContent = 'Learn More ▾';
+    }
+  }
+</script>
+</body>
+</html>

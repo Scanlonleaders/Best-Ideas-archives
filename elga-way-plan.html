@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The ELGA Way — ELGA Credit Union Scanlon Plan 2011</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#4a2060;--purple-light:#7b4fa6;--gold:#c8952a;--gold-light:#e8b040;--red:#b52025;--blue-road:#1e3d6e;--cream:#faf8f4;--warm-white:#f5f0e8;--warm-gray:#e8e0d2;--text-dark:#1a1520;--text-mid:#3d3550;--text-light:#7a7090;--asphalt:#1a1a20}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'IBM Plex Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden}
+.hero{min-height:100vh;background:var(--asphalt);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(74,32,96,.4) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 80% 40%,rgba(181,32,37,.15) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,149,42,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,149,42,.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-left{position:relative;z-index:3;padding:80px 50px 80px 80px;display:flex;flex-direction:column;justify-content:center}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:12px;opacity:0;animation:fadeUp .7s ease .2s forwards}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+.hero-the{font-family:'IBM Plex Sans',sans-serif;font-size:clamp(16px,2vw,22px);font-weight:300;color:rgba(255,255,255,.4);letter-spacing:.3em;text-transform:uppercase;margin-bottom:4px;opacity:0;animation:fadeUp .7s ease .4s forwards}
+.hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(60px,8vw,100px);font-weight:700;color:#fff;line-height:.95;margin-bottom:10px;opacity:0;animation:fadeUp .7s ease .5s forwards}
+.hero-title span{color:var(--gold-light)}
+.hero-way{font-family:'Libre Baskerville',serif;font-size:clamp(26px,3.5vw,46px);font-weight:400;font-style:italic;color:rgba(255,255,255,.55);margin-bottom:44px;opacity:0;animation:fadeUp .7s ease .6s forwards}
+.hero-principles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:44px;opacity:0;animation:fadeUp .7s ease .8s forwards}
+.principle-chip{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:13px;color:rgba(255,255,255,.75);transition:all .2s;cursor:default}
+.principle-chip:hover{border-color:var(--gold);color:var(--gold-light)}
+.chip-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-purple{background:var(--purple-light)}.dot-red{background:#d93030}.dot-gold{background:var(--gold)}.dot-blue{background:#2d5a9e}
+.hero-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.12em;line-height:2;opacity:0;animation:fadeUp .7s ease 1s forwards}
+.hero-right{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;padding:60px;opacity:0;animation:fadeIn 1.2s ease 1s forwards}
+.shield-wrap{position:relative;width:280px;height:340px}
+.shield-svg{width:100%;height:100%;filter:drop-shadow(0 20px 60px rgba(74,32,96,.7))}
+.shield-text-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-38%);text-align:center}
+.shield-the{font-family:'Libre Baskerville',serif;font-size:22px;color:#fff;display:block}
+.shield-elga{font-family:'Libre Baskerville',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;display:block}
+.shield-way{font-family:'Libre Baskerville',serif;font-size:28px;font-style:italic;color:rgba(255,255,255,.85);display:block}
+.scanlon-tag{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);background:rgba(200,149,42,.12);border:1px solid rgba(200,149,42,.3);color:var(--gold-light);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.15em;padding:6px 16px;white-space:nowrap;text-transform:uppercase}
+.sticky-nav{position:sticky;top:0;z-index:100;background:rgba(26,20,32,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,149,42,.15);padding:0 60px;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none}
+.sticky-nav::-webkit-scrollbar{display:none}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;padding:18px 0;margin-right:40px;white-space:nowrap;flex-shrink:0}
+.nav-link{font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:20px 16px;white-space:nowrap;transition:color .2s;flex-shrink:0}
+.nav-link:hover{color:var(--gold-light)}
+section{padding:100px 80px}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+h2.section-title{font-family:'Libre Baskerville',serif;font-size:clamp(30px,4vw,50px);font-weight:700;line-height:1.1;margin-bottom:18px}
+.section-intro{font-size:16px;line-height:1.8;color:var(--text-mid);max-width:680px;margin-bottom:56px}
+#identity{background:var(--cream)}
+.identity-statement{background:var(--purple);padding:52px 56px;margin-bottom:2px}
+.identity-statement blockquote{font-family:'Libre Baskerville',serif;font-size:clamp(16px,2vw,22px);font-style:italic;color:#fff;line-height:1.55;border-left:3px solid var(--gold);padding-left:28px}
+.core-values-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
+.core-value{background:var(--asphalt);padding:36px 40px;display:flex;gap:20px;align-items:flex-start;transition:background .2s}
+.core-value:hover{background:#28222e}
+.cv-number{font-family:'Libre Baskerville',serif;font-size:44px;font-weight:700;color:rgba(200,149,42,.15);line-height:1;flex-shrink:0;width:44px}
+.cv-text{font-size:14px;line-height:1.75;color:rgba(255,255,255,.6);padding-top:6px}
+.history-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--warm-gray)}
+.history-card{padding:36px 28px;border-right:1px solid var(--warm-gray)}
+.history-card:last-child{border-right:none}
+.history-decade{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--purple-light);line-height:1;margin-bottom:12px}
+.history-desc{font-size:13px;line-height:1.7;color:var(--text-mid)}
+#metrics{background:var(--purple);color:#fff}
+#metrics h2.section-title,#competency h2.section-title,#timeline h2.section-title{color:#fff}
+#metrics .section-intro,#competency .section-intro{color:rgba(255,255,255,.5)}
+#metrics .section-label,#competency .section-label,#timeline .section-label{color:var(--gold-light)}
+#metrics .section-label::before,#competency .section-label::before,#timeline .section-label::before{background:var(--gold-light)}
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.metric-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:36px;transition:background .2s,border-color .2s;cursor:default}
+.metric-card:hover{background:rgba(200,149,42,.1);border-color:rgba(200,149,42,.3)}
+.metric-name{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.metric-goal{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1}
+.metric-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,.45)}
+#participation{background:var(--warm-white)}
+.participation-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.condition-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--warm-gray);align-items:flex-start}
+.condition-num{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:var(--purple-light);flex-shrink:0;width:36px;line-height:1;margin-top:2px}
+.condition-text{font-size:14px;line-height:1.7;color:var(--text-mid)}
+.condition-text strong{display:block;font-size:15px;color:var(--text-dark);margin-bottom:4px}
+.flowchart{background:var(--asphalt);padding:40px}
+.flowchart h3{font-family:'Libre Baskerville',serif;font-size:18px;color:var(--gold-light);font-style:italic;margin-bottom:28px}
+.flow-step{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.flow-icon{width:32px;height:32px;border-radius:50%;background:rgba(200,149,42,.15);border:1px solid rgba(200,149,42,.3);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.flow-content{font-size:13px;line-height:1.65;color:rgba(255,255,255,.55);padding-top:4px}
+.flow-arrow{text-align:center;color:rgba(200,149,42,.4);font-size:16px;padding:4px 0}
+.flow-outcomes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px}
+.outcome{padding:12px;font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.06em;text-align:center;line-height:1.5}
+.outcome-yes{background:rgba(50,180,80,.1);color:#5ddb7a;border:1px solid rgba(50,180,80,.2)}
+.outcome-maybe{background:rgba(200,149,42,.1);color:var(--gold-light);border:1px solid rgba(200,149,42,.2)}
+.outcome-no{background:rgba(181,32,37,.1);color:#e05050;border:1px solid rgba(181,32,37,.2)}
+.rewards-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:60px}
+.reward-card{background:var(--purple);padding:40px 36px;position:relative;overflow:hidden;transition:transform .2s}
+.reward-card:hover{transform:translateY(-4px)}
+.reward-card::after{content:attr(data-prize);position:absolute;bottom:16px;right:20px;font-family:'Libre Baskerville',serif;font-size:56px;font-weight:700;color:rgba(255,255,255,.04);line-height:1}
+.reward-freq{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.reward-title{font-family:'Libre Baskerville',serif;font-size:20px;color:#fff;margin-bottom:10px}
+.reward-amount{font-family:'Libre Baskerville',serif;font-size:36px;font-weight:700;color:var(--gold-light);margin-bottom:10px}
+.reward-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,.45)}
+#equity{background:var(--cream)}
+.stakeholders{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:60px}
+.stakeholder-card{padding:44px 40px;border-top:4px solid transparent;transition:border-color .2s,background .2s}
+.stakeholder-card:hover{border-top-color:var(--purple-light);background:var(--warm-white)}
+.s-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.25em;color:var(--purple-light);text-transform:uppercase;margin-bottom:16px}
+.s-title{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;margin-bottom:16px}
+.s-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.s-list li{font-size:13px;line-height:1.6;color:var(--text-mid);padding-left:16px;position:relative}
+.s-list li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px}
+.gain-sharing-box{background:var(--asphalt);padding:56px;margin-bottom:2px}
+.gain-sharing-box h3{font-family:'Libre Baskerville',serif;font-size:26px;color:#fff;margin-bottom:32px}
+.formula-row{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.f-step-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);text-align:center;width:44px;height:44px;border:1px solid rgba(200,149,42,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(200,149,42,.06)}
+.f-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.5}
+.f-value{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold-light);text-align:right;white-space:nowrap}
+.formula-result{background:rgba(200,149,42,.1);border:1px solid rgba(200,149,42,.25);padding:24px 32px;display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.result-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}
+.result-value{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:var(--gold-light)}
+.service-scale{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08);padding:32px;margin-top:32px}
+.scale-title{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.scale-bars{display:flex;align-items:flex-end;gap:8px;height:80px;margin-bottom:8px}
+.scale-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.scale-bar{width:100%;background:linear-gradient(to top,var(--gold),var(--gold-light));border-radius:2px 2px 0 0}
+.scale-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,.4)}
+.scale-pct{font-size:11px;color:var(--gold-light);font-weight:500}
+#competency{background:var(--purple);color:#fff}
+.competency-definition{background:rgba(255,255,255,.06);border-left:3px solid var(--gold);padding:24px 32px;margin-bottom:56px;font-family:'Libre Baskerville',serif;font-style:italic;font-size:17px;color:rgba(255,255,255,.8);line-height:1.65}
+.training-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:40px}
+.training-card{background:rgba(255,255,255,.05);padding:36px;border-bottom:2px solid transparent;transition:border-color .2s,background .2s;cursor:default}
+.training-card:hover{border-bottom-color:var(--gold);background:rgba(255,255,255,.08)}
+.training-type{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.training-name{font-family:'Libre Baskerville',serif;font-size:18px;color:#fff;margin-bottom:10px}
+.training-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,.45)}
+.tuition-banner{background:rgba(200,149,42,.12);border:1px solid rgba(200,149,42,.25);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.tuition-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.tuition-text{font-size:14px;line-height:1.65;color:rgba(255,255,255,.6)}
+.tuition-pct{font-family:'Libre Baskerville',serif;font-size:52px;font-weight:700;color:var(--gold-light);line-height:1}
+.tuition-cap{font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(255,255,255,.35);margin-top:4px}
+#process{background:var(--warm-white)}
+.process-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.process-heading{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.process-tagline{font-size:13px;color:var(--text-light);font-style:italic;margin-bottom:28px}
+.kaizen-phase{background:var(--asphalt);padding:24px 28px;display:flex;gap:20px;align-items:flex-start;margin-bottom:2px;transition:background .2s}
+.kaizen-phase:hover{background:#28222e}
+.kp-num{font-family:'Libre Baskerville',serif;font-size:30px;font-weight:700;color:var(--gold);flex-shrink:0;width:30px;line-height:1;margin-top:2px}
+.kp-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.kp-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,.45)}
+.pdca-cycle{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.pdca-card{padding:32px 28px;position:relative;overflow:hidden}
+.pdca-p{background:var(--purple)}.pdca-d{background:var(--red)}.pdca-c{background:var(--blue-road)}.pdca-a{background:#1a4030}
+.pdca-letter{font-family:'Libre Baskerville',serif;font-size:80px;font-weight:700;color:rgba(255,255,255,.07);position:absolute;bottom:-16px;right:12px;line-height:1}
+.pdca-word{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:10px}
+.pdca-title{font-family:'Libre Baskerville',serif;font-size:18px;color:#fff;margin-bottom:8px}
+.pdca-desc{font-size:12px;line-height:1.65;color:rgba(255,255,255,.5)}
+#timeline{background:var(--asphalt);color:#fff}
+.timeline-track{position:relative;padding:20px 0}
+.timeline-track::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(200,149,42,.1));transform:translateX(-50%)}
+.tl-row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;margin-bottom:28px}
+.tl-left,.tl-right{padding:14px 28px;font-size:13px;line-height:1.65;color:rgba(255,255,255,.5)}
+.tl-right{text-align:right}
+.tl-year{font-family:'Libre Baskerville',serif;font-size:22px;font-weight:700;color:var(--gold-light);margin-bottom:4px}
+.tl-stats{font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(200,149,42,.7);margin-top:6px;line-height:1.8}
+.tl-center{display:flex;align-items:center;justify-content:center}
+.tl-dot{width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--asphalt);box-shadow:0 0 0 2px var(--gold);z-index:1}
+#dispute{background:var(--cream)}
+.dispute-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.dispute-step{background:var(--asphalt);padding:40px 32px;position:relative;overflow:hidden;transition:background .2s}
+.dispute-step:hover{background:#22202a}
+.ds-step-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.ds-step-big{font-family:'Libre Baskerville',serif;font-size:60px;font-weight:700;color:rgba(255,255,255,.04);position:absolute;bottom:-10px;right:12px;line-height:1}
+.ds-title{font-family:'Libre Baskerville',serif;font-size:17px;color:#fff;margin-bottom:12px}
+.ds-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,.4)}
+footer{background:var(--purple);border-top:1px solid rgba(200,149,42,.2);padding:60px 80px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
+.footer-brand{font-family:'Libre Baskerville',serif;font-size:30px;font-weight:700;color:#fff}
+.footer-brand span{color:var(--gold-light)}
+.footer-tagline{font-family:'Libre Baskerville',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,.4);margin-top:6px}
+.footer-meta{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,.3);line-height:2}
+.gold-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(200,149,42,.3),transparent);margin:0 80px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-right{display:none}section{padding:70px 32px}.core-values-grid,.metrics-grid,.training-grid,.stakeholders,.dispute-steps{grid-template-columns:1fr}.participation-layout,.process-layout{grid-template-columns:1fr}.history-grid{grid-template-columns:1fr 1fr}.rewards-strip{grid-template-columns:1fr}.pdca-cycle{grid-template-columns:1fr}.tl-row{grid-template-columns:1fr 40px 1fr}footer{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+<div class="hero-grid"></div>
+<div class="hero-overlay"></div>
+<div class="hero-left">
+<div class="hero-eyebrow">ELGA Credit Union — Genesee County, Michigan</div>
+<div class="hero-the">The</div>
+<h1 class="hero-title"><span>ELGA</span></h1>
+<p class="hero-way">Way</p>
+<div class="hero-principles">
+<div class="principle-chip"><span class="chip-dot dot-purple"></span>Identity</div>
+<div class="principle-chip"><span class="chip-dot dot-red"></span>Participation</div>
+<div class="principle-chip"><span class="chip-dot dot-gold"></span>Equity</div>
+<div class="principle-chip"><span class="chip-dot dot-blue"></span>Competence</div>
+</div>
+<div class="hero-meta">Scanlon Plan &middot; August 16, 2011<br>Requires 80% Associate Approval &middot; Vote: August 30, 2011<br>ELGA Credit Union &middot; Founded January 31, 1951</div>
+</div>
+<div class="hero-right">
+<div class="shield-wrap">
+<svg class="shield-svg" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M140 8 L268 50 L268 160 C268 230 210 290 140 312 C70 290 12 230 12 160 L12 50 Z" fill="#1a2a5e" stroke="rgba(200,149,42,0.4)" stroke-width="2"/>
+<path d="M140 8 L268 50 L268 80 L12 80 L12 50 Z" fill="#9b1a20"/>
+<path d="M140 24 L252 62 L252 160 C252 222 200 276 140 296 C80 276 28 222 28 160 L28 62 Z" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+</svg>
+<div class="shield-text-overlay">
+<span class="shield-the">The</span>
+<span class="shield-elga">ELGA</span>
+<span class="shield-way">Way</span>
+</div>
+<div class="scanlon-tag">Scanlon Principles &middot; 2011</div>
+</div>
+</div>
+</section>
+
+<nav class="sticky-nav">
+<div class="nav-brand">The ELGA Way</div>
+<a class="nav-link" href="#identity">Identity</a>
+<a class="nav-link" href="#metrics">Metrics</a>
+<a class="nav-link" href="#participation">Participation</a>
+<a class="nav-link" href="#equity">Equity</a>
+<a class="nav-link" href="#competency">Competency</a>
+<a class="nav-link" href="#process">Process Tools</a>
+<a class="nav-link" href="#timeline">Timeline</a>
+<a class="nav-link" href="#dispute">Dispute Resolution</a>
+</nav>
+
+<section id="identity">
+<div class="section-label">Principle I</div>
+<h2 class="section-title reveal">Identity</h2>
+<p class="section-intro reveal">ELGA Credit Union is a cooperative — a partnership between employees, members, management, board of directors, and the communities it serves. Founded January 31, 1951, to help underserved Consumers Energy employees in Genesee County, Michigan.</p>
+<div class="identity-statement reveal">
+<blockquote>"Building member relationships through exceptional service while maintaining strong financial performance and supporting our communities."</blockquote>
+</div>
+<div class="core-values-grid reveal">
+<div class="core-value"><div class="cv-number">1</div><div class="cv-text">We listen and interact to identify opportunities to provide genuine above and beyond service to ensure financial success for our members.</div></div>
+<div class="core-value"><div class="cv-number">2</div><div class="cv-text">We go where we're afraid to go, do what we're afraid to do, and say what we're afraid to say — being courageous every single day.</div></div>
+<div class="core-value"><div class="cv-number">3</div><div class="cv-text">We incorporate a fun atmosphere in our professional environment, making ELGA the greatest place to work, bank, and borrow.</div></div>
+<div class="core-value"><div class="cv-number">4</div><div class="cv-text">We provide an environment for ongoing personal and professional growth, investing in every associate's development and potential.</div></div>
+</div>
+<div style="height:40px"></div>
+<div class="history-grid reveal">
+<div class="history-card"><div class="history-decade">1951</div><div class="history-desc">Founded January 31st to serve underpaid Consumers Energy employees. Name chosen via contest in 1959 combining "electrical" and "gas."</div></div>
+<div class="history-card"><div class="history-decade">1970–80s</div><div class="history-desc">Introduced checking accounts, ATMs, and merged with three credit unions to counter shrinking membership. Risk-based lending made ELGA the only lender helping many members.</div></div>
+<div class="history-card"><div class="history-decade">1990s–2000s</div><div class="history-desc">Overdraft protection, debit cards, XpressLink, e-Statements, online bill pay, grocery locations, and commercial lending launched. Membership grew to 20,326 by 2001.</div></div>
+<div class="history-card"><div class="history-decade">2008–2011</div><div class="history-desc">Community charter expanded membership to six counties. 2008–2010 were the most challenging years. Assets reached $261.6M with 43,754 members by 2010.</div></div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="metrics">
+<div class="section-label">Performance Dashboard</div>
+<h2 class="section-title reveal">Key Metrics &amp; Goals</h2>
+<p class="section-intro reveal">These quantitative measures define what success looks like for ELGA Credit Union stakeholders — guiding daily decisions and connecting every associate's actions to organizational health.</p>
+<div class="metrics-grid reveal">
+<div class="metric-card"><div class="metric-name">Efficiency Ratio</div><div class="metric-goal">0.65</div><div class="metric-desc">Cost to generate each $1 of revenue. The primary gain sharing trigger. Lower is better.</div></div>
+<div class="metric-card"><div class="metric-name">Member Service Survey</div><div class="metric-goal">5.0</div><div class="metric-desc">Scale of 1–5. Each point = 20% of payout eligibility. Score of 5 unlocks 100% of gain sharing.</div></div>
+<div class="metric-card"><div class="metric-name">Capital Ratio</div><div class="metric-goal">&ge; 9.5%</div><div class="metric-desc">Regulatory reserve requirement. The "rainy day fund" ensuring viability through challenging times.</div></div>
+<div class="metric-card"><div class="metric-name">Return on Assets</div><div class="metric-goal">&ge; 1.5%</div><div class="metric-desc">Net gain or loss divided by total assets. Measures profitability relative to the asset base deployed.</div></div>
+<div class="metric-card"><div class="metric-name">Delinquency Ratio</div><div class="metric-goal">&le; 2%</div><div class="metric-desc">Percentage of loan totals past due at least 60 days. Reflects underwriting quality and member financial health.</div></div>
+<div class="metric-card"><div class="metric-name">Loan to Share</div><div class="metric-goal">&ge; 90%</div><div class="metric-desc">How much of member shares we've been able to loan out. Maximizing this ratio drives income for member benefits.</div></div>
+<div class="metric-card"><div class="metric-name">Services per Household</div><div class="metric-goal">3.5 avg.</div><div class="metric-desc">Must include a loan and/or VISA product. Multi-service households have stronger, longer-lasting relationships.</div></div>
+<div class="metric-card"><div class="metric-name">Community Involvement</div><div class="metric-goal">Annual Goal</div><div class="metric-desc">Hours associates give back to communities. Must be met for gain sharing to be paid. Goal set annually by management.</div></div>
+<div class="metric-card"><div class="metric-name">Board Duties</div><div class="metric-goal">3 Duties</div><div class="metric-desc">Duty of Care, Duty of Loyalty, and Duty of Obedience. Volunteer board governs strategy and fiduciary compliance.</div></div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="participation">
+<div class="section-label">Principle II</div>
+<h2 class="section-title reveal">Participation</h2>
+<p class="section-intro reveal">Participation is involvement — taking your suggestions and making them happen. Every associate is empowered and authorized to suggest and implement beneficial changes in their immediate area of responsibility.</p>
+<div class="participation-layout reveal">
+<div>
+<div class="condition-item"><div class="condition-num">1</div><div class="condition-text"><strong>Know the Reality</strong>Everyone must understand the business and the role they play in its success.</div></div>
+<div class="condition-item"><div class="condition-num">2</div><div class="condition-text"><strong>Provide Opportunity</strong>Management must provide meaningful, substantive opportunities for participation.</div></div>
+<div class="condition-item"><div class="condition-num">3</div><div class="condition-text"><strong>Accept Responsibility</strong>Associates must accept increased responsibility for outcomes in their area.</div></div>
+<div class="condition-item"><div class="condition-num">4</div><div class="condition-text"><strong>Increase Competency</strong>Everyone must grow knowledge and skills to participate fully and effectively.</div></div>
+<div style="background:var(--asphalt);padding:32px;margin-top:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:12px">Process Note</div><p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.5)">Before submitting, associates must research all areas of impact and discuss with a peer for a "second opinion." All suggestions posted to the Sandbox are reevaluated at 1 and 3 months.</p></div>
+</div>
+<div class="flowchart">
+<h3>Suggestion Flow — Credit Union Wide</h3>
+<div class="flow-step"><div class="flow-icon">&#x1F4AC;</div><div class="flow-content">Associate discusses suggestion with a peer, gets validation, then submits via Sandbox form.</div></div>
+<div class="flow-arrow">&#x2193;</div>
+<div class="flow-step"><div class="flow-icon">&#x1F4CB;</div><div class="flow-content">Participation Team receives, sends thank-you, posts to Sandbox, and evaluates feasibility.</div></div>
+<div class="flow-arrow">&#x2193;</div>
+<div class="flow-step"><div class="flow-icon">&#x2696;</div><div class="flow-content">Can the suggestion be executed?</div></div>
+<div class="flow-outcomes">
+<div class="outcome outcome-yes">YES<br>Problem Solvers assigned. Reward given.</div>
+<div class="outcome outcome-maybe">MAYBE<br>More info needed. Dept. heads contacted.</div>
+<div class="outcome outcome-no">NO<br>Associate notified. Revise and resubmit.</div>
+</div>
+</div>
+</div>
+<div class="rewards-strip reveal">
+<div class="reward-card" data-prize="$25"><div class="reward-freq">Monthly Drawing</div><div class="reward-title">Participation Prize</div><div class="reward-amount">$25+</div><div class="reward-desc">All completed suggestion forms — implemented or not — entered in a monthly drawing.</div></div>
+<div class="reward-card" data-prize="$50"><div class="reward-freq">Quarterly Drawing</div><div class="reward-title">Implementation Prize</div><div class="reward-amount">$50+</div><div class="reward-desc">All suggestions implemented during the quarter. Three winners selected each quarter-end.</div></div>
+<div class="reward-card" data-prize="$500"><div class="reward-freq">Annual Award</div><div class="reward-title">Year-End Excellence</div><div class="reward-amount">$500+</div><div class="reward-desc">Executive Committee scores on member satisfaction, cost savings, teamwork, and morale. Winner receives award plaque update.</div></div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="equity">
+<div class="section-label">Principle III</div>
+<h2 class="section-title reveal">Equity</h2>
+<p class="section-intro reveal">ELGA Credit Union recognizes three stakeholders: Members, Associates, and the Organization. All three must be treated equitably — creating a virtuous cycle of trust, performance, and shared gain.</p>
+<div class="stakeholders reveal">
+<div class="stakeholder-card"><div class="s-label">Stakeholder 01</div><div class="s-title">Equity to Members</div><ul class="s-list"><li>Great service delivered reliably and quickly</li><li>Highest deposit rates and lowest loan rates</li><li>Low fees and transparent pricing</li><li>Corporate Social Responsibility and community support</li></ul></div>
+<div class="stakeholder-card"><div class="s-label">Stakeholder 02</div><div class="s-title">Equity to Associates</div><ul class="s-list"><li>Fair compensation, benefits, and job security</li><li>Involvement and empowerment</li><li>Resources to do the job effectively</li><li>Share in the gains of the Credit Union</li><li>Clear and fair dispute resolution</li></ul></div>
+<div class="stakeholder-card"><div class="s-label">Stakeholder 03</div><div class="s-title">Equity to the Organization</div><ul class="s-list"><li>Members contribute through products or fee income</li><li>Reserves built through profitability ensure viability</li><li>Relationship pricing creates sustainable membership tiers</li><li>Associates fulfill expectations to drive organizational health</li></ul></div>
+</div>
+<div class="gain-sharing-box reveal">
+<h3>Gain Sharing — How the Payout Formula Works</h3>
+<div class="formula-row"><div class="f-step-num">01</div><div class="f-desc">Establish baseline efficiency ratio (2-year average)</div><div class="f-value">e.g. 66.16%</div></div>
+<div class="formula-row"><div class="f-step-num">02</div><div class="f-desc">Get Quarter-to-Date (QTD) net revenue</div><div class="f-value">e.g. $5,600,347</div></div>
+<div class="formula-row"><div class="f-step-num">03</div><div class="f-desc">QTD revenue x baseline ratio = Expected operating expenses</div><div class="f-value">= $3,705,189</div></div>
+<div class="formula-row"><div class="f-step-num">04</div><div class="f-desc">Compare actual QTD expenses to expected</div><div class="f-value">Actual: $3,460,606</div></div>
+<div class="formula-row"><div class="f-step-num">05</div><div class="f-desc">Difference = Total gain sharing pool</div><div class="f-value">= $244,583</div></div>
+<div class="formula-row"><div class="f-step-num">06</div><div class="f-desc">50% to associates; adjusted by member service rating (avg. 4/5 = 80%)</div><div class="f-value">= $97,833</div></div>
+<div class="formula-row"><div class="f-step-num">07</div><div class="f-desc">90% paid out; 10% held in reserve for deficit years</div><div class="f-value">$88,050 paid out</div></div>
+<div class="formula-row"><div class="f-step-num">08-10</div><div class="f-desc">Distribution % = pool divided by total compensation. Each associate's earnings x distribution %</div><div class="f-value">e.g. 6.99% x $10k = $699</div></div>
+<div class="formula-result">
+<div><div class="result-label">Example: Sally Associate — $10k quarterly compensation</div><div style="font-size:13px;color:rgba(255,255,255,.35);margin-top:4px">Community involvement goal must be met. ELGA must have QTD net gain.</div></div>
+<div class="result-value">$699</div>
+</div>
+<div class="service-scale">
+<div class="scale-title">Member Service Rating to Payout Multiplier</div>
+<div class="scale-bars">
+<div class="scale-bar-wrap"><div class="scale-pct">20%</div><div class="scale-bar" style="height:16px"></div><div class="scale-label">1</div></div>
+<div class="scale-bar-wrap"><div class="scale-pct">40%</div><div class="scale-bar" style="height:32px"></div><div class="scale-label">2</div></div>
+<div class="scale-bar-wrap"><div class="scale-pct">60%</div><div class="scale-bar" style="height:48px"></div><div class="scale-label">3</div></div>
+<div class="scale-bar-wrap"><div class="scale-pct">80%</div><div class="scale-bar" style="height:64px"></div><div class="scale-label">4</div></div>
+<div class="scale-bar-wrap"><div class="scale-pct">100%</div><div class="scale-bar" style="height:80px"></div><div class="scale-label">5</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="competency">
+<div class="section-label">Principle IV</div>
+<h2 class="section-title reveal">Competency</h2>
+<p class="section-intro reveal">Competency is the backbone of organizational improvement. The organization provides the tools — associates use them to continuously grow.</p>
+<div class="competency-definition reveal">"The ability to respond to the constant demand for improvement and change."</div>
+<div class="training-grid reveal">
+<div class="training-card"><div class="training-type">Internal</div><div class="training-name">CORE Employee Training</div><div class="training-desc">Four-level program ensuring individual competence in each job description — safely, efficiently, and skillfully performing every role.</div></div>
+<div class="training-card"><div class="training-type">Internal</div><div class="training-name">Mentor Program</div><div class="training-desc">New-position associates paired with trained mentors. Ensures consistent skill levels across all branches, reducing variation and improving service.</div></div>
+<div class="training-card"><div class="training-type">Internal</div><div class="training-name">Supervisor Development</div><div class="training-desc">Ongoing required courses and mentoring prepare employees for authority, preventing costly turnover from undertrained managers.</div></div>
+<div class="training-card"><div class="training-type">Online</div><div class="training-name">CUES Online University</div><div class="training-desc">120+ courses in accounting, compliance, HR, lending, and management. One CUES module required per quarter. Accessible from any device.</div></div>
+<div class="training-card"><div class="training-type">Online</div><div class="training-name">Software Skills (Lynda.com)</div><div class="training-desc">Introductory and advanced Microsoft Windows and Office training, enabling better use of business tools day-to-day.</div></div>
+<div class="training-card"><div class="training-type">External</div><div class="training-name">Conferences and Seminars</div><div class="training-desc">Consultants, specialists, and organizations with field expertise. Used for job-specific competencies including conferences, seminars, and webinars.</div></div>
+<div class="training-card"><div class="training-type">Coaching</div><div class="training-name">Individual Coaching Sessions</div><div class="training-desc">Associates work with managers to determine the right mix of job-specific and professional development learning for their career path.</div></div>
+<div class="training-card"><div class="training-type">ELGA Way</div><div class="training-name">The ELGA Way Training</div><div class="training-desc">All staff receive Scanlon history, suggestion system, and business literacy. Team leaders receive active participation and committee training.</div></div>
+<div class="training-card"><div class="training-type">Reimbursement</div><div class="training-name">Tuition Assistance</div><div class="training-desc">75% reimbursement for CU-relevant courses with a grade of C or above, covering degrees, certifications, and developmental coursework.</div></div>
+</div>
+<div class="tuition-banner reveal">
+<div style="flex:1"><div class="tuition-label">Tuition Reimbursement Program</div><div class="tuition-text">All regular full-time employees eligible. Covers CU-applicable degrees, developmental courses, and professional certification prep. Grade of C, Pass, or 2.0+ required.</div></div>
+<div style="text-align:right;flex-shrink:0"><div class="tuition-pct">75%</div><div class="tuition-cap">Max $4,500 per calendar year</div></div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="process">
+<div class="section-label">Appendices A and B</div>
+<h2 class="section-title reveal">Process Improvement Tools</h2>
+<p class="section-intro reveal">Two new methodologies introduced with the Scanlon portion of The ELGA Way — both derived from LEAN thinking and used together or independently to drive systematic improvement.</p>
+<div class="process-layout reveal">
+<div>
+<div class="process-heading">Kaizen Blitz</div>
+<div class="process-tagline">Rapid improvement event — typically 3 to 8 days</div>
+<div class="kaizen-phase"><div class="kp-num">1</div><div><div class="kp-title">Initial Analysis</div><div class="kp-desc">Select Blitz area, compile team of up to 15 people. Develop a contract (empowerment statement) and mandate (aggressive yet achievable goal).</div></div></div>
+<div class="kaizen-phase"><div class="kp-num">2</div><div><div class="kp-title">Kaizen Blitz Event</div><div class="kp-desc">3 to 8 full days, 8 hours per day. Full training day, process analysis, baseline measurement, development and implementation of new processes, and formal presentation of accomplishments.</div></div></div>
+<div class="kaizen-phase"><div class="kp-num">3</div><div><div class="kp-title">Follow Up</div><div class="kp-desc">Team members visit affected areas for 5 to 10 days post-event to debug the process, complete action items, and ensure new processes are deployed across all applicable departments.</div></div></div>
+</div>
+<div>
+<div class="process-heading">Plan-Do-Check-Act</div>
+<div class="process-tagline">Systematic change management cycle for sustained improvement</div>
+<div class="pdca-cycle">
+<div class="pdca-card pdca-p"><div class="pdca-letter">P</div><div class="pdca-word">Plan</div><div class="pdca-title">Define and Strategize</div><div class="pdca-desc">Define problem, validate with senior management, compile change control team, collect process data, flowchart, analyze, and generate solutions.</div></div>
+<div class="pdca-card pdca-d"><div class="pdca-letter">D</div><div class="pdca-word">Do</div><div class="pdca-title">Test at Small Scale</div><div class="pdca-desc">Develop testing plan and beta-implement the solution in a single, controlled branch environment before broader rollout.</div></div>
+<div class="pdca-card pdca-c"><div class="pdca-letter">C</div><div class="pdca-word">Check</div><div class="pdca-title">Evaluate Results</div><div class="pdca-desc">Review pilot data. Verify goals met. Discuss successes and failures. Validate the solution will positively impact all affected business units.</div></div>
+<div class="pdca-card pdca-a"><div class="pdca-letter">A</div><div class="pdca-word">Act</div><div class="pdca-title">Implement and Monitor</div><div class="pdca-desc">Standardize procedures, train all business units, install technology, and continuously monitor for compliance and sub-standard results.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="timeline">
+<div class="section-label">ELGA History</div>
+<h2 class="section-title reveal">60 Years of Growth</h2>
+<div class="timeline-track reveal">
+<div class="tl-row"><div class="tl-left"><div class="tl-year">1951</div>Founded January 31st to serve Consumers Energy employees<div class="tl-stats">Assets: $20,878 | Loans: $18,171 | Members: 250</div></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"></div></div>
+<div class="tl-row"><div class="tl-left"></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"><div class="tl-year">1961</div>First decade of growth<div class="tl-stats">Assets: $1,040,471 | Members: 1,408</div></div></div>
+<div class="tl-row"><div class="tl-left"><div class="tl-year">1968</div>Received State Charter</div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"></div></div>
+<div class="tl-row"><div class="tl-left"></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"><div class="tl-year">1970s</div>Added Checking Accounts</div></div>
+<div class="tl-row"><div class="tl-left"><div class="tl-year">1980–81</div>Merged with Flint Area Employees CU<div class="tl-stats">Assets: $7,332,792 | Members: 4,827</div></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"></div></div>
+<div class="tl-row"><div class="tl-left"></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"><div class="tl-year">1980s</div>Added ATMs. Merged with Building Trades AFL-CIO CU.</div></div>
+<div class="tl-row"><div class="tl-left"><div class="tl-year">1990–91</div>Merged with North Flint Catholic CU. Risk-Based Lending — 2nd in Michigan.<div class="tl-stats">Assets: $26,985,368 | Members: 11,669</div></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"></div></div>
+<div class="tl-row"><div class="tl-left"></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"><div class="tl-year">1990s</div>Overdraft protection, debit cards, grocery store locations</div></div>
+<div class="tl-row"><div class="tl-left"><div class="tl-year">2001</div>XpressLink, e-Statements, online bill pay launched<div class="tl-stats">Assets: $104,283,624 | Members: 20,326</div></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"></div></div>
+<div class="tl-row"><div class="tl-left"></div><div class="tl-center"><div class="tl-dot"></div></div><div class="tl-right"><div class="tl-year">2008</div>Community Charter — membership expanded to six Michigan counties</div></div>
+<div class="tl-row"><div class="tl-left"><div class="tl-year">2010–11</div>The ELGA Way design process begins following Scanlon study<div class="tl-stats">Assets: $261,574,806 | Members: 43,754</div></div><div class="tl-center"><div class="tl-dot" style="background:var(--gold-light);box-shadow:0 0 0 3px var(--gold-light)"></div></div><div class="tl-right"></div></div>
+</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="dispute">
+<div class="section-label">Fair Process</div>
+<h2 class="section-title reveal">Dispute Resolution</h2>
+<p class="section-intro reveal">Employees who believe they have been treated unfairly may challenge any decision through ELGA's formal Problem Resolution System — without fear of discrimination or reprisal for using the system.</p>
+<div class="dispute-steps reveal">
+<div class="dispute-step"><div class="ds-step-big">1</div><div class="ds-step-label">Step One</div><div class="ds-title">Supervisor Discussion</div><div class="ds-desc">Employee discusses the concern directly with their supervisor. If the complaint concerns the supervisor, begin at Step 2.</div></div>
+<div class="dispute-step"><div class="ds-step-big">2</div><div class="ds-step-label">Step Two</div><div class="ds-title">Manager and HR</div><div class="ds-desc">Contact the manager supervisor (executive level management) and the HR department. Appeal must be in writing within 10 working days.</div></div>
+<div class="dispute-step"><div class="ds-step-big">3</div><div class="ds-step-label">Step Three</div><div class="ds-title">CEO</div><div class="ds-desc">If unresolved after Step 2, the employee pursues the matter directly with the CEO. The Credit Union will respond within 10 working days.</div></div>
+<div class="dispute-step"><div class="ds-step-big">4</div><div class="ds-step-label">Step Four — Final</div><div class="ds-title">Board of Directors</div><div class="ds-desc">If still unsatisfactory, employees may appeal to the Board of Directors. The Board's decision on the matter will be final.</div></div>
+</div>
+</section>
+
+<footer>
+<div><div class="footer-brand">The <span>ELGA</span> Way</div><div class="footer-tagline">"The Greatest Place to Work, Bank, and Borrow."</div></div>
+<div class="footer-meta">Scanlon Principles · August 2011<br>ELGA Credit Union — Genesee County, MI<br>Founded January 31, 1951</div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.08});
+reveals.forEach(el=>observer.observe(el));
+document.querySelectorAll('.metrics-grid,.training-grid,.stakeholders,.rewards-strip,.core-values-grid,.dispute-steps').forEach(g=>{g.querySelectorAll(':scope > *').forEach((c,i)=>{c.style.transitionDelay=(i*.08)+'s'})});
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-link');
+window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--gold-light)':''})});
+</script>
+</body>
+</html>

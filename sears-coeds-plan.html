@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sears Licensed Business — Team COEDS Goalsharing Plan 1997</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --steel: #1e3a5f;
+    --gold: #c8992a;
+    --gold-light: #e8b84b;
+    --gold-pale: #f5e6c0;
+    --cream: #faf7f0;
+    --warm-gray: #e8e0d0;
+    --text-dark: #1a1a2e;
+    --text-mid: #3d4666;
+    --text-light: #7a8099;
+    --red-accent: #9b2335;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(200,153,42,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(155,35,53,0.08) 0%, transparent 60%);
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(200,153,42,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,153,42,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-coeds {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .coeds-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .coeds-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold);
+    width: 36px;
+    flex-shrink: 0;
+  }
+
+  .coeds-word {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,153,42,0.15);
+    border: 1px solid rgba(200,153,42,0.3);
+    border-radius: 4px;
+    padding: 10px 18px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1s forwards;
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 60px;
+  }
+
+  .hero-diagram {
+    width: 380px;
+    height: 380px;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 1.2s forwards;
+  }
+
+  .diagram-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(200,153,42,0.2);
+    animation: spin 40s linear infinite;
+  }
+
+  .diagram-ring-2 {
+    inset: 30px;
+    border-color: rgba(200,153,42,0.15);
+    animation: spin 30s linear infinite reverse;
+  }
+
+  .diagram-center {
+    position: absolute;
+    inset: 80px;
+    border-radius: 50%;
+    background: rgba(200,153,42,0.08);
+    border: 1px solid rgba(200,153,42,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .diagram-center-text {
+    text-align: center;
+  }
+
+  .diagram-center-text .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .diagram-center-text .small {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  .diagram-node {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--navy-mid);
+    border: 1px solid rgba(200,153,42,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .node-top    { top: -10px;  left: 50%; transform: translateX(-50%); }
+  .node-right  { right: -10px; top: 50%; transform: translateY(-50%); }
+  .node-bottom { bottom: -10px; left: 50%; transform: translateX(-50%); }
+  .node-left   { left: -10px;  top: 50%; transform: translateY(-50%); }
+
+  /* ─── NAV ─── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,22,40,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,153,42,0.15);
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .nav-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    padding: 18px 0;
+    margin-right: 40px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    padding: 20px 20px;
+    white-space: nowrap;
+    transition: color 0.2s;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+  }
+
+  .nav-link:hover { color: var(--gold-light); }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 80px; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 700px;
+    margin-bottom: 60px;
+  }
+
+  /* ─── IDENTITY SECTION ─── */
+  #identity {
+    background: var(--cream);
+  }
+
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .identity-card {
+    background: var(--navy);
+    padding: 44px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .identity-card:hover { transform: translateY(-4px); }
+
+  .identity-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .identity-card:hover::after { transform: scaleX(1); }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+
+  .card-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .identity-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--warm-gray);
+  }
+
+  .timeline-item {
+    padding: 36px 32px;
+    border-right: 1px solid var(--warm-gray);
+    position: relative;
+  }
+
+  .timeline-item:last-child { border-right: none; }
+
+  .timeline-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .timeline-desc {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+
+  /* ─── LEARNING SECTION ─── */
+  #learning {
+    background: var(--navy);
+    color: #fff;
+  }
+
+  #learning h2.section-title { color: #fff; }
+  #learning .section-intro { color: rgba(255,255,255,0.55); }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .obj-card {
+    background: var(--navy-mid);
+    padding: 40px;
+    border-left: 3px solid var(--gold);
+    transition: background 0.2s;
+  }
+
+  .obj-card:hover { background: var(--steel); }
+
+  .obj-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .obj-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .obj-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .meeting-format {
+    background: rgba(200,153,42,0.06);
+    border: 1px solid rgba(200,153,42,0.2);
+    padding: 48px;
+  }
+
+  .meeting-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  .meeting-schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(200,153,42,0.1);
+    font-size: 14px;
+  }
+
+  .schedule-topic { color: rgba(255,255,255,0.7); }
+  .schedule-freq {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── INVOLVEMENT ─── */
+  #involvement {
+    background: var(--cream);
+  }
+
+  .involvement-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--warm-gray);
+    transition: background 0.2s;
+  }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 48px;
+  }
+
+  .step-content {}
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-mid);
+  }
+
+  .suggestion-form-preview {
+    background: var(--navy);
+    padding: 44px;
+    color: #fff;
+  }
+
+  .form-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold-light);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  .form-field {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .form-input-mock {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,153,42,0.2);
+    height: 42px;
+    width: 100%;
+    border-radius: 2px;
+  }
+
+  .form-input-mock.tall { height: 90px; }
+
+  /* ─── EQUITY SECTION ─── */
+  #equity {
+    background: #f0ebe0;
+  }
+
+  .equity-components {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 60px;
+  }
+
+  .equity-card {
+    background: var(--navy);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .equity-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(200,153,42,0.06);
+    line-height: 1;
+  }
+
+  .equity-badge {
+    display: inline-block;
+    background: rgba(200,153,42,0.15);
+    border: 1px solid rgba(200,153,42,0.3);
+    color: var(--gold-light);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .equity-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .equity-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+
+  .equity-max {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+
+  /* Payout table */
+  .payout-table-wrap {
+    background: var(--navy);
+    padding: 48px;
+    overflow-x: auto;
+  }
+
+  .payout-table-wrap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold-light);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(200,153,42,0.2);
+  }
+
+  tbody td {
+    padding: 10px 16px;
+    color: rgba(255,255,255,0.65);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  tbody tr:hover td { 
+    background: rgba(200,153,42,0.05); 
+    color: rgba(255,255,255,0.85);
+  }
+
+  .td-highlight { color: var(--gold-light) !important; font-weight: 500; }
+
+  /* ─── ESSENCE SECTION ─── */
+  #essence {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 120px 80px;
+  }
+
+  #essence h2.section-title { color: #fff; }
+
+  .commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    text-align: left;
+  }
+
+  .commitment-card {
+    background: var(--navy-mid);
+    padding: 40px;
+    border-top: 2px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+
+  .commitment-card:hover {
+    border-top-color: var(--gold);
+    background: var(--steel);
+  }
+
+  .commit-icon {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .commit-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .commit-text strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  /* ─── QUARTERLY GOALS ─── */
+  #goals {
+    background: var(--cream);
+  }
+
+  .quarters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .quarter-card {
+    background: var(--navy);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .quarter-card:hover { transform: translateY(-4px); }
+
+  .quarter-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .quarter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .quarter-targets {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .target-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .target-label {
+    color: rgba(255,255,255,0.5);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .target-value { color: var(--gold-light); font-weight: 500; }
+  .target-value.max { color: #7adb8c; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(200,153,42,0.15);
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .footer-brand span { color: var(--gold); }
+
+  .footer-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  .footer-meta {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+    line-height: 2;
+  }
+
+  /* ─── DIVIDER ─── */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 80px;
+    opacity: 0.3;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    section { padding: 70px 32px; }
+    .identity-grid, .equity-components, .commitments-grid { grid-template-columns: 1fr; }
+    .objectives-grid, .involvement-layout { grid-template-columns: 1fr; }
+    .identity-timeline { grid-template-columns: 1fr 1fr; }
+    .quarters-grid { grid-template-columns: 1fr 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .meeting-schedule { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="top">
+  <div class="hero-grid-lines"></div>
+  
+  <div class="hero-left">
+    <div class="hero-eyebrow">Sears, Roebuck and Co. — Licensed Business Group</div>
+    <h1 class="hero-title">Team<br><em>COEDS</em></h1>
+    <p class="hero-subtitle">Goalsharing Plan · 1997 Renewal</p>
+
+    <div class="hero-coeds">
+      <div class="coeds-row"><span class="coeds-letter">C</span><span class="coeds-word">Communicate — it's everyone's job</span></div>
+      <div class="coeds-row"><span class="coeds-letter">O</span><span class="coeds-word">Ownership — of ideas and challenges</span></div>
+      <div class="coeds-row"><span class="coeds-letter">E</span><span class="coeds-word">Education — we will provide it</span></div>
+      <div class="coeds-row"><span class="coeds-letter">D</span><span class="coeds-word">Development — enhance the personal</span></div>
+      <div class="coeds-row"><span class="coeds-letter">S</span><span class="coeds-word">Solutions — make them happen</span></div>
+    </div>
+
+    <div class="hero-badge">📅 Effective: 1997 &nbsp;|&nbsp; Document Date: June 25, 1997</div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-diagram">
+      <div class="diagram-ring"></div>
+      <div class="diagram-ring diagram-ring-2"></div>
+      <div class="diagram-center">
+        <div class="diagram-center-text">
+          <div class="big">1997</div>
+          <div class="small">Renewal</div>
+        </div>
+      </div>
+      <div class="diagram-node node-top">Learn &amp;<br>Comm.</div>
+      <div class="diagram-node node-right">Involve&shy;ment</div>
+      <div class="diagram-node node-bottom">Equity<br>Plan</div>
+      <div class="diagram-node node-left">Identity<br>&amp; Vision</div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="sticky-nav">
+  <div class="nav-brand">Team COEDS</div>
+  <a class="nav-link" href="#identity">Identity</a>
+  <a class="nav-link" href="#learning">Learning & Comm.</a>
+  <a class="nav-link" href="#involvement">Involvement</a>
+  <a class="nav-link" href="#equity">Equity Plan</a>
+  <a class="nav-link" href="#goals">Quarterly Goals</a>
+  <a class="nav-link" href="#essence">The Essence</a>
+</nav>
+
+<!-- ═══════ IDENTITY ═══════ -->
+<section id="identity">
+  <div class="section-label">Section I</div>
+  <h2 class="section-title reveal">Identity &amp; History</h2>
+  <p class="section-intro reveal">Sears Licensed Businesses are specialty businesses managed through contracts with other companies — known as Licensees — to market goods or services which complement Sears' strategic direction, in mall or off-mall locations.</p>
+
+  <div class="identity-grid reveal">
+    <div class="identity-card">
+      <div class="card-icon">🏬</div>
+      <div class="card-title">Making Sears A Compelling Place to Shop</div>
+      <div class="card-body">Customers require the right merchandise and services, and associates who deliver excellent customer service, with a high level of integrity and trust. We build lasting relationships that make Sears their first choice.</div>
+    </div>
+    <div class="identity-card">
+      <div class="card-icon">👥</div>
+      <div class="card-title">Making Sears A Compelling Place to Work</div>
+      <div class="card-body">Associates require an environment for achievement of personal goals, personal development, empowerment and involvement, while being encouraged to contribute new ideas. We treat associates fairly, in mutual dignity and respect.</div>
+    </div>
+    <div class="identity-card">
+      <div class="card-icon">📈</div>
+      <div class="card-title">Making Sears A Compelling Place to Invest</div>
+      <div class="card-body">Investors require revenue growth, improvements in operating margin, asset management, and increased productivity. We will act as owners of our business to deliver growth and shareholder return.</div>
+    </div>
+  </div>
+
+  <div class="identity-timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-year">1940s</div>
+      <div class="timeline-desc">First licensed business — a key shop in Cleveland, Ohio with Cole Key Company. The concept quickly proved mutually beneficial.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1960s</div>
+      <div class="timeline-desc">Portrait Studio introduced with CPI Corporation — pioneering the concept of permanent studios inside a retail store environment.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1992</div>
+      <div class="timeline-desc">Peak: Sears licensing over 100 businesses with more than 3,000 individual contracts across the nation.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1995</div>
+      <div class="timeline-desc">Strategic refocus: Businesses reduced from 105 to 49; contracts from 3,000+ to 1,300 — aligning to core Sears strategy.</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ LEARNING & COMMUNICATION ═══════ -->
+<section id="learning">
+  <div class="section-label">Section II</div>
+  <h2 class="section-title reveal">Learning &amp; Communication</h2>
+  <p class="section-intro reveal">Continuous learning and open and honest communication are essential ingredients in an environment that requires full participation of all Team Members. Learning builds competency; communication creates understanding.</p>
+
+  <div class="objectives-grid reveal">
+    <div class="obj-card">
+      <div class="obj-number">01 — OBJECTIVE</div>
+      <div class="obj-title">Two-Way Communication</div>
+      <div class="obj-body">Develop effective two-way communication skills, enhance problem solving, and establish an environment which welcomes diverse ideas and opinions across all team members.</div>
+    </div>
+    <div class="obj-card">
+      <div class="obj-number">02 — OBJECTIVE</div>
+      <div class="obj-title">Elevate Competency</div>
+      <div class="obj-body">Elevate the competency level of each team member through structured Personal Development courses — a minimum of three per calendar year, from Sears University or outside courses.</div>
+    </div>
+    <div class="obj-card">
+      <div class="obj-number">03 — OBJECTIVE</div>
+      <div class="obj-title">Business Literacy</div>
+      <div class="obj-body">Achieve a high level of literacy relative to our own business and the total company — ensuring every associate understands how their role contributes to company-wide performance.</div>
+    </div>
+    <div class="obj-card">
+      <div class="obj-number">04 — OBJECTIVE</div>
+      <div class="obj-title">High Performance Team Skills</div>
+      <div class="obj-body">Build the team skills necessary to function as a high performance organization — leveraging interpersonal skills, trust, and an appreciation for the diversity of the team.</div>
+    </div>
+  </div>
+
+  <div class="meeting-format reveal">
+    <div class="meeting-title">Semi-Monthly Staff Meeting Agenda Format</div>
+    <div class="meeting-schedule">
+      <div class="schedule-item">
+        <span class="schedule-topic">Sales / Performance Update</span>
+        <span class="schedule-freq">Every Meeting</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Marketing Updates</span>
+        <span class="schedule-freq">Monthly</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Current Issues / Field Update</span>
+        <span class="schedule-freq">Every Meeting</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Finance Updates</span>
+        <span class="schedule-freq">Once per Qtr.</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Business Imperative Committee</span>
+        <span class="schedule-freq">Once per Qtr.</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Customer Service Updates</span>
+        <span class="schedule-freq">Once per Qtr.</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Goalsharing Committee Updates</span>
+        <span class="schedule-freq">Once per Qtr.</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-topic">Licensing Manager Updates</span>
+        <span class="schedule-freq">Once per Qtr.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ INVOLVEMENT ═══════ -->
+<section id="involvement">
+  <div class="section-label">Section III</div>
+  <h2 class="section-title reveal">Involvement</h2>
+  <p class="section-intro reveal">We maintain an environment that promotes an open exchange of ideas and opinions through active participation — recognizing all team members as integral contributors to the success of the department.</p>
+
+  <div class="involvement-layout">
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Verbal Suggestions</div>
+          <div class="step-body">Ideas and solutions communicated directly to an Involvement Committee Member or the individual responsible for the area to which the suggestion pertains. Ideal for easily and inexpensively executed ideas.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Written Suggestion Process</div>
+          <div class="step-body">A suggestion box is maintained in the department. Each submission should include a recommendation for implementing the suggestion and the desired outcome. The Involvement Committee reviews all written suggestions.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">Action Team Formation</div>
+          <div class="step-body">When a departmental opportunity is identified that falls outside the identifier's area of expertise or control, an Action Team may be formed. Everyone within the department is encouraged to lead an Action Team.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Final Resolution</div>
+          <div class="step-body">The Vice President &amp; General Manager holds final decision authority on all suggestions. Final resolution of Action Team work is communicated to the entire Licensed Business Department.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="suggestion-form-preview reveal">
+      <div class="form-heading">Suggestion Form</div>
+      <div class="form-field">
+        <label class="form-label">Team Member Name</label>
+        <div class="form-input-mock"></div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Date</label>
+        <div class="form-input-mock"></div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Description of Suggestion &amp; Recommendation</label>
+        <div class="form-input-mock tall"></div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Desired Outcome</label>
+        <div class="form-input-mock"></div>
+      </div>
+      <div style="margin-top:20px; border-top:1px solid rgba(200,153,42,0.2); padding-top:20px;">
+        <div class="form-label" style="color:rgba(255,255,255,0.3);">— To be completed by committee —</div>
+      </div>
+      <div class="form-field" style="margin-top:16px;">
+        <label class="form-label">Date Received &amp; Completed</label>
+        <div class="form-input-mock"></div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Outcome / Status</label>
+        <div class="form-input-mock"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ EQUITY ═══════ -->
+<section id="equity">
+  <div class="section-label">Section IV</div>
+  <h2 class="section-title reveal">Equity Plan</h2>
+  <p class="section-intro reveal">The Equity Plan measures and rewards team-oriented achievement of departmental goals and accountabilities. Distribution is made to each eligible associate based upon hours worked each quarter.</p>
+
+  <div class="equity-components reveal">
+    <div class="equity-card" data-num="1">
+      <div class="equity-badge">Key Component #1</div>
+      <h3>Income Growth</h3>
+      <p>The most important department goal. Income Growth is measured quarterly and annually. An Annual Award Payout Reserve Fund is calculated at 1% for each dollar of growth over a 5% income increase threshold vs. 1996.</p>
+      <div class="equity-max">No cap on upside · Annual payout only</div>
+    </div>
+    <div class="equity-card" data-num="2">
+      <div class="equity-badge">Key Component #2</div>
+      <h3>Business Imperatives</h3>
+      <p>Each quarter features specific goals targeting outstanding performance. A quarterly Business Imperative directly impacts achievement of overall departmental goals — tied to timely business events.</p>
+      <div class="equity-max">Maximum payout: $40,000 annually</div>
+    </div>
+    <div class="equity-card" data-num="3">
+      <div class="equity-badge">Key Component #3</div>
+      <h3>Customer Service</h3>
+      <p>Committed to ensuring customers are highly satisfied with products and services delivered by licensees. Measured through quarterly Shop &amp; Check and telephone surveys — CSSP/60 Second Survey.</p>
+      <div class="equity-max">Maximum payout: $24,000 annually</div>
+    </div>
+  </div>
+
+  <div class="payout-table-wrap reveal">
+    <h3>Customer Service — Quarterly Payout Scale</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Points vs. Last Year (Same Qtr.)</th>
+          <th>Corresponding Quarterly Payout</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>4 points or greater</td><td class="td-highlight">$6,000</td></tr>
+        <tr><td>3 points above</td><td class="td-highlight">$4,500</td></tr>
+        <tr><td>2 points above</td><td class="td-highlight">$3,000</td></tr>
+        <tr><td>1 point above</td><td>$0</td></tr>
+        <tr><td>0 points (flat)</td><td>$0</td></tr>
+        <tr><td>−1 point</td><td>$0</td></tr>
+        <tr><td>−2 points</td><td style="color:#e87474;">−$3,000</td></tr>
+        <tr><td>−3 points</td><td style="color:#e87474;">−$4,500</td></tr>
+        <tr><td>−4 points or less</td><td style="color:#e87474;">−$6,000</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.35);font-style:italic;">Note: Any negative balance carries over to the next quarter and is deducted from any Annual Award Payout at year end.</p>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══════ QUARTERLY GOALS ═══════ -->
+<section id="goals">
+  <div class="section-label">1997 Business Imperatives</div>
+  <h2 class="section-title reveal">Quarterly Performance Goals</h2>
+  <p class="section-intro reveal">Each quarter features a specific, measurable Business Imperative goal. Achievement unlocks payout; missing the minimum results in no award for that quarter.</p>
+
+  <div class="quarters-grid reveal">
+    <div class="quarter-card">
+      <div class="quarter-label">Q1 · 1st Quarter</div>
+      <div class="quarter-title">Income Tax Unit Expansion</div>
+      <div class="quarter-targets">
+        <div class="target-row">
+          <span class="target-label">Minimum</span>
+          <span class="target-value">20 units = $2,000</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Target</span>
+          <span class="target-value">50 units = $5,000</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Maximum</span>
+          <span class="target-value max">100 units = $10,000</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);">$100 per net new unit over minimum</div>
+    </div>
+
+    <div class="quarter-card">
+      <div class="quarter-label">Q2 · 2nd Quarter</div>
+      <div class="quarter-title">Hearing Aid Event</div>
+      <div class="quarter-targets">
+        <div class="target-row">
+          <span class="target-label">Minimum</span>
+          <span class="target-value">20% increase = $0</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Target</span>
+          <span class="target-value">30% increase = $5,000</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Maximum</span>
+          <span class="target-value max">40% increase = $10,000</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);">1997 Hearing Awareness Days event</div>
+    </div>
+
+    <div class="quarter-card">
+      <div class="quarter-label">Q3 · 3rd Quarter</div>
+      <div class="quarter-title">Optical / National Eye Exam Month</div>
+      <div class="quarter-targets">
+        <div class="target-row">
+          <span class="target-label">Minimum</span>
+          <span class="target-value">7.5% increase = $0</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Target</span>
+          <span class="target-value">10% increase = $5,000</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Maximum</span>
+          <span class="target-value max">12.5% increase = $10,000</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);">$1,000 per 0.5% over 7.5%, up to 12.5%</div>
+    </div>
+
+    <div class="quarter-card">
+      <div class="quarter-label">Q4 · 4th Quarter</div>
+      <div class="quarter-title">Portrait / Underperforming Locations</div>
+      <div class="quarter-targets">
+        <div class="target-row">
+          <span class="target-label">Minimum</span>
+          <span class="target-value">50% vs. nation = $0</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Target</span>
+          <span class="target-value">100% vs. nation = $5,000</span>
+        </div>
+        <div class="target-row">
+          <span class="target-label">Maximum</span>
+          <span class="target-value max">150% vs. nation = $10,000</span>
+        </div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);">Underperforming districts must outperform nation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ESSENCE ═══════ -->
+<section id="essence">
+  <div class="section-label" style="justify-content:center; text-align:center;">The Foundation</div>
+  <h2 class="section-title reveal">The Essence of Team COEDS</h2>
+  <p style="font-size:17px;line-height:1.75;color:rgba(255,255,255,0.5);max-width:600px;margin:0 auto 0;" class="reveal">
+    According to Greek Mythology, the Altus was a bird which set itself apart by flying the highest of all. Team COEDS commits to achieve the highest goals in the company.
+  </p>
+
+  <div class="commitments-grid reveal">
+    <div class="commitment-card">
+      <div class="commit-icon">🎯</div>
+      <div class="commit-text">
+        <strong>Understand Goalsharing</strong>
+        Each Team Member commits to understand and embrace the principles of goalsharing as a framework for winning together.
+      </div>
+    </div>
+    <div class="commitment-card">
+      <div class="commit-icon">📚</div>
+      <div class="commit-text">
+        <strong>Continual Improvement</strong>
+        Each Team Member commits to continually improve their personal skills and competencies through ongoing education and development.
+      </div>
+    </div>
+    <div class="commitment-card">
+      <div class="commit-icon">🤝</div>
+      <div class="commit-text">
+        <strong>Contribute Through Participation</strong>
+        Each Team Member commits to contribute through active participation — bringing ideas, challenges, and solutions forward.
+      </div>
+    </div>
+    <div class="commitment-card">
+      <div class="commit-icon">👁</div>
+      <div class="commit-text">
+        <strong>Welcome Others' Contributions</strong>
+        Each Team Member commits to be aware of and welcome the potential contributions of others — recognizing that all perspectives add value.
+      </div>
+    </div>
+    <div class="commitment-card">
+      <div class="commit-icon">🌱</div>
+      <div class="commit-text">
+        <strong>Help Others Succeed</strong>
+        Each Team Member commits to be willing to help others contribute so that all can benefit from the shared rewards of team growth.
+      </div>
+    </div>
+    <div class="commitment-card">
+      <div class="commit-icon">🏆</div>
+      <div class="commit-text">
+        <strong>Performance Leadership</strong>
+        Each Team Member commits to performance leadership that benefits our customers, associates, and shareholders — raising the standard.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div>
+    <div class="footer-brand">Sears <span>COEDS</span></div>
+    <div class="footer-sub">Licensed Business Group · Goalsharing Plan</div>
+  </div>
+  <div class="footer-meta">
+    1997 Renewal<br>
+    Document Date: June 25, 1997<br>
+    The Licensed Business Group of Sears, Roebuck and Co.
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Stagger siblings
+  document.querySelectorAll('.identity-grid, .objectives-grid, .equity-components, .quarters-grid, .commitments-grid').forEach(grid => {
+    grid.querySelectorAll(':scope > *').forEach((child, i) => {
+      child.style.transitionDelay = (i * 0.1) + 's';
+    });
+  });
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--gold-light)' : '';
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREPARE/21 — Beth Israel Hospital</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1612;
+    --rust: #B84A2F;
+    --gold: #C9A84C;
+    --slate: #3D4B5C;
+    --mist: #E8EDF2;
+    --border: rgba(26,22,18,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(255,255,255,0.04) 39px,
+      rgba(255,255,255,0.04) 40px
+    );
+    pointer-events: none;
+  }
+  .masthead-rule {
+    width: 60px;
+    height: 3px;
+    background: var(--rust);
+    margin: 0 auto 28px;
+  }
+  .masthead-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+  .masthead h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 9vw, 108px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    color: var(--cream);
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.25s forwards;
+  }
+  .masthead h1 span { color: var(--rust); }
+  .masthead-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(14px, 2vw, 20px);
+    color: rgba(245,240,232,0.65);
+    margin-top: 22px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.45s forwards;
+  }
+  .masthead-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.4);
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.6s forwards;
+  }
+  .masthead-acro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.75s forwards;
+  }
+  .acro-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .acro-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--rust);
+  }
+  .acro-word {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.55);
+    text-transform: uppercase;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    text-decoration: none;
+    padding: 14px 20px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+  nav a:hover { color: var(--cream); border-color: var(--rust); }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .section.visible { opacity: 1; transform: translateY(0); }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--rust);
+    opacity: 0.4;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  /* ── INTRO LAYOUT ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 60px;
+    align-items: start;
+  }
+  @media (max-width: 700px) { .intro-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .lead-text {
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+  .lead-text + p {
+    margin-top: 22px;
+    font-size: 16px;
+    color: #4a4540;
+  }
+
+  .sidebar-card {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 36px 30px;
+    position: relative;
+  }
+  .sidebar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--rust);
+  }
+  .sidebar-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .sidebar-card blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.88);
+    border: none;
+  }
+  .sidebar-card cite {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.45);
+    margin-top: 14px;
+  }
+
+  /* ── THREE PILLARS ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  @media (max-width: 700px) { .pillars { grid-template-columns: 1fr; } }
+
+  .pillar {
+    background: var(--cream);
+    padding: 44px 36px;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .pillar:hover { background: var(--mist); }
+  .pillar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: rgba(26,22,18,0.07);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .pillar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .pillar p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #5a5450;
+  }
+  .pillar-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    border: 1px solid var(--rust);
+    padding: 3px 9px;
+    margin-bottom: 18px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 2px;
+    margin-top: 40px;
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    margin-bottom: 36px;
+    align-items: start;
+  }
+  @media (max-width: 600px) { .timeline-item { grid-template-columns: 1fr; gap: 8px; } }
+  .timeline-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--rust);
+    line-height: 1.2;
+    padding-top: 2px;
+  }
+  .timeline-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .timeline-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #5a5450;
+  }
+  .timeline-line {
+    width: 1px;
+    background: var(--border);
+    position: absolute;
+    left: 100px;
+    top: 8px;
+    bottom: 8px;
+  }
+  @media (max-width: 600px) { .timeline-line { display: none; } }
+
+  /* ── PARTICIPATION TABLE ── */
+  .role-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 36px;
+    font-size: 14px;
+  }
+  .role-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--ink);
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 400;
+  }
+  .role-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .role-table tr:nth-child(even) td { background: rgba(61,75,92,0.04); }
+  .role-table tr:hover td { background: var(--mist); }
+  .role-table td:first-child {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  /* ── EQUITY FORMULA ── */
+  .formula-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    margin-top: 40px;
+  }
+  @media (max-width: 650px) { .formula-row { grid-template-columns: 1fr; } }
+  .formula-cell {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .formula-cell:nth-child(2) { background: var(--rust); }
+  .formula-cell:nth-child(3) { background: var(--slate); }
+  .formula-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .formula-cell h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .formula-cell p { font-size: 13px; line-height: 1.7; opacity: 0.8; }
+
+  .gain-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+  }
+  @media (max-width: 650px) { .gain-breakdown { grid-template-columns: 1fr; } }
+  .gain-item {
+    border-left: 3px solid var(--gold);
+    padding: 20px 22px;
+    background: rgba(201,168,76,0.06);
+  }
+  .gain-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .gain-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .gain-item p { font-size: 13px; color: #5a5450; line-height: 1.65; }
+
+  /* ── VALUES LIST ── */
+  .values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .value-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    padding: 7px 16px;
+    transition: background 0.2s, color 0.2s;
+    cursor: default;
+  }
+  .value-tag:hover { background: var(--ink); color: var(--cream); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    background: var(--mist);
+    border-left: 5px solid var(--rust);
+    padding: 36px 40px;
+    margin: 48px 0;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(17px, 2.5vw, 23px);
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .pull-quote cite {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--rust);
+    margin-top: 16px;
+    text-transform: uppercase;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--slate);
+    color: var(--cream);
+    padding: 50px 0;
+  }
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+  @media (max-width: 700px) { .stats-inner { grid-template-columns: repeat(2,1fr); } }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.4;
+  }
+
+  /* ── IDEA PROCESS FLOW ── */
+  .idea-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 36px;
+    overflow-x: auto;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 150px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .flow-step:hover { background: var(--mist); }
+  .flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -13px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--rust);
+    z-index: 2;
+    background: var(--cream);
+    padding: 4px;
+    line-height: 1;
+  }
+  .flow-step:hover:not(:last-child)::after { background: var(--mist); }
+  .flow-icon { font-size: 28px; margin-bottom: 10px; }
+  .flow-step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .flow-step p { font-size: 12px; color: #6a6460; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.45);
+    padding: 50px 30px;
+    text-align: center;
+  }
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+  footer .footer-logo span { color: var(--rust); }
+  footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── DIVIDER ── */
+  .ornament {
+    text-align: center;
+    font-size: 20px;
+    color: var(--rust);
+    margin: 48px 0;
+    opacity: 0.5;
+    letter-spacing: 0.5em;
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-rule"></div>
+  <div class="masthead-eyebrow">Boston's Beth Israel Hospital · March 1989</div>
+  <h1>PREPARE<span>/21</span></h1>
+  <div class="masthead-subtitle">An Innovative Program in Hospital Operation & Management</div>
+  <div class="masthead-meta">© Beth Israel Corporation, 1988 · Planning Committee Approved 4 November 1988</div>
+  <div class="masthead-acro">
+    <div class="acro-item"><span class="acro-letter">P</span><span class="acro-word">Participation</span></div>
+    <div class="acro-item"><span class="acro-letter">R</span><span class="acro-word">Responsibility</span></div>
+    <div class="acro-item"><span class="acro-letter">E</span><span class="acro-word">Education</span></div>
+    <div class="acro-item"><span class="acro-letter">P</span><span class="acro-word">Productivity</span></div>
+    <div class="acro-item"><span class="acro-letter">A</span><span class="acro-word">Accountability</span></div>
+    <div class="acro-item"><span class="acro-letter">R</span><span class="acro-word">Recognition</span></div>
+    <div class="acro-item"><span class="acro-letter">E</span><span class="acro-word">Excellence</span></div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#introduction">Introduction</a>
+    <a href="#identity">Identity</a>
+    <a href="#history">History</a>
+    <a href="#participation">Participation</a>
+    <a href="#equity">Equity</a>
+    <a href="#ideas">Idea Process</a>
+  </div>
+</nav>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><span class="stat-num">27,000+</span><span class="stat-label">Patients admitted annually</span></div>
+    <div><span class="stat-num">192,000</span><span class="stat-label">Outpatient visits per year</span></div>
+    <div><span class="stat-num">250+</span><span class="stat-label">House officers &amp; fellows trained</span></div>
+    <div><span class="stat-num">75</span><span class="stat-label">Elected committee members</span></div>
+  </div>
+</div>
+
+<!-- INTRODUCTION -->
+<section class="section" id="introduction">
+  <div class="container">
+    <div class="section-label">Introduction</div>
+    <div class="intro-grid">
+      <div>
+        <h2 class="section-title">Preparing Beth Israel<br>for the <em>21st Century</em></h2>
+        <p class="lead-text">The economic and regulatory environments in which hospitals function are going through dramatic changes. Teaching hospitals, in particular, face growing challenges to their ability to provide quality patient care, excellent teaching, and leading-edge research.</p>
+        <p style="margin-top:22px;font-size:16px;color:#4a4540;">In 1986, senior management began exploring participative management approaches. Inspired by the Scanlon Plan — a proven framework that fosters employee ownership of quality, productivity, and efficiency — a planning committee of 75 elected employees developed PREPARE/21.</p>
+        <p style="margin-top:18px;font-size:16px;color:#4a4540;">The result is a living document — subject to renewal and revision to meet new needs of changing times. That very vitality and flexibility are among its greatest strengths.</p>
+      </div>
+      <div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Mission Statement · Board of Trustees, 1983</div>
+          <blockquote>
+            "The major mission of Beth Israel Hospital is to deliver patient care of the highest quality, in both scientific and human terms… carried out within a framework of financially responsible management which is sensitive to the requirements both to deliver health care which is efficient and cost-effective."
+          </blockquote>
+          <cite>— Beth Israel Board of Trustees</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-tag">Section I</div>
+        <div class="pillar-num">01</div>
+        <h3>Identity</h3>
+        <p>Employees understand the hospital's mission, history, values, and the competitive environment in which it operates. Shared knowledge creates shared purpose.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-tag">Section II</div>
+        <div class="pillar-num">02</div>
+        <h3>Participation</h3>
+        <p>Every employee has the right and responsibility to influence decision-making. Work teams form the cornerstone of this process, solving problems and generating improvements.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-tag">Section III</div>
+        <div class="pillar-num">03</div>
+        <h3>Equity</h3>
+        <p>Fair return on investment for all — patients, community, and employees. When the hospital succeeds through collective effort, employees share in the financial gains produced.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTITY / VALUES -->
+<section class="section" id="identity">
+  <div class="container">
+    <div class="section-label">Identity</div>
+    <h2 class="section-title">Who We Are &amp;<br><em>What We Stand For</em></h2>
+
+    <div class="intro-grid">
+      <div>
+        <p style="font-size:16px;color:#4a4540;line-height:1.8;">Beth Israel employees, staff, and volunteers bring a diversity of ethnic, racial, and cultural backgrounds and a wealth of specialized training, skills, and experience. We are identical only in the quality of care we deliver and in the pride we take in doing so.</p>
+        <p style="margin-top:20px;font-size:16px;color:#4a4540;">The hospital's mission is also that of its employees. When the hospital succeeds, each of us succeeds. Any failure diminishes us all; any success advances us all. To identify Beth Israel is to identify its people.</p>
+
+        <div class="pull-quote" style="margin-top:32px;margin-bottom:0;">
+          <p>"The potential of Beth Israel Hospital is much more than the sum of our individual potentials. Our major challenge — and opportunity — is to find ways of tapping this energy."</p>
+          <cite>— PREPARE/21 Plan</cite>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust);margin-bottom:16px;">Core Values</p>
+        <div class="values-grid">
+          <span class="value-tag">Commitment</span>
+          <span class="value-tag">Warmth</span>
+          <span class="value-tag">Compassion</span>
+          <span class="value-tag">Respect</span>
+          <span class="value-tag">Initiative</span>
+          <span class="value-tag">Diversity</span>
+          <span class="value-tag">Dignity</span>
+          <span class="value-tag">Trust</span>
+          <span class="value-tag">Fairness</span>
+          <span class="value-tag">Recognition</span>
+          <span class="value-tag">Excellence</span>
+        </div>
+        <p style="margin-top:28px;font-size:14px;color:#6a6460;line-height:1.7;">These values were originally expressed by the founders of Beth Israel Hospital in the early 1900s. Each generation of employees is entrusted with enhancing and passing them forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="section" id="history">
+  <div class="container">
+    <div class="section-label">History</div>
+    <h2 class="section-title">Beth Israel's<br><em>Turning Points</em></h2>
+    <p style="font-size:16px;color:#4a4540;max-width:640px;margin-bottom:8px;">In the early 1900s, waves of immigrants arrived in Boston — most homeless, ill, and confused by cultural and language barriers. Boston's Jewish community took on the task of raising funds for a medical facility that respected the needs of this new population.</p>
+
+    <div class="timeline" style="margin-top:40px;">
+      <div class="timeline-line"></div>
+      <div class="timeline-item">
+        <div class="timeline-year">1901</div>
+        <div class="timeline-content">
+          <h4>Mount Sinai Hospital Association Founded</h4>
+          <p>Incorporated to establish a Jewish-sponsored hospital open to all races, creeds, and colors.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1902</div>
+        <div class="timeline-content">
+          <h4>First Jewish Outpatient Clinic Opens</h4>
+          <p>Boston's first Jewish outpatient facility opens in the old West End, serving the growing immigrant community.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1917</div>
+        <div class="timeline-content">
+          <h4>45-Bed Hospital Opens in Roxbury</h4>
+          <p>The 45-bed facility is dedicated in October 1916 and opens for patients in February 1917, with a school of nursing enrolling 10 students.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1928</div>
+        <div class="timeline-content">
+          <h4>Harvard Medical School Affiliation</h4>
+          <p>Beth Israel purchases property on Brookline Avenue near Harvard Medical School. The new 200-bed campus is dedicated in 1928, and the teaching affiliation with Harvard soon follows.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1970s</div>
+        <div class="timeline-content">
+          <h4>Major Modernization</h4>
+          <p>The state-of-the-art Feldberg Building, Berenson Emergency Unit (Trauma Center), and primary nursing care model under Joyce C. Clifford transform the hospital into an internationally regarded academic medical center.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1988</div>
+        <div class="timeline-content">
+          <h4>PREPARE/21 Plan Approved</h4>
+          <p>A planning committee of 75 elected employees approves the PREPARE/21 plan on 4 November 1988, marking the hospital's first employee-based participative management program.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament">✦ ✦ ✦</div>
+
+    <p style="font-size:15px;color:#5a5450;max-width:720px;">Beth Israel is also a pioneer in patient rights (first Statement on Rights of Patients, 1972), conservative breast cancer management, primary nursing care, insulin via nasal spray, early MRI cancer detection, and family-centered maternity care.</p>
+  </div>
+</section>
+
+<!-- PARTICIPATION -->
+<section class="section" id="participation">
+  <div class="container">
+    <div class="section-label">Participation</div>
+    <h2 class="section-title">Work Teams &amp;<br><em>Shared Governance</em></h2>
+
+    <p style="font-size:16px;color:#4a4540;max-width:720px;">Participation is defined as the opportunity and the responsibility to influence the decision-making process within one's area of competence. It is both the right and the responsibility of every employee.</p>
+
+    <table class="role-table" style="margin-top:40px;">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Responsibilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>President &amp; Senior Mgmt</td>
+          <td>Responsible and accountable for directing and leading the hospital through its Mission Statement and Mandate. Establishes goals for each division and service.</td>
+        </tr>
+        <tr>
+          <td>Departmental Work Team</td>
+          <td>Every employee belongs to at least one. Meets 13 times per year (once each fiscal period). Primary source for receiving hospital performance information and generating ideas for improvement.</td>
+        </tr>
+        <tr>
+          <td>Functional Work Team</td>
+          <td>Employees from several departments sharing a common work mission. Sets broader goals and reviews progress toward them across disciplines.</td>
+        </tr>
+        <tr>
+          <td>Ad Hoc Work Team</td>
+          <td>Temporary task force convened to resolve a specific issue or evaluate a new idea. Disbands once the task is complete.</td>
+        </tr>
+        <tr>
+          <td>PREPARE/21 Council</td>
+          <td>20 councils (division and service) facilitate the review of ideas within divisions. Meets at least once per fiscal period; reports to the PREPARE/21 Coordinator.</td>
+        </tr>
+        <tr>
+          <td>Screening Committee</td>
+          <td>Hospital-wide committee that reviews ideas affecting work teams outside an employee's own division or service. Chaired by a presidential appointee.</td>
+        </tr>
+        <tr>
+          <td>PREPARE/21 Coordinator</td>
+          <td>Full-time position selected by the President and EVP. Coordinates day-to-day operations, training, and maintains records of all ideas submitted and implemented.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pull-quote" style="margin-top:52px;">
+      <p>"The work team is the cornerstone of PREPARE/21. Every employee belongs to at least one. The success of PREPARE/21 will depend on work teams individually and collectively developing solutions to problems and generating ideas for improvement."</p>
+      <cite>— PREPARE/21 Plan, Participation Section</cite>
+    </div>
+  </div>
+</section>
+
+<!-- EQUITY -->
+<section class="section" id="equity">
+  <div class="container">
+    <div class="section-label">Equity</div>
+    <h2 class="section-title">Fair Return on<br><em>Collective Investment</em></h2>
+
+    <p style="font-size:16px;color:#4a4540;max-width:680px;">"Equity" carries two meanings: that which is <em>fair and just</em>, and the sense of <em>ownership</em> we feel when we invest in something. At Beth Israel, patients, community, and employees all invest — and all deserve a return.</p>
+
+    <div class="formula-row">
+      <div class="formula-cell">
+        <div class="formula-icon">🏥</div>
+        <h4>Patients' Equity</h4>
+        <p>The highest quality medical care, teaching, and research delivered within a humanistic and ethical framework.</p>
+      </div>
+      <div class="formula-cell">
+        <div class="formula-icon">🏘️</div>
+        <h4>Community's Equity</h4>
+        <p>The hospital's continuing existence and constant improvement of resources to deliver the highest quality patient care.</p>
+      </div>
+      <div class="formula-cell">
+        <div class="formula-icon">👥</div>
+        <h4>Employees' Equity</h4>
+        <p>Enhanced job security, safer work conditions, professional growth, and a share in any monetary gains achieved through collective effort.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin:52px 0 8px;">The Gain-Sharing Formula</h3>
+    <p style="font-size:15px;color:#5a5450;max-width:680px;">Gains are measured at the overall hospital level each four-week fiscal period. Net gains are split 50/50 between the hospital and employees. An employee's share is calculated as a percentage of their period gross wages (capped at $50,000 annual base).</p>
+
+    <div class="gain-breakdown">
+      <div class="gain-item">
+        <div class="gain-num">Source 01</div>
+        <h4>Volume Factor</h4>
+        <p>The difference between budgeted and actual patient admissions and outpatient visits, valued at a dollar amount approximating net revenue less variable costs.</p>
+      </div>
+      <div class="gain-item">
+        <div class="gain-num">Source 02</div>
+        <h4>Savings Factor</h4>
+        <p>The difference between budgeted and actual expenses (excluding depreciation, interest, and pension). Cost savings flow directly into the gain pool.</p>
+      </div>
+      <div class="gain-item">
+        <div class="gain-num">Source 03</div>
+        <h4>Ideas Factor</h4>
+        <p>The annualized dollar value of ideas accepted through the PREPARE/21 Idea Review Process, divided by 13 fiscal periods to calculate per-period savings.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:28px;font-size:13px;color:#7a7470;font-family:'DM Mono',monospace;letter-spacing:0.05em;">A minimum gain of 0.5% must be exceeded for a payment to be made. 25% of each period's total gain is held in reserve, released at fiscal year end. Gains are paid on the last Thursday of the following period.</p>
+  </div>
+</section>
+
+<!-- IDEA PROCESS -->
+<section class="section" id="ideas">
+  <div class="container">
+    <div class="section-label">Idea Review Process</div>
+    <h2 class="section-title">From Thought<br><em>to Action</em></h2>
+
+    <p style="font-size:16px;color:#4a4540;max-width:680px;">The Idea Review Process gives every employee at Beth Israel the opportunity to contribute ideas that improve the hospital's overall performance. The best ideas identify ways to improve quality, reduce costs, increase revenue, or eliminate waste.</p>
+
+    <div class="idea-flow">
+      <div class="flow-step">
+        <div class="flow-icon">💡</div>
+        <h4>Have an Idea</h4>
+        <p>Consult the Idea Guide (Appendix D). Define what needs to change and why.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">🤝</div>
+        <h4>Discuss with Team</h4>
+        <p>Bring the idea to your work team leader and affected colleagues for initial review.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">📋</div>
+        <h4>Submit Idea Form</h4>
+        <p>Complete an Idea Form (Appendix E) and direct it to the appropriate Council or Screening Committee.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">🔍</div>
+        <h4>Review</h4>
+        <p>Council or Screening Committee evaluates. Decision expected within 10 work days of meeting.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">✅</div>
+        <h4>Decision &amp; Recognition</h4>
+        <p>Written response sent to employee. If accepted, implementation begins and employee is publicly recognized.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;background:rgba(61,75,92,0.06);border:1px solid var(--border);padding:32px;">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--slate);margin-bottom:14px;">What is NOT reviewed through this process</p>
+      <p style="font-size:14px;color:#5a5450;line-height:1.75;">The process does not review personal complaints or problems such as difficulties in one's job, relationships with supervisors or peers, pay or benefits, or performance issues. These should be directed to the individual's manager or the Employee Relations Specialist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">PREPARE<span>/21</span></div>
+  <p>Boston's Beth Israel Hospital · Planning Committee Approved 4 November 1988</p>
+  <p style="margin-top:8px;">© Beth Israel Corporation, 1988. All rights reserved.</p>
+</footer>
+
+<script>
+  // Intersection observer for scroll animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  sections.forEach(s => observer.observe(s));
+
+  // Active nav link highlighting
+  const navLinks = document.querySelectorAll('nav a');
+  const sectionEls = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sectionEls.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--cream)' : '';
+      a.style.borderColor = a.getAttribute('href') === '#' + current
+        ? 'var(--rust)' : '';
+    });
+  });
+</script>
+</body>
+</html>
